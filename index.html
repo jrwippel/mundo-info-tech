@@ -2,34 +2,38 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Mundo Info Tech</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Info Tech</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div id="header-global"></div>
 
     <main class="container">
-        <section class="ads-scroll">
+        <div class="ads-scroll">
             <a href="#" class="ad-card">
                 <img src="posts/images/tv-lg-65.jpg">
-                <h3>Smart TV 65" LG</h3>
-                <p class="price">Ver oferta</p>
+                <h3>Smart TV 65" LG NanoCell</h3>
             </a>
-        </section>
+            <a href="#" class="ad-card">
+                <img src="posts/images/tv-tcl-65.jpg">
+                <h3>Smart TV 65" TCL QLED</h3>
+            </a>
+        </div>
 
-        <section class="posts">
-            <a href="posts/melhores-fones-2026.html" style="text-decoration:none">
-                <article class="post-card-banner" style="background-image: url('posts/images/banner-fones.jpg');">
-                    <div class="post-content">
-                        <h3>🎧 Os 5 Melhores Fones de Ouvido de 2026</h3>
-                    </div>
-                </article>
+        <section class="posts-grid">
+            <a href="posts/melhores-fones-2026.html" class="post-item" style="background-image: url('posts/images/banner-fones.jpg')">
+                <div class="post-over">
+                    <span class="tag">Destaque</span>
+                    <h2>Os 5 Melhores Fones de Ouvido de 2026</h2>
+                </div>
             </a>
         </section>
     </main>
 
     <div id="footer-global"></div>
+
     <script src="componentes.js"></script>
 </body>
 </html>
