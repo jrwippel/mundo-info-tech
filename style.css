@@ -1,124 +1,62 @@
 /* GERAL */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f4f6f9;
-}
+body { margin: 0; font-family: 'Open Sans', Arial, sans-serif; background-color: #f2f2f2; color: #333; }
+.container { max-width: 1100px; margin: auto; padding: 0 15px; }
 
-.container {
-    width: 90%;
-    max-width: 1000px; /* Limita a largura para o conteúdo não esticar */
-    margin: auto;
-}
+/* CABEÇALHO TECHTUDO */
+.barra-topo { background: #333; color: white; width: 100%; }
 
-/* HEADER - LOGO EM CIMA, LINKS EMBAIXO */
-.topo {
-    background: #0f172a;
-    color: white;
-    border-bottom: 3px solid #ff6600;
-}
-
-.topo-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    position: relative;
-    padding: 10px 0;
-}
-
-.menu-botao { 
-    display: block; 
-    position: absolute;
-    left: 20px;
-    top: 15px;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-#menu-check { display: none; }
-
-.logo-area { text-align: center; margin-bottom: 10px; }
-.logo { font-size: 26px; margin: 0; font-weight: 800; }
-.logo span { color: #ff6600; }
-.logo a { text-decoration: none; color: inherit; }
-
-/* MENU CATEGORIAS (PC) */
-.menu-categorias { 
+.container-header { 
+    max-width: 1100px; 
+    margin: auto; 
     display: flex; 
-    gap: 25px; 
-    width: 100%;
-    justify-content: center;
-    padding: 8px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center; 
+    height: 100%;
+    padding: 0 15px;
 }
 
-.menu-categorias a { 
+/* Linha 1 */
+.linha-principal { height: 60px; background: #333; position: relative; }
+.lado-esquerdo, .lado-direito { flex: 1; }
+.lado-direito { text-align: right; }
+
+.logo-area { display: flex; align-items: center; justify-content: center; flex: 2; }
+.logo { font-size: 24px; font-weight: bold; color: white; text-decoration: none; }
+.logo span { color: #ff6600; }
+.secao-titulo { font-size: 20px; color: #ccc; margin-left: 10px; border-left: 1px solid #555; padding-left: 10px; }
+
+.menu-botao { cursor: pointer; font-size: 18px; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+
+/* Linha 2 (Menu) */
+.barra-categorias { background: #444; height: 40px; border-bottom: 4px solid #ff6600; }
+.barra-categorias a { 
     color: white; 
     text-decoration: none; 
+    text-transform: lowercase; 
     font-size: 13px; 
-    font-weight: 700; 
-    text-transform: uppercase;
+    font-weight: bold; 
+    margin-right: 20px;
+    line-height: 40px;
 }
 
-/* --- AJUSTE NO MOBILE (SANDUÍCHE) --- */
+/* MENU SANDUÍCHE (Mobile) */
+#menu-check { display: none; }
 @media (max-width: 900px) {
-    .topo-container { flex-direction: row; justify-content: center; }
-    .menu-botao { top: 50%; transform: translateY(-50%); }
-
-    .menu-categorias {
+    .barra-categorias { display: none; } /* Esconde a linha 2 no celular */
+    .secao-titulo { font-size: 14px; }
+    
+    .barra-categorias { /* Reaproveita a classe para o menu suspenso */
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #1e293b;
-        z-index: 1000;
-        gap: 0; /* Remove o espaço entre os links */
-        padding: 5px 0; /* Reduz o respiro interno do menu */
+        top: 60px; left: 0; width: 100%;
+        background: #333; z-index: 1000; height: auto;
     }
-
-    #menu-check:checked ~ .menu-categorias { display: flex; }
-
-    .menu-categorias a { 
-        padding: 10px 20px; /* ESPAÇAMENTO REDUZIDO: Antes estava 15px ou mais */
-        font-size: 14px;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-        width: 100%;
-        box-sizing: border-box;
-    }
+    
+    #menu-check:checked ~ .barra-categorias { display: flex; }
+    .barra-categorias a { border-bottom: 1px solid #444; padding: 12px 20px; margin: 0; line-height: normal; }
 }
 
-/* CONTEÚDO DO POST */
-.artigo-corpo {
-    background: white;
-    padding: 25px;
-    margin: 20px auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.rank-card { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
-.rank-card img { 
-    width: 100%; 
-    max-width: 400px; /* Imagem não fica mais gigante */
-    height: auto; 
-    display: block; 
-    margin: 15px auto; 
-    border-radius: 8px;
-}
-.rank-numero { background: #0f172a; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; }
-.btn-ml-discreto {
-    display: inline-block;
-    background: #00a650;
-    color: white !important;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-}
+/* CONTEÚDO ARTIGO */
+.artigo { background: white; margin: 20px auto; padding: 30px; border-radius: 4px; max-width: 800px; }
+.artigo h1 { font-size: 36px; margin-bottom: 10px; }
+.rank-card img { width: 100%; max-height: 450px; object-fit: contain; background: #f9f9f9; margin: 20px 0; }
