@@ -9,29 +9,32 @@ function carregarComponentes() {
     const headerHTML = `
     <header class="topo">
         <div class="topo-container">
-            <input type="checkbox" id="menu-check">
-            <label for="menu-check" class="menu-botao">☰</label>
+            <div class="menu-area">
+                <input type="checkbox" id="menu-check">
+                <label for="menu-check" class="menu-botao">☰</label>
+                
+                <nav class="menu-categorias">
+                    <a href="${prefix}index.html">Últimas</a>
+                    <a href="#">Celulares</a>
+                    <a href="${prefix}posts/melhores-fones-2026.html">Fones</a>
+                    <a href="#">Eletrônicos</a>
+                    <a href="#">Casa Inteligente</a>
+                </nav>
+            </div>
 
             <div class="logo-area">
                 <h1 class="logo"><a href="${prefix}index.html">Mundo <span>Info</span> Tech</a></h1>
                 ${secao ? `<span class="secao-titulo">${secao}</span>` : ''}
             </div>
 
-            <nav class="menu-categorias">
-                <a href="${prefix}index.html">Últimas</a>
-                <a href="#">Celulares</a>
-                <a href="${prefix}posts/melhores-fones-2026.html">Fones</a>
-                <a href="#">Eletrônicos</a>
-                <a href="#">Casa Inteligente</a>
-            </nav>
+            <div class="vazio-direita" style="display: flex; justify-content: flex-end;">
+                </div>
         </div>
     </header>`;
 
     const footerHTML = `
-    <footer style="background:#0f172a; color:white; text-align:center; padding:20px; margin-top:40px;">
-        <div class="container">
-            <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
-        </div>
+    <footer style="background:#0f172a; color:white; text-align:center; padding:30px; margin-top:40px;">
+        <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
     </footer>`;
 
     if (document.getElementById('header-global')) document.getElementById('header-global').innerHTML = headerHTML;
