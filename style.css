@@ -1,110 +1,68 @@
-/* GERAL */
-body { margin: 0; font-family: 'Open Sans', Arial, sans-serif; background-color: #f2f2f2; color: #333; }
-.container { max-width: 1100px; margin: auto; padding: 0 15px; }
+/* RESET E BASE */
+body { margin: 0; font-family: 'Open Sans', sans-serif; background-color: #f2f2f2; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
 
-/* CABEÇALHO TECHTUDO */
-.barra-topo { background: #333; color: white; width: 100%; }
+/* PUBLICIDADE LADO A LADO */
+.sessao-ofertas { margin: 20px 0; }
+.ads-top { font-size: 11px; color: #999; text-transform: uppercase; margin-bottom: 10px; }
 
-.container-header { 
-    max-width: 1100px; 
-    margin: auto; 
-    display: flex; 
-    align-items: center; 
-    height: 100%;
-    padding: 0 15px;
+.ads-container {
+    display: flex; /* Alinha os cards em linha */
+    gap: 15px;
+    overflow-x: auto; /* Permite scroll no celular se não couber */
+    padding-bottom: 10px;
 }
 
-/* Linha 1 */
-.linha-principal { height: 60px; background: #333; position: relative; }
-.lado-esquerdo, .lado-direito { flex: 1; }
-.lado-direito { text-align: right; }
-
-.logo-area { display: flex; align-items: center; justify-content: center; flex: 2; }
-.logo { font-size: 24px; font-weight: bold; color: white; text-decoration: none; }
-.logo span { color: #ff6600; }
-.secao-titulo { font-size: 20px; color: #ccc; margin-left: 10px; border-left: 1px solid #555; padding-left: 10px; }
-
-.menu-botao { cursor: pointer; font-size: 18px; font-weight: bold; display: flex; align-items: center; gap: 8px; }
-
-/* Linha 2 (Menu) */
-.barra-categorias { background: #444; height: 40px; border-bottom: 4px solid #ff6600; }
-.barra-categorias a { 
-    color: white; 
-    text-decoration: none; 
-    text-transform: lowercase; 
-    font-size: 13px; 
-    font-weight: bold; 
-    margin-right: 20px;
-    line-height: 40px;
-}
-
-/* MENU SANDUÍCHE (Mobile) */
-#menu-check { display: none; }
-@media (max-width: 900px) {
-    .barra-categorias { display: none; } /* Esconde a linha 2 no celular */
-    .secao-titulo { font-size: 14px; }
-    
-    .barra-categorias { /* Reaproveita a classe para o menu suspenso */
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px; left: 0; width: 100%;
-        background: #333; z-index: 1000; height: auto;
-    }
-    
-    #menu-check:checked ~ .barra-categorias { display: flex; }
-    .barra-categorias a { border-bottom: 1px solid #444; padding: 12px 20px; margin: 0; line-height: normal; }
-}
-
-/* CONTEÚDO ARTIGO */
-.artigo { background: white; margin: 20px auto; padding: 30px; border-radius: 4px; max-width: 800px; }
-.artigo h1 { font-size: 36px; margin-bottom: 10px; }
-.rank-card img { width: 100%; max-height: 450px; object-fit: contain; background: #f9f9f9; margin: 20px 0; }
-
-
-/* GRID DE NOTÍCIAS ESTILO TECHTUDO */
-.posts-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr; /* Notícia grande e notícia pequena ao lado */
-    gap: 20px;
-    margin-top: 20px;
-}
-
-@media (max-width: 768px) {
-    .posts-grid {
-        grid-template-columns: 1fr; /* No celular fica uma embaixo da outra */
-    }
-}
-
-.post-card-banner {
-    height: 350px; /* Mais alto para o destaque */
-    background-size: cover;
-    background-position: center;
-    border-radius: 4px; /* Cantos menos arredondados igual ao original */
+.ad-card-mini {
+    flex: 1; /* Faz todos terem o mesmo tamanho */
+    min-width: 250px;
+    background: white;
+    text-decoration: none;
     display: flex;
-    align-items: flex-end;
-    overflow: hidden;
-    position: relative;
-    border-bottom: 4px solid #ff6600; /* Detalhe laranja do TechTudo */
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.post-content {
+.ad-card-mini img { width: 60px; height: 60px; object-fit: contain; margin-right: 15px; }
+.ad-info h3 { font-size: 14px; color: #333; margin: 0; }
+.ad-info .price { color: #00a650; font-weight: bold; margin: 5px 0 0; font-size: 13px; }
+
+/* GRID DE NOTÍCIAS (ESTILO TECHTUDO) */
+.noticias-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 1 grande e 1 pequena lateral */
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.post-item { position: relative; text-decoration: none; display: block; height: 350px; border-radius: 4px; overflow: hidden; }
+.post-item.secundario { height: 350px; }
+
+.post-thumb {
+    width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.post-item:hover .post-thumb { transform: scale(1.05); }
+
+.post-over {
+    position: absolute; bottom: 0; left: 0; width: 100%;
     padding: 20px;
-    color: white;
-    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    box-sizing: border-box;
 }
 
-.post-content h3 {
-    font-size: 24px;
-    margin: 10px 0;
-    line-height: 1.2;
+.tag { background: #ff6600; color: white; padding: 3px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+.post-over h2 { color: white; margin: 10px 0 0; font-size: 22px; line-height: 1.2; }
+
+/* RESPONSIVIDADE */
+@media (max-width: 800px) {
+    .noticias-grid { grid-template-columns: 1fr; } /* Empilha no celular */
+    .ads-container { flex-direction: column; } /* Empilha ofertas no celular se preferir */
+    .ad-card-mini { min-width: 100%; }
 }
 
-.tag {
-    background: #ff6600;
-    color: white;
-    padding: 2px 8px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+/* ... (Mantenha os estilos de Cabeçalho/Menu do passo anterior) ... */
