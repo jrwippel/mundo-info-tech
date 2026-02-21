@@ -8,9 +8,28 @@
 </head>
 <body>
 
-<div id="header-global"></div>
+<div id="header-global">
+    <header class="topo">
+      <div class="topo-container">
+        <input type="checkbox" id="menu-check">
+        <label for="menu-check" class="menu-botao">☰</label>
 
-<main class="container">
+        <div class="logo-area">
+          <h1 class="logo">Mundo <span>Info</span> Tech</h1>
+        </div>
+
+        <nav class="menu-categorias">
+            <a href="index.html">Últimas</a>
+            <a href="#">Celulares</a>
+            <a href="posts/melhores-fones-2026.html">Fones</a>
+            <a href="#">Eletrônicos</a>
+            <a href="#">Casa Inteligente</a>
+        </nav>
+      </div>
+    </header>
+</div>
+
+<div class="container">
   <div class="ads-top">
       <span>Publicidade</span>
   </div>
@@ -34,8 +53,10 @@
           <p class="price">Ver oferta</p>
       </a>
   </section>
+</div>
 
-  <section class="posts">
+<section class="posts container">
+
     <a href="posts/melhores-fones-2026.html" class="post-card-link">
         <article class="post-card-banner" style="background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('posts/images/banner-fones.jpg');">
             <div class="post-content">
@@ -55,10 +76,14 @@
             </div>
         </article>
     </a>
-  </section>
-</main>
 
-<div id="footer-global"></div>
+</section>
+
+<div id="footer-global">
+    <footer>
+        <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
+    </footer>
+</div>
 
 <script src="componentes.js"></script>
 
