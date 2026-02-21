@@ -11,31 +11,65 @@ body {
     margin: auto;
 }
 
-/* HEADER (Mantido centralizado) */
+/* HEADER - LOGO CENTRALIZADA EM AMBAS AS SITUAÇÕES */
 .topo {
     background: #0f172a;
     color: white;
     border-bottom: 3px solid #ff6600;
+    position: relative; /* Base para o centro absoluto */
+    height: 70px; /* Altura fixa para alinhar tudo */
+    display: flex;
+    align-items: center;
 }
 
 .topo-container {
+    width: 95%;
+    max-width: 1100px;
+    margin: auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 15px 20px;
+    align-items: center;
 }
 
-.logo-area { text-align: center; }
+/* O segredo da centralização perfeita */
+.logo-area {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+}
+
 .logo { font-size: 24px; margin: 0; }
 .logo span { color: #ff6600; }
-.spacer, .menu-botao { width: 40px; font-size: 24px; cursor: pointer; color: white; }
+
+.menu-botao { 
+    font-size: 26px; 
+    cursor: pointer; 
+    color: white; 
+    z-index: 10; 
+}
 
 #menu-check { display: none; }
 
-.menu-categorias { display: flex; gap: 20px; }
-.menu-categorias a { color: white; text-decoration: none; font-size: 14px; font-weight: 600; }
+/* MENU CATEGORIAS (PC) */
+.menu-categorias { 
+    display: flex; 
+    gap: 20px; 
+    z-index: 10;
+}
 
-/* PUBLICIDADE SCROLL (Mantido horizontal) */
+.menu-categorias a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 14px; 
+    font-weight: 600; 
+    transition: 0.3s;
+}
+
+.menu-categorias a:hover { color: #ff6600; }
+
+/* PUBLICIDADE SCROLL */
 .ads-top { text-align: right; font-size: 10px; color: #94a3b8; margin: 10px 0; }
 .ads-scroll {
     display: flex;
@@ -43,7 +77,6 @@ body {
     margin-bottom: 30px;
     overflow-x: auto;
     padding-bottom: 10px;
-    -webkit-overflow-scrolling: touch;
 }
 .ads-scroll::-webkit-scrollbar { display: none; }
 
@@ -59,7 +92,7 @@ body {
 .ad-card h3 { font-size: 12px; padding: 8px; margin: 0; }
 .price { padding: 0 8px 8px; color: #00a650; font-weight: bold; font-size: 13px; }
 
-/* NOVOS CARDS DE ARTIGOS (BANNERS) */
+/* CARDS DE ARTIGOS (ALTURA AJUSTADA) */
 .post-card-link {
     text-decoration: none;
     display: block;
@@ -67,71 +100,60 @@ body {
 }
 
 .post-card-banner {
-    height: 250px;
+    height: 180px; /* Altura reduzida conforme solicitado */
     background-size: cover;
     background-position: center;
     border-radius: 12px;
     display: flex;
-    align-items: flex-end; /* Texto na parte de baixo */
+    align-items: flex-end; 
     overflow: hidden;
     transition: transform 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.post-card-banner:hover {
-    transform: translateY(-5px);
-}
+.post-card-banner:hover { transform: translateY(-5px); }
 
 .post-content {
-    padding: 25px;
+    padding: 20px;
     color: white;
     width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
 }
 
 .tag {
     background: #ff6600;
-    padding: 4px 10px;
-    font-size: 12px;
+    padding: 3px 8px;
+    font-size: 11px;
     font-weight: bold;
     border-radius: 4px;
     text-transform: uppercase;
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.post-content h3 {
-    margin: 0;
-    font-size: 24px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
+.post-content h3 { margin: 0; font-size: 20px; }
+.post-content p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
 
-.post-content p {
-    margin: 8px 0 0;
-    font-size: 15px;
-    opacity: 0.9;
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
+/* RESPONSIVIDADE (MOBILE) */
+@media (max-width: 900px) {
+    /* No Mobile, as categorias vão para dentro do menu sanduíche */
     .menu-categorias {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 70px;
         left: 0;
         width: 100%;
         background: #1e293b;
         padding: 20px;
         z-index: 100;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.2);
     }
 
     #menu-check:checked ~ .menu-categorias { display: flex; }
 
-    .post-card-banner {
-        height: 200px; /* Um pouco menor no celular */
-    }
-
-    .post-content h3 { font-size: 19px; }
+    .post-card-banner { height: 160px; }
+    .post-content h3 { font-size: 18px; }
 }
 
 footer { background: #0f172a; color: white; text-align: center; padding: 30px; margin-top: 40px; }
