@@ -69,29 +69,66 @@ body {
 
 .menu-categorias a:hover { color: #ff6600; }
 
-/* PUBLICIDADE SCROLL */
-.ads-top { text-align: right; font-size: 10px; color: #94a3b8; margin: 10px 0; }
+/* PUBLICIDADE - AJUSTE PARA NOTEBOOK E CELULAR */
+.ads-top { 
+    text-align: right; 
+    font-size: 10px; 
+    color: #94a3b8; 
+    margin: 10px 0; 
+}
+
 .ads-scroll {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     margin-bottom: 30px;
     overflow-x: auto;
-    padding-bottom: 10px;
+    padding: 10px 5px;
+    justify-content: center; /* Centraliza as TVs no Notebook */
 }
+
+/* No mobile, o scroll lateral precisa de alinhamento à esquerda para funcionar */
+@media (max-width: 768px) {
+    .ads-scroll {
+        justify-content: flex-start; 
+    }
+}
+
 .ads-scroll::-webkit-scrollbar { display: none; }
 
 .ad-card {
     background: white;
-    flex: 0 0 220px;
+    flex: 0 0 250px; /* Largura um pouco maior para preencher melhor o espaço */
     text-decoration: none;
     color: #111;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
-.ad-card img { width: 100%; height: 120px; object-fit: contain; background: #f8fafc; }
-.ad-card h3 { font-size: 12px; padding: 8px; margin: 0; }
-.price { padding: 0 8px 8px; color: #00a650; font-weight: bold; font-size: 13px; }
 
+.ad-card:hover { transform: scale(1.02); }
+
+.ad-card img { 
+    width: 100%; 
+    height: 140px; 
+    object-fit: contain; 
+    background: #f8fafc; 
+    border-radius: 8px 8px 0 0;
+}
+
+.ad-card h3 { 
+    font-size: 14px; 
+    padding: 10px; 
+    margin: 0; 
+    text-align: center; /* Título centralizado */
+}
+
+.price { 
+    padding: 0 10px 15px; 
+    color: #00a650; 
+    font-weight: bold; 
+    font-size: 15px; 
+    text-align: center; /* Preço centralizado */
+}
 /* CARDS DE ARTIGOS (ALTURA AJUSTADA) */
 .post-card-link {
     text-decoration: none;
