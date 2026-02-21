@@ -3,10 +3,17 @@
 body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; color: #333; overflow-x: hidden; }
 
 /* HEADER ESTILO TECHTUDO */
-.topo { background: #0f172a; color: white; border-bottom: 4px solid #ff6600; width: 100%; position: relative; }
+.topo { background: #0f172a; color: white; border-bottom: 4px solid #ff6600; width: 100%; position: sticky; top: 0; z-index: 1000; }
+
 .topo-container { 
-    max-width: 1200px; margin: auto; padding: 12px 15px;
-    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1200px; 
+    margin: auto; 
+    padding: 12px 15px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; /* Centraliza o conteúdo principal (Logo) */
+    position: relative; /* Base para o botão absoluto */
+    min-height: 60px;
 }
 
 /* Área do Logo e Seção */
@@ -20,15 +27,23 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; co
     padding-left: 10px; font-weight: 400; white-space: nowrap;
 }
 
-/* Botão Menu Sanduíche */
-.menu-botao { font-size: 26px; cursor: pointer; color: white; order: -1; margin-right: 15px; }
+/* Botão Menu Sanduíche - Posicionado para não empurrar o logo */
+.menu-botao { 
+    font-size: 26px; 
+    cursor: pointer; 
+    color: white; 
+    position: absolute; 
+    left: 15px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
 #menu-check { display: none; }
 
 /* Navegação Categorias (Desktop) */
-.menu-categorias { display: flex; gap: 20px; }
+.menu-categorias { display: flex; gap: 20px; margin-left: auto; }
 .menu-categorias a { color: white; text-decoration: none; font-size: 12px; font-weight: 700; text-transform: uppercase; }
 
-/* OFERTAS / PUBLICIDADE (Lado a Lado) */
+/* OFERTAS / PUBLICIDADE */
 .container { max-width: 1100px; margin: auto; padding: 0 15px; }
 .ads-scroll { 
     display: flex; gap: 15px; margin: 20px 0; overflow-x: auto; 
@@ -42,7 +57,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; co
 .ad-card img { width: 50px; height: 50px; object-fit: contain; margin-right: 12px; }
 .ad-card h3 { font-size: 13px; line-height: 1.2; }
 
-/* POSTS (Garantindo que a imagem apareça) */
+/* POSTS */
 .posts-grid { display: block; margin-top: 20px; }
 .post-item { 
     display: flex; align-items: flex-end; width: 100%; height: 350px; 
@@ -67,7 +82,6 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; co
     .menu-categorias a { padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
     
     .logo { font-size: 18px; }
-    .secao-titulo { font-size: 15px; }
+    .secao-titulo { display: none; } /* Esconde o título da seção no mobile para manter o logo centralizado */
     .post-item { height: 250px; }
-    .post-over h2 { font-size: 20px; }
 }
