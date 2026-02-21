@@ -2,7 +2,7 @@ function carregarComponentes() {
     const path = window.location.pathname;
     const prefix = path.includes('/posts/') ? '../' : '';
     
-    // Define o nome da seção conforme o arquivo
+    // Identifica a seção para o título ao lado do logo
     let secao = "";
     if (path.includes('fones')) secao = "Fones";
     else if (path.includes('celulares')) secao = "Celulares";
@@ -30,7 +30,9 @@ function carregarComponentes() {
 
     const footerHTML = `
     <footer style="background:#0f172a; color:white; text-align:center; padding:20px; margin-top:40px;">
-        <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
+        <div class="container">
+            <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
+        </div>
     </footer>`;
 
     if (document.getElementById('header-global')) document.getElementById('header-global').innerHTML = headerHTML;
