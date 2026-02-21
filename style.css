@@ -1,47 +1,57 @@
-/* BASE */
-body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; color: #333; }
-.container { width: 95%; max-width: 1100px; margin: auto; }
+/* RESET PADRÃO */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; color: #333; line-height: 1.6; }
 
-/* HEADER */
-.topo { background: #0f172a; color: white; border-bottom: 3px solid #ff6600; padding: 15px 0; }
+/* CABEÇALHO PROFISSIONAL */
+.topo { background: #0f172a; color: white; border-bottom: 4px solid #ff6600; width: 100%; }
 .topo-container { 
-    width: 95%; max-width: 1100px; margin: auto; 
-    display: flex; justify-content: space-between; align-items: center; position: relative; 
+    max-width: 1100px; margin: auto; padding: 10px 15px;
+    display: flex; flex-direction: column; align-items: center; position: relative;
 }
 
-.logo-area { position: absolute; left: 50%; transform: translateX(-50%); }
-.logo { font-size: 24px; margin: 0; font-weight: 800; }
+/* Logo e Título da Seção */
+.logo-area { display: flex; align-items: center; padding: 10px 0; }
+.logo { font-size: 26px; font-weight: 800; }
+.logo a { text-decoration: none; color: white; }
 .logo span { color: #ff6600; }
-.logo a { text-decoration: none; color: inherit; }
+.secao-titulo { font-size: 20px; color: #94a3b8; margin-left: 10px; border-left: 2px solid #334155; padding-left: 10px; }
 
-.menu-botao { font-size: 28px; cursor: pointer; z-index: 1001; }
+/* Botão Menu (Sanduíche) */
+.menu-botao { position: absolute; left: 15px; top: 22px; font-size: 26px; cursor: pointer; color: white; }
 #menu-check { display: none; }
 
-/* MENU RESPONSIVO */
-.menu-categorias { display: flex; gap: 20px; }
-.menu-categorias a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; }
-
-@media (max-width: 850px) {
-    .menu-categorias {
-        display: none; flex-direction: column; position: absolute;
-        top: 50px; left: -2.5%; width: 105%; background: #1e293b; padding: 10px 0;
-    }
-    #menu-check:checked ~ .menu-categorias { display: flex; }
-    .menu-categorias a { padding: 15px 25px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+/* Navegação Categorias (Barra de baixo) */
+.menu-categorias { 
+    display: flex; gap: 25px; width: 100%; justify-content: center; 
+    padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.1); 
 }
+.menu-categorias a { color: white; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; }
 
-/* PUBLICIDADE E CARDS (O que estava funcionando) */
-.ads-scroll { display: flex; gap: 15px; overflow-x: auto; padding: 15px 0; }
+/* PUBLICIDADE / OFERTAS (Lado a Lado) */
+.container { max-width: 1100px; margin: auto; padding: 0 15px; }
+.ads-scroll { display: flex; gap: 15px; margin: 20px 0; overflow-x: auto; }
 .ad-card { 
-    background: white; flex: 0 0 280px; text-decoration: none; color: #111; 
-    border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;
+    background: white; flex: 1; min-width: 250px; padding: 15px; 
+    border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex; align-items: center;
 }
-.ad-card img { width: 100%; height: 150px; object-fit: contain; padding: 10px; box-sizing: border-box; }
-.price { color: #00a650; font-weight: bold; padding-bottom: 15px; margin: 0; }
+.ad-card img { width: 60px; height: 60px; object-fit: contain; margin-right: 15px; }
+.ad-card h3 { font-size: 14px; margin: 0; }
 
-/* POSTS */
-.post-card-banner { 
-    height: 250px; background-size: cover; background-position: center; 
-    border-radius: 12px; display: flex; align-items: flex-end; margin-bottom: 20px;
+/* POSTS (ESTILO DESTAQUE) */
+.posts-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 15px; margin-top: 20px; }
+.post-item { 
+    height: 350px; border-radius: 8px; overflow: hidden; position: relative;
+    text-decoration: none; display: flex; align-items: flex-end;
+    background-size: cover; background-position: center;
 }
-.post-content { padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; width: 100%; border-radius: 0 0 12px 12px; }
+.post-over { padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); width: 100%; color: white; }
+.tag { background: #ff6600; padding: 2px 8px; font-size: 11px; font-weight: bold; border-radius: 3px; }
+
+/* MOBILE */
+@media (max-width: 800px) {
+    .menu-categorias { display: none; flex-direction: column; position: absolute; top: 65px; left: 0; background: #0f172a; z-index: 100; }
+    #menu-check:checked ~ .menu-categorias { display: flex; }
+    .posts-grid { grid-template-columns: 1fr; }
+    .ad-card { min-width: 90%; }
+}
