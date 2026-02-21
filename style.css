@@ -1,63 +1,61 @@
-/* RESET PADRÃO */
+/* RESET E BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; color: #333; overflow-x: hidden; }
+body { font-family: 'Segoe UI', sans-serif; background-color: #f4f6f9; color: #333; }
 
-/* HEADER ESTILO TECHTUDO (3 COLUNAS) */
+/* HEADER */
 .topo { background: #0f172a; color: white; border-bottom: 4px solid #ff6600; width: 100%; position: sticky; top: 0; z-index: 1000; }
 
-.topo-container { 
-    max-width: 1200px; 
-    margin: auto; 
-    padding: 0 15px;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr; /* Esquerda, Centro (Logo), Direita */
-    align-items: center;
-    min-height: 65px;
+/* Linha 1: Logo e Menu Sanduíche */
+.topo-principal {
+    max-width: 1200px; margin: auto; padding: 10px 15px;
+    display: flex; align-items: center; justify-content: center; position: relative;
+    min-height: 60px;
 }
 
-/* Coluna 1: Menu */
-.menu-area { display: flex; align-items: center; }
-.menu-botao { font-size: 26px; cursor: pointer; color: white; display: block; }
-#menu-check { display: none; }
-
-/* Coluna 2: Logo Centralizado */
-.logo-area { display: flex; align-items: center; justify-content: center; gap: 10px; }
-.logo { font-size: 22px; font-weight: 800; white-space: nowrap; }
+.logo { font-size: 24px; font-weight: 800; white-space: nowrap; }
 .logo a { text-decoration: none; color: white; }
 .logo span { color: #ff6600; }
-.secao-titulo { font-size: 18px; color: #94a3b8; border-left: 2px solid #334155; padding-left: 10px; font-weight: 400; }
 
-/* Coluna 3: Categorias (Desktop) */
-.menu-categorias { display: flex; gap: 15px; justify-content: flex-end; }
-.menu-categorias a { color: white; text-decoration: none; font-size: 11px; font-weight: 700; text-transform: uppercase; white-space: nowrap; }
+.menu-botao { position: absolute; left: 15px; font-size: 26px; cursor: pointer; color: white; }
+#menu-check { display: none; }
 
-/* OFERTAS E PUBLICIDADE */
+/* Linha 2: Barra de Categorias (Apenas PC) */
+.topo-categorias { background: rgba(255,255,255,0.05); width: 100%; }
+.menu-categorias { 
+    max-width: 1200px; margin: auto; display: flex; 
+    justify-content: center; gap: 25px; padding: 10px 0; 
+}
+.menu-categorias a { color: white; text-decoration: none; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+
+/* ANÚNCIOS / OFERTAS */
 .container { max-width: 1100px; margin: auto; padding: 0 15px; }
-.ads-scroll { display: flex; gap: 15px; margin: 20px 0; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; }
+.ads-scroll { display: flex; gap: 15px; margin: 20px 0; overflow-x: auto; padding-bottom: 10px; }
 .ad-card { background: white; flex: 0 0 280px; padding: 12px; border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; }
 .ad-card img { width: 50px; height: 50px; object-fit: contain; margin-right: 12px; }
-.ad-card h3 { font-size: 13px; line-height: 1.2; }
 
 /* POSTS */
-.post-item { display: flex; align-items: flex-end; width: 100%; height: 380px; border-radius: 12px; overflow: hidden; position: relative; text-decoration: none; margin-bottom: 20px; background-size: cover; background-position: center; }
-.post-over { padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); width: 100%; color: white; box-sizing: border-box; }
-.post-over h2 { font-size: 26px; margin-top: 8px; line-height: 1.2; }
+.post-item { 
+    display: flex; align-items: flex-end; width: 100%; height: 400px; 
+    border-radius: 12px; overflow: hidden; position: relative; text-decoration: none; 
+    margin-bottom: 20px; background-size: cover; background-position: center; 
+}
+.post-over { padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); width: 100%; color: white; }
+.post-over h2 { font-size: 26px; margin-top: 8px; }
 .tag { background: #ff6600; padding: 3px 8px; font-size: 11px; font-weight: bold; border-radius: 3px; text-transform: uppercase; }
 
-/* RESPONSIVIDADE (MOBILE) */
-@media (max-width: 900px) {
-    .topo-container { grid-template-columns: 50px 1fr; } /* Menu e Logo (Categorias somem) */
+/* RESPONSIVIDADE (CELULAR) */
+@media (max-width: 850px) {
+    /* Esconde a barra de categorias horizontal e transforma em menu lateral */
+    .topo-categorias { display: none; } 
+    
     .menu-categorias {
         display: none; flex-direction: column; position: absolute;
-        top: 100%; left: 0; width: 100%; background: #0f172a; z-index: 1000;
-        justify-content: flex-start;
+        top: 60px; left: 0; width: 100%; background: #0f172a; padding: 0;
     }
     #menu-check:checked ~ .menu-categorias { display: flex; }
-    .menu-categorias a { padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .menu-categorias a { padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; }
     
-    .logo-area { justify-content: center; width: 100%; margin-right: 50px; } /* Centraliza compensando o botão */
-    .logo { font-size: 18px; }
-    .secao-titulo { display: none; }
-    .post-item { height: 260px; }
+    .logo { font-size: 20px; }
+    .post-item { height: 250px; }
     .post-over h2 { font-size: 20px; }
 }
