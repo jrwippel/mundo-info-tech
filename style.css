@@ -1,61 +1,73 @@
-/* RESET E CONFIGURAÇÃO BASE */
+/* RESET PADRÃO */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; color: #333; overflow-x: hidden; }
 
 /* HEADER ESTILO TECHTUDO */
-.topo { background: #0f172a; color: white; border-bottom: 4px solid #ff6600; width: 100%; }
+.topo { background: #0f172a; color: white; border-bottom: 4px solid #ff6600; width: 100%; position: relative; }
 .topo-container { 
-    max-width: 1200px; margin: auto; padding: 10px 15px;
-    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1200px; margin: auto; padding: 12px 15px;
+    display: flex; align-items: center; justify-content: space-between;
 }
 
-/* Logo: white-space nowrap impede quebra em 2 linhas */
-.logo { font-size: 22px; font-weight: 800; white-space: nowrap; flex-shrink: 0; }
+/* Área do Logo e Seção */
+.logo-area { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.logo { font-size: 22px; font-weight: 800; white-space: nowrap; }
 .logo a { text-decoration: none; color: white; }
 .logo span { color: #ff6600; }
 
-.menu-botao { font-size: 26px; cursor: pointer; color: white; margin-right: 15px; }
+.secao-titulo { 
+    font-size: 18px; color: #94a3b8; border-left: 2px solid #334155; 
+    padding-left: 10px; font-weight: 400; white-space: nowrap;
+}
+
+/* Botão Menu Sanduíche */
+.menu-botao { font-size: 26px; cursor: pointer; color: white; order: -1; margin-right: 15px; }
 #menu-check { display: none; }
 
-/* Menu Categorias (Desktop) */
+/* Navegação Categorias (Desktop) */
 .menu-categorias { display: flex; gap: 20px; }
-.menu-categorias a { color: white; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; }
+.menu-categorias a { color: white; text-decoration: none; font-size: 12px; font-weight: 700; text-transform: uppercase; }
 
-/* PUBLICIDADE (Lado a Lado) */
+/* OFERTAS / PUBLICIDADE (Lado a Lado) */
 .container { max-width: 1100px; margin: auto; padding: 0 15px; }
 .ads-scroll { 
     display: flex; gap: 15px; margin: 20px 0; overflow-x: auto; 
-    scrollbar-width: none; /* Esconde scroll no Firefox */
+    padding-bottom: 10px; scrollbar-width: none; 
 }
 .ad-card { 
-    background: white; flex: 0 0 300px; padding: 12px; 
-    border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex; align-items: center;
+    background: white; flex: 0 0 280px; padding: 12px; 
+    border-radius: 8px; text-decoration: none; color: #333; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center;
 }
 .ad-card img { width: 50px; height: 50px; object-fit: contain; margin-right: 12px; }
-.ad-card h3 { font-size: 14px; line-height: 1.2; }
+.ad-card h3 { font-size: 13px; line-height: 1.2; }
 
-/* POSTS (Garantindo que a imagem apareça no celular) */
+/* POSTS (Garantindo que a imagem apareça) */
 .posts-grid { display: block; margin-top: 20px; }
 .post-item { 
-    display: block; width: 100%; height: 350px; /* Altura fixa para garantir visibilidade */
+    display: flex; align-items: flex-end; width: 100%; height: 350px; 
     border-radius: 12px; overflow: hidden; position: relative;
     text-decoration: none; margin-bottom: 20px;
     background-size: cover; background-position: center;
 }
-
 .post-over { 
-    position: absolute; bottom: 0; left: 0; width: 100%; 
     padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); 
-    color: white; box-sizing: border-box;
+    width: 100%; color: white; box-sizing: border-box;
 }
 .post-over h2 { font-size: 24px; margin-top: 8px; line-height: 1.2; }
 .tag { background: #ff6600; padding: 3px 8px; font-size: 11px; font-weight: bold; border-radius: 3px; text-transform: uppercase; }
 
-/* AJUSTES MOBILE */
+/* RESPONSIVIDADE (MOBILE) */
 @media (max-width: 900px) {
-    .menu-categorias { display: none; } /* Esconde o menu para não apertar o logo */
-    .logo { font-size: 19px; }
-    .post-item { height: 280px; } /* Altura um pouco menor no celular */
+    .menu-categorias {
+        display: none; flex-direction: column; position: absolute;
+        top: 100%; left: 0; width: 100%; background: #0f172a; z-index: 1000;
+    }
+    #menu-check:checked ~ .menu-categorias { display: flex; }
+    .menu-categorias a { padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    
+    .logo { font-size: 18px; }
+    .secao-titulo { font-size: 15px; }
+    .post-item { height: 250px; }
     .post-over h2 { font-size: 20px; }
 }
