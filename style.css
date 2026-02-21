@@ -11,13 +11,13 @@ body {
     margin: auto;
 }
 
-/* HEADER - ESTILO PORTAL (DUAS LINHAS) */
+/* HEADER - ESTILO PORTAL (DUAS LINHAS NO PC) */
 .topo {
     background: #0f172a;
     color: white;
     border-bottom: 3px solid #ff6600;
-    padding-top: 20px;
-    display: block; /* Permite que o conteúdo empilhe */
+    padding-top: 15px;
+    display: block;
 }
 
 .topo-container {
@@ -27,23 +27,24 @@ body {
     display: flex;
     flex-direction: column; /* Logo em cima, Menu embaixo */
     align-items: center;
+    position: relative; /* Base para o botão mobile */
 }
 
-/* Logo centralizada */
+/* Logo */
 .logo-area {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .logo { 
     font-size: 32px; 
     margin: 0; 
-    font-weight: 800;
-    letter-spacing: -1px;
+    font-weight: 800; 
 }
 .logo span { color: #ff6600; }
+.logo a { text-decoration: none; color: inherit; }
 
-/* MENU CATEGORIAS - A SEGUNDA LINHA */
+/* MENU CATEGORIAS - SEGUNDA LINHA (PC) */
 .menu-categorias { 
     display: flex; 
     gap: 30px; 
@@ -65,9 +66,9 @@ body {
 
 .menu-categorias a:hover { color: #ff6600; }
 
-/* Botão sanduíche (Invisível no PC) */
-.menu-botao { display: none; }
+/* Esconder elementos de controle no PC */
 #menu-check { display: none; }
+.menu-botao { display: none; }
 
 /* PUBLICIDADE */
 .ads-top { 
@@ -108,27 +109,11 @@ body {
     border-radius: 8px 8px 0 0;
 }
 
-.ad-card h3 { 
-    font-size: 14px; 
-    padding: 10px; 
-    margin: 0; 
-    text-align: center; 
-}
-
-.price { 
-    padding: 0 10px 15px; 
-    color: #00a650; 
-    font-weight: bold; 
-    font-size: 15px; 
-    text-align: center; 
-}
+.ad-card h3 { font-size: 14px; padding: 10px; margin: 0; text-align: center; }
+.price { padding: 0 10px 15px; color: #00a650; font-weight: bold; font-size: 15px; text-align: center; }
 
 /* CARDS DE ARTIGOS */
-.post-card-link {
-    text-decoration: none;
-    display: block;
-    margin-bottom: 20px;
-}
+.post-card-link { text-decoration: none; display: block; margin-bottom: 20px; }
 
 .post-card-banner {
     height: 180px;
@@ -168,91 +153,26 @@ body {
 /* RODAPÉ */
 footer { background: #0f172a; color: white; text-align: center; padding: 30px; margin-top: 40px; }
 
-/* ARTIGOS INTERNOS */
-.artigo-corpo {
-    background: white;
-    padding: 30px;
-    margin-top: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.header-post {
-    border-bottom: 2px solid #f1f5f9;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-}
-
-.categoria-tag {
-    color: #ff6600;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
-}
-
-.rank-card {
-    margin-bottom: 50px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
-}
-
-.rank-card img {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 8px;
-}
-
-.rank-numero {
-    background: #0f172a;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-weight: bold;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.btn-ml-discreto {
-    display: inline-block;
-    background: #f3f4f6;
-    color: #1f2937;
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-weight: bold;
-    border: 1px solid #d1d5db;
-    transition: 0.2s;
-}
-
-.btn-ml-discreto:hover { background: #e5e7eb; }
-
-/* TABELA */
-.tabela-container { overflow-x: auto; margin-top: 40px; }
-table { width: 100%; border-collapse: collapse; min-width: 600px; }
-th { background: #0f172a; color: white; padding: 15px; text-align: left; }
-td { padding: 15px; border-bottom: 1px solid #eee; }
-.img-tabela { width: 50px; height: 50px; object-fit: contain; }
-.link-oferta { color: #00a650; font-weight: bold; text-decoration: none; }
-
 /* RESPONSIVIDADE (MOBILE) */
 @media (max-width: 900px) {
+    .topo { padding: 15px 0; }
+
     .topo-container {
-        flex-direction: row; /* Volta a ser uma linha só no celular */
-        justify-content: center;
-        padding-bottom: 15px;
-        position: relative;
+        flex-direction: row; /* Volta a ser linha única */
+        justify-content: center; /* Centraliza a logo */
     }
 
+    /* OS 3 TRAÇOS (BOTÃO) */
     .menu-botao { 
         display: block; 
         position: absolute;
-        left: 10px;
-        font-size: 28px;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 30px;
+        color: white;
         cursor: pointer;
+        z-index: 1001;
     }
 
     .logo-area { margin-bottom: 0; }
@@ -262,25 +182,43 @@ td { padding: 15px; border-bottom: 1px solid #eee; }
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
+        top: 50px;
+        left: -2.5%; 
+        width: 105%;
         background: #1e293b;
-        padding: 0;
-        border-top: none;
+        padding: 10px 0;
         z-index: 1000;
+        border-top: 2px solid #ff6600;
+    }
+
+    /* Mostrar menu quando clicado */
+    #menu-check:checked ~ .menu-categorias {
+        display: flex;
     }
 
     .menu-categorias a {
-        padding: 15px 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        justify-content: flex-start;
+        padding: 15px 25px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
         width: 100%;
         box-sizing: border-box;
+        text-align: left;
     }
 
-    #menu-check:checked ~ .menu-categorias { display: flex; }
-
     .ads-scroll { justify-content: flex-start; }
-    .post-card-banner { height: 160px; }
 }
+
+/* ESTILOS PARA PÁGINAS DE ARTIGO */
+.artigo-corpo { background: white; padding: 30px; margin-top: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.header-post { border-bottom: 2px solid #f1f5f9; margin-bottom: 30px; padding-bottom: 20px; }
+.categoria-tag { color: #ff6600; font-weight: bold; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+.rank-card { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+.rank-card img { width: 100%; max-width: 350px; height: auto; display: block; margin: 20px auto; border-radius: 8px; }
+.rank-numero { background: #0f172a; color: white; padding: 4px 12px; border-radius: 4px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+.btn-ml-discreto { display: inline-block; background: #f3f4f6; color: #1f2937; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; border: 1px solid #d1d5db; transition: 0.2s; }
+.btn-ml-discreto:hover { background: #e5e7eb; }
+.tabela-container { overflow-x: auto; margin-top: 40px; }
+table { width: 100%; border-collapse: collapse; min-width: 600px; }
+th { background: #0f172a; color: white; padding: 15px; text-align: left; }
+td { padding: 15px; border-bottom: 1px solid #eee; }
+.img-tabela { width: 50px; height: 50px; object-fit: contain; }
+.link-oferta { color: #00a650; font-weight: bold; text-decoration: none; }
