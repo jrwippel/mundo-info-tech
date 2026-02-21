@@ -1,10 +1,11 @@
 function carregarComponentes() {
+    // Verifica se estamos na pasta posts ou na raiz para ajustar os caminhos
     const prefix = window.location.pathname.includes('/posts/') ? '../' : '';
 
     const headerHTML = `
     <header class="topo">
       <div class="topo-container">
-        <input type="checkbox" id="menu-check" style="display:none;">
+        <input type="checkbox" id="menu-check">
         <label for="menu-check" class="menu-botao">☰</label>
 
         <div class="logo-area">
@@ -32,8 +33,18 @@ function carregarComponentes() {
     </footer>
     `;
 
-    if(document.getElementById('header-global')) document.getElementById('header-global').innerHTML = headerHTML;
-    if(document.getElementById('footer-global')) document.getElementById('footer-global').innerHTML = footerHTML;
+    // Insere o Header se o elemento existir
+    const headerElement = document.getElementById('header-global');
+    if (headerElement) {
+        headerElement.innerHTML = headerHTML;
+    }
+
+    // Insere o Footer se o elemento existir
+    const footerElement = document.getElementById('footer-global');
+    if (footerElement) {
+        footerElement.innerHTML = footerHTML;
+    }
 }
 
+// Executa a função assim que o script é carregado
 carregarComponentes();
