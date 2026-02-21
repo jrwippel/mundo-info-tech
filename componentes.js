@@ -1,5 +1,4 @@
 function carregarComponentes() {
-    // Detecta se o arquivo está na subpasta 'posts'
     const prefix = window.location.pathname.includes('/posts/') ? '../' : '';
 
     const headerHTML = `
@@ -32,13 +31,8 @@ function carregarComponentes() {
     </footer>
     `;
 
-    // Injeta nos IDs correspondentes
-    const headerElement = document.getElementById('header-global');
-    const footerElement = document.getElementById('footer-global');
-
-    if (headerElement) headerElement.innerHTML = headerHTML;
-    if (footerElement) footerElement.innerHTML = footerHTML;
+    if (document.getElementById('header-global')) document.getElementById('header-global').innerHTML = headerHTML;
+    if (document.getElementById('footer-global')) document.getElementById('footer-global').innerHTML = footerHTML;
 }
 
-// Inicializa a função
 carregarComponentes();
