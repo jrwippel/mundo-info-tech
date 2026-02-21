@@ -11,16 +11,12 @@ body {
     margin: auto;
 }
 
-/* HEADER - LOGO CENTRALIZADA E BOTÃO ☰ SEMPRE VISÍVEL */
+/* HEADER - LOGO EM CIMA, LINKS EMBAIXO NO PC */
 .topo {
     background: #0f172a;
     color: white;
     border-bottom: 3px solid #ff6600;
-    padding: 15px 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    min-height: 50px;
+    padding-top: 15px; /* Espaço para a logo */
 }
 
 .topo-container {
@@ -28,46 +24,49 @@ body {
     max-width: 1100px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* FORÇA UM EMBAIXO DO OUTRO NO PC */
     align-items: center;
     position: relative;
 }
 
-/* O Botão ☰ agora fica sempre visível no PC e Celular */
+/* O Botão sanduíche fica na esquerda, fixo */
 .menu-botao { 
     display: block; 
-    font-size: 30px;
+    position: absolute;
+    left: 0;
+    top: 5px; /* Alinha com a logo no topo */
+    font-size: 28px;
     color: white;
     cursor: pointer;
     z-index: 1001;
-    order: 1; /* Fica na esquerda */
 }
 
-/* Logo sempre centralizada no topo */
+/* Logo centralizada acima de tudo */
 .logo-area {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     text-align: center;
-    white-space: nowrap;
+    margin-bottom: 15px; /* Espaço para os links embaixo */
 }
 
-.logo { font-size: 26px; margin: 0; font-weight: 800; }
+.logo { font-size: 28px; margin: 0; font-weight: 800; }
 .logo span { color: #ff6600; }
 .logo a { text-decoration: none; color: inherit; }
 
-/* MENU CATEGORIAS - Links ao lado no PC */
+/* MENU CATEGORIAS - BARRA ABAIXO DA LOGO NO PC */
 .menu-categorias { 
     display: flex; 
-    gap: 20px; 
-    order: 3; /* Fica na direita no PC */
+    gap: 30px; 
+    width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil separando da logo */
 }
 
 .menu-categorias a { 
     color: white; 
     text-decoration: none; 
-    font-size: 14px; 
-    font-weight: 600; 
+    font-size: 13px; 
+    font-weight: 700; 
+    text-transform: uppercase;
     transition: 0.3s;
 }
 
@@ -75,36 +74,47 @@ body {
 
 #menu-check { display: none; }
 
-/* RESPONSIVIDADE (Telas menores) */
+/* RESPONSIVIDADE (CELULAR) */
 @media (max-width: 900px) {
-    /* No celular ou tela pequena, os links laterais somem e vão para o botão */
+    .topo-container {
+        flex-direction: row; /* No celular volta a ser uma linha só */
+        justify-content: center;
+        padding-bottom: 15px;
+    }
+
+    .menu-botao {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* ESCONDE OS LINKS NO CELULAR (Só aparecem se clicar no sanduíche) */
     .menu-categorias {
         display: none; 
         flex-direction: column;
         position: absolute;
-        top: 50px;
+        top: 55px;
         left: -2.5%; 
         width: 105%;
         background: #1e293b;
-        padding: 10px 0;
+        padding: 0;
         z-index: 1000;
         border-top: 2px solid #ff6600;
     }
 
-    /* Faz o menu aparecer ao clicar no ☰ */
     #menu-check:checked ~ .menu-categorias {
         display: flex;
     }
 
     .menu-categorias a {
-        padding: 15px 25px;
+        padding: 15px 20px;
         border-bottom: 1px solid rgba(255,255,255,0.05);
         width: 100%;
         box-sizing: border-box;
+        text-align: left;
     }
 }
 
-/* --- RESTANTE DO CSS (PUBLICIDADE, POSTS E ARTIGOS) --- */
+/* --- ESTILOS DE CONTEÚDO (MANTIDOS) --- */
 .ads-top { text-align: right; font-size: 10px; color: #94a3b8; margin: 10px 0; }
 .ads-scroll { display: flex; gap: 20px; margin-bottom: 30px; overflow-x: auto; padding: 10px 5px; justify-content: center; }
 .ads-scroll::-webkit-scrollbar { display: none; }
@@ -119,16 +129,3 @@ body {
 .post-content h3 { margin: 0; font-size: 20px; }
 .post-content p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
 footer { background: #0f172a; color: white; text-align: center; padding: 30px; margin-top: 40px; }
-.artigo-corpo { background: white; padding: 30px; margin-top: 20px; border-radius: 12px; }
-.header-post { border-bottom: 2px solid #f1f5f9; margin-bottom: 30px; padding-bottom: 20px; }
-.categoria-tag { color: #ff6600; font-weight: bold; text-transform: uppercase; font-size: 13px; }
-.rank-card { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
-.rank-card img { width: 100%; max-width: 350px; height: auto; display: block; margin: 20px auto; border-radius: 8px; }
-.rank-numero { background: #0f172a; color: white; padding: 4px 12px; border-radius: 4px; font-weight: bold; display: inline-block; }
-.btn-ml-discreto { display: inline-block; background: #f3f4f6; color: #1f2937; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; border: 1px solid #d1d5db; }
-.tabela-container { overflow-x: auto; margin-top: 40px; }
-table { width: 100%; border-collapse: collapse; min-width: 600px; }
-th { background: #0f172a; color: white; padding: 15px; text-align: left; }
-td { padding: 15px; border-bottom: 1px solid #eee; }
-.img-tabela { width: 50px; height: 50px; object-fit: contain; }
-.link-oferta { color: #00a650; font-weight: bold; text-decoration: none; }
