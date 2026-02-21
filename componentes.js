@@ -1,7 +1,10 @@
-function carregarComponentes() {
+function carregarComponentes(categoria = "") {
     const path = window.location.pathname;
     const prefix = path.includes('/posts/') ? '../' : '';
     
+    // Se houver uma categoria, adiciona o separador visual
+    const textoCategoria = categoria ? ` | <span class="categoria-header">${categoria}</span>` : "";
+
     const headerHTML = `
     <header class="topo">
         <div class="topo-container">
@@ -9,7 +12,7 @@ function carregarComponentes() {
             <label for="menu-check" class="menu-botao">☰</label>
 
             <div class="logo">
-                <a href="${prefix}index.html">Mundo <span>Info</span> Tech</a>
+                <a href="${prefix}index.html">Mundo <span>Info</span> Tech${textoCategoria}</a>
             </div>
 
             <nav class="menu-lateral">
@@ -30,4 +33,3 @@ function carregarComponentes() {
     if (document.getElementById('header-global')) document.getElementById('header-global').innerHTML = headerHTML;
     if (document.getElementById('footer-global')) document.getElementById('footer-global').innerHTML = footerHTML;
 }
-carregarComponentes();

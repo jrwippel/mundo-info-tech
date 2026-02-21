@@ -90,3 +90,58 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; co
     .post-item { height: 280px; }
     .logo { font-size: 20px; }
 }
+/* ESTILO DO ARTIGO */
+.artigo { 
+    max-width: 800px; 
+    margin: 40px auto; 
+    background: white; 
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+}
+
+.artigo h1 { font-size: 32px; color: #0f172a; margin: 10px 0; }
+
+/* CARDS DO RANKING */
+.rank-card { 
+    margin-top: 40px; 
+    padding-top: 20px; 
+    border-top: 2px solid #f4f6f9; 
+}
+
+.rank-card h2 { color: #0f172a; font-size: 24px; margin-bottom: 20px; }
+
+/* Ajuste para a imagem não estourar como no print */
+.rank-card img { 
+    width: 100%; 
+    max-height: 400px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+}
+
+.rank-card p { 
+    font-size: 18px; 
+    line-height: 1.6; 
+    color: #444; 
+}
+
+/* BOTÃO DE COMPRA NO ARTIGO */
+.btn-oferta {
+    display: inline-block;
+    background: #00a650;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+.btn-oferta:hover { background: #008a43; }
+.categoria-header {
+    font-weight: 400; /* Mais fino que o logo principal */
+    font-size: 0.8em; /* Levemente menor */
+    color: #cbd5e1;   /* Um cinza claro para suavizar */
+    margin-left: 5px;
+}
