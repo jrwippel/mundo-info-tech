@@ -2,29 +2,28 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Mundo Info Tech | Fones de Ouvido</title>
+    <title>Mundo Info Tech | Melhores Fones 2026</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descubra os 5 melhores fones de ouvido de 2026. Comparativo completo com análise técnica e links de oferta.">
-    <link rel="stylesheet" href="../style.css?v=8">
+    <link rel="stylesheet" href="../style.css?v=9">
     <style>
-        /* Estilos para a página de Artigo */
+        /* Estilos específicos para o corpo do artigo */
+        body { background-color: #f4f6f9; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+        
         .artigo-corpo {
             background: white;
-            padding: 40px 30px;
+            padding: 30px;
             margin-top: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
+
         .header-post {
             border-bottom: 2px solid #f1f5f9;
             margin-bottom: 30px;
             padding-bottom: 20px;
         }
-        .header-post h1 {
-            font-size: 32px;
-            color: #111827;
-            margin: 10px 0;
-        }
+
         .categoria-tag {
             color: #ff6600;
             font-weight: bold;
@@ -33,35 +32,32 @@
             letter-spacing: 1px;
         }
 
-        /* Cards de Produto no Ranking */
-        .rank-card {
-            margin-bottom: 60px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #eee;
-        }
-        .rank-numero {
-            background: #111827;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 14px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .rank-card h2 {
-            font-size: 26px;
-            margin-top: 0;
-        }
+        /* Ajuste de imagem para não ficar gigante */
         .rank-card img {
             width: 100%;
-            max-width: 450px;
+            max-width: 350px; /* Reduzi o tamanho máximo da imagem */
+            height: auto;
             display: block;
             margin: 20px auto;
             border-radius: 8px;
         }
 
-        /* Botão Mercado Livre Discreto */
+        .rank-card {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rank-numero {
+            background: #0f172a;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
         .btn-ml-discreto {
             display: inline-block;
             background: #f3f4f6;
@@ -70,84 +66,48 @@
             padding: 12px 25px;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 15px;
             border: 1px solid #d1d5db;
-            transition: all 0.2s;
-            margin-top: 15px;
-        }
-        .btn-ml-discreto:hover {
-            background: #e5e7eb;
-            border-color: #9ca3af;
+            transition: 0.2s;
         }
 
-        /* Tabela Comparativa Estilizada */
-        .tabela-container {
-            overflow-x: auto;
-            margin-top: 40px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            min-width: 600px;
-        }
-        th {
-            background: #111827;
-            color: white;
-            padding: 15px;
-            text-align: left;
-        }
-        td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        .img-tabela {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
-        .btn-tabela {
-            color: #00a650;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .btn-tabela:hover {
-            text-decoration: underline;
-        }
+        .btn-ml-discreto:hover { background: #e5e7eb; }
 
-        @media (max-width: 768px) {
-            .header-post h1 { font-size: 26px; }
-            .artigo-corpo { padding: 20px; }
-        }
+        /* Tabela Responsiva */
+        .tabela-container { overflow-x: auto; margin-top: 40px; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th { background: #0f172a; color: white; padding: 15px; text-align: left; }
+        td { padding: 15px; border-bottom: 1px solid #eee; }
+        .img-tabela { width: 50px; height: 50px; object-fit: contain; }
     </style>
 </head>
 <body>
 
 <header class="topo">
   <div class="topo-container">
-    <div class="menu">☰ Menu</div>
-    <div class="logo-area">
-      <h1 class="logo">
+    <input type="checkbox" id="menu-check" style="display:none;">
+    <label for="menu-check" class="menu-botao" style="cursor:pointer; font-size:24px; color:white; width:40px;">☰</label>
+
+    <div class="logo-area" style="text-align:center; flex:1;">
+      <h1 class="logo" style="margin:0; font-size:24px; color:white;">
         <a href="../index.html" style="text-decoration: none; color: inherit;">
-            Mundo <span>Info</span> Tech
+            Mundo <span style="color:#ff6600;">Info</span> Tech
         </a>
       </h1>
-      <p class="slogan">Fones de Ouvido</p>
     </div>
-    <div class="buscar">🔎 Buscar</div>
-  </div>
 
-  <nav class="menu-categorias">
-    <a href="../index.html">Últimas</a>
-    <a href="#">Celulares</a>
-    <a href="#">Fones</a>
-    <a href="#">Eletrônicos</a>
-    <a href="#">Casa Inteligente</a>
-  </nav>
+    <div class="spacer" style="width:40px;"></div>
+
+    <nav class="menu-categorias">
+        <a href="../index.html">Últimas</a>
+        <a href="#">Celulares</a>
+        <a href="#">Fones</a>
+        <a href="#">Eletrônicos</a>
+        <a href="#">Casa Inteligente</a>
+    </nav>
+  </div>
 </header>
 
-<main class="container">
+<main class="container" style="width:95%; max-width:1100px; margin:auto;">
     <article class="artigo-corpo">
         <div class="header-post">
             <span class="categoria-tag">Review & Tecnologia</span>
@@ -156,14 +116,14 @@
         </div>
 
         <section>
-            <p>Um fone de ouvido premium em 2026 precisa entregar áudio equilibrado e tecnologia de ponta. Nossa seleção foi baseada em critérios técnicos, reputação das marcas e avaliações reais de usuários. Confira o ranking abaixo:</p>
+            <p>Um fone de ouvido premium em 2026 precisa entregar áudio equilibrado e tecnologia de ponta. Confira o ranking dos modelos que testamos e aprovamos:</p>
         </section>
 
         <section class="rank-card">
             <span class="rank-numero">#1</span>
             <h2>Sony WH-1000XM6</h2>
             <img src="images/sony.jpg" alt="Sony WH-1000XM6">
-            <p>Referência mundial em cancelamento de ruído, o XM6 traz som extremamente equilibrado, graves profundos e tecnologia adaptativa inteligente. Ideal para viagens e uso profissional.</p>
+            <p>Referência mundial em cancelamento de ruído, o XM6 traz som extremamente equilibrado e tecnologia adaptativa inteligente. Ideal para viagens e uso profissional.</p>
             <a href="https://mercadolivre.com/sec/227jiAw" target="_blank" class="btn-ml-discreto">Ver no Mercado Livre ➔</a>
         </section>
 
@@ -171,7 +131,7 @@
             <span class="rank-numero">#2</span>
             <h2>Bose QuietComfort Ultra</h2>
             <img src="images/bose-ultra.jpg" alt="Bose QuietComfort Ultra">
-            <p>Cancelamento de ruído líder de mercado e áudio espacial imersivo. Conforto excepcional para uso prolongado, sendo a escolha favorita para quem prioriza ergonomia.</p>
+            <p>Cancelamento de ruído líder de mercado e áudio espacial imersivo. Conforto excepcional para uso prolongado.</p>
             <a href="https://mercadolivre.com/sec/32i4uo5" target="_blank" class="btn-ml-discreto">Ver no Mercado Livre ➔</a>
         </section>
 
@@ -179,7 +139,7 @@
             <span class="rank-numero">#3</span>
             <h2>Apple AirPods Max</h2>
             <img src="images/airpods-max.jpg" alt="Apple AirPods Max">
-            <p>Construção premium em alumínio, integração perfeita com ecossistema Apple e som limpo com excelente espacialidade. Agora atualizado para 2026.</p>
+            <p>Construção premium em alumínio, integração perfeita com ecossistema Apple e som limpo com excelente espacialidade.</p>
             <a href="https://mercadolivre.com/sec/1wHAbYT" target="_blank" class="btn-ml-discreto">Ver no Mercado Livre ➔</a>
         </section>
 
@@ -187,7 +147,7 @@
             <span class="rank-numero">#4</span>
             <h2>QCY Tri-Mode Heroad V200</h2>
             <img src="images/qcy.jpg" alt="QCY Tri-Mode Heroad V200">
-            <p>Excelente custo-benefício com múltiplos modos de conexão e bateria de longa duração. A prova de que você não precisa gastar uma fortuna por boa qualidade.</p>
+            <p>Excelente custo-benefício com múltiplos modos de conexão e bateria de longa duração. Qualidade surpreendente pelo preço.</p>
             <a href="https://mercadolivre.com/sec/2ssAZGa" target="_blank" class="btn-ml-discreto">Ver no Mercado Livre ➔</a>
         </section>
 
@@ -195,7 +155,7 @@
             <span class="rank-numero">#5</span>
             <h2>Bose QuietComfort Ultra Wireless</h2>
             <img src="images/bose-wireless.jpg" alt="Bose QuietComfort Ultra Wireless">
-            <p>Versão wireless com som refinado, conforto premium e cancelamento adaptativo de ruído. Equilíbrio perfeito entre portabilidade e fidelidade sonora.</p>
+            <p>Versão wireless com som refinado e cancelamento adaptativo. Equilíbrio perfeito entre portabilidade e fidelidade.</p>
             <a href="https://mercadolivre.com/sec/1RwugHF" target="_blank" class="btn-ml-discreto">Ver no Mercado Livre ➔</a>
         </section>
 
@@ -215,31 +175,31 @@
                         <td><img src="images/sony.jpg" class="img-tabela"></td>
                         <td>Sony WH-1000XM6</td>
                         <td>30h</td>
-                        <td><a href="https://mercadolivre.com/sec/227jiAw" target="_blank" class="btn-tabela">Ver Oferta</a></td>
+                        <td><a href="https://mercadolivre.com/sec/227jiAw" target="_blank" style="color:#00a650; font-weight:bold;">Ver Oferta</a></td>
                     </tr>
                     <tr>
                         <td><img src="images/bose-ultra.jpg" class="img-tabela"></td>
                         <td>Bose QC Ultra</td>
                         <td>24h</td>
-                        <td><a href="https://mercadolivre.com/sec/32i4uo5" target="_blank" class="btn-tabela">Ver Oferta</a></td>
+                        <td><a href="https://mercadolivre.com/sec/32i4uo5" target="_blank" style="color:#00a650; font-weight:bold;">Ver Oferta</a></td>
                     </tr>
                     <tr>
                         <td><img src="images/airpods-max.jpg" class="img-tabela"></td>
                         <td>AirPods Max</td>
                         <td>20h</td>
-                        <td><a href="https://mercadolivre.com/sec/1wHAbYT" target="_blank" class="btn-tabela">Ver Oferta</a></td>
+                        <td><a href="https://mercadolivre.com/sec/1wHAbYT" target="_blank" style="color:#00a650; font-weight:bold;">Ver Oferta</a></td>
                     </tr>
                     <tr>
                         <td><img src="images/qcy.jpg" class="img-tabela"></td>
                         <td>QCY V200</td>
                         <td>40h</td>
-                        <td><a href="https://mercadolivre.com/sec/2ssAZGa" target="_blank" class="btn-tabela">Ver Oferta</a></td>
+                        <td><a href="https://mercadolivre.com/sec/2ssAZGa" target="_blank" style="color:#00a650; font-weight:bold;">Ver Oferta</a></td>
                     </tr>
                     <tr>
                         <td><img src="images/bose-wireless.jpg" class="img-tabela"></td>
                         <td>Bose QC Ultra Wireless</td>
                         <td>24h</td>
-                        <td><a href="https://mercadolivre.com/sec/1RwugHF" target="_blank" class="btn-tabela">Ver Oferta</a></td>
+                        <td><a href="https://mercadolivre.com/sec/1RwugHF" target="_blank" style="color:#00a650; font-weight:bold;">Ver Oferta</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -247,7 +207,7 @@
     </article>
 </main>
 
-<footer>
+<footer style="background:#0f172a; color:white; text-align:center; padding:30px; margin-top:40px;">
     <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
 </footer>
 
