@@ -11,13 +11,16 @@ body {
     margin: auto;
 }
 
-/* HEADER - ESTILO PORTAL (DUAS LINHAS NO PC) */
+/* HEADER - LOGO CENTRALIZADA E BOTÃO ☰ SEMPRE VISÍVEL */
 .topo {
     background: #0f172a;
     color: white;
     border-bottom: 3px solid #ff6600;
-    padding-top: 15px;
-    display: block;
+    padding: 15px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
 }
 
 .topo-container {
@@ -25,161 +28,58 @@ body {
     max-width: 1100px;
     margin: auto;
     display: flex;
-    flex-direction: column; /* Logo em cima, Menu embaixo */
+    justify-content: space-between;
     align-items: center;
-    position: relative; /* Base para o botão mobile */
+    position: relative;
 }
 
-/* Logo */
+/* O Botão ☰ agora fica sempre visível no PC e Celular */
+.menu-botao { 
+    display: block; 
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+    order: 1; /* Fica na esquerda */
+}
+
+/* Logo sempre centralizada no topo */
 .logo-area {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    margin-bottom: 10px;
+    white-space: nowrap;
 }
 
-.logo { 
-    font-size: 32px; 
-    margin: 0; 
-    font-weight: 800; 
-}
+.logo { font-size: 26px; margin: 0; font-weight: 800; }
 .logo span { color: #ff6600; }
 .logo a { text-decoration: none; color: inherit; }
 
-/* MENU CATEGORIAS - SEGUNDA LINHA (PC) */
+/* MENU CATEGORIAS - Links ao lado no PC */
 .menu-categorias { 
     display: flex; 
-    gap: 30px; 
-    width: 100%;
-    justify-content: center;
-    padding: 12px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 20px; 
+    order: 3; /* Fica na direita no PC */
 }
 
 .menu-categorias a { 
     color: white; 
     text-decoration: none; 
-    font-size: 13px; 
-    font-weight: 700; 
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 14px; 
+    font-weight: 600; 
     transition: 0.3s;
 }
 
 .menu-categorias a:hover { color: #ff6600; }
 
-/* Esconder elementos de controle no PC */
 #menu-check { display: none; }
-.menu-botao { display: none; }
 
-/* PUBLICIDADE */
-.ads-top { 
-    text-align: right; 
-    font-size: 10px; 
-    color: #94a3b8; 
-    margin: 10px 0; 
-}
-
-.ads-scroll {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-    overflow-x: auto;
-    padding: 10px 5px;
-    justify-content: center;
-}
-
-.ads-scroll::-webkit-scrollbar { display: none; }
-
-.ad-card {
-    background: white;
-    flex: 0 0 250px;
-    text-decoration: none;
-    color: #111;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.ad-card:hover { transform: scale(1.02); }
-
-.ad-card img { 
-    width: 100%; 
-    height: 140px; 
-    object-fit: contain; 
-    background: #f8fafc; 
-    border-radius: 8px 8px 0 0;
-}
-
-.ad-card h3 { font-size: 14px; padding: 10px; margin: 0; text-align: center; }
-.price { padding: 0 10px 15px; color: #00a650; font-weight: bold; font-size: 15px; text-align: center; }
-
-/* CARDS DE ARTIGOS */
-.post-card-link { text-decoration: none; display: block; margin-bottom: 20px; }
-
-.post-card-banner {
-    height: 180px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    display: flex;
-    align-items: flex-end; 
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.post-card-banner:hover { transform: translateY(-5px); }
-
-.post-content {
-    padding: 20px;
-    color: white;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-}
-
-.tag {
-    background: #ff6600;
-    padding: 3px 8px;
-    font-size: 11px;
-    font-weight: bold;
-    border-radius: 4px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-.post-content h3 { margin: 0; font-size: 20px; }
-.post-content p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
-
-/* RODAPÉ */
-footer { background: #0f172a; color: white; text-align: center; padding: 30px; margin-top: 40px; }
-
-/* RESPONSIVIDADE (MOBILE) */
+/* RESPONSIVIDADE (Telas menores) */
 @media (max-width: 900px) {
-    .topo { padding: 15px 0; }
-
-    .topo-container {
-        flex-direction: row; /* Volta a ser linha única */
-        justify-content: center; /* Centraliza a logo */
-    }
-
-    /* OS 3 TRAÇOS (BOTÃO) */
-    .menu-botao { 
-        display: block; 
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .logo-area { margin-bottom: 0; }
-    .logo { font-size: 22px; }
-
+    /* No celular ou tela pequena, os links laterais somem e vão para o botão */
     .menu-categorias {
-        display: none;
+        display: none; 
         flex-direction: column;
         position: absolute;
         top: 50px;
@@ -191,7 +91,7 @@ footer { background: #0f172a; color: white; text-align: center; padding: 30px; m
         border-top: 2px solid #ff6600;
     }
 
-    /* Mostrar menu quando clicado */
+    /* Faz o menu aparecer ao clicar no ☰ */
     #menu-check:checked ~ .menu-categorias {
         display: flex;
     }
@@ -201,21 +101,31 @@ footer { background: #0f172a; color: white; text-align: center; padding: 30px; m
         border-bottom: 1px solid rgba(255,255,255,0.05);
         width: 100%;
         box-sizing: border-box;
-        text-align: left;
     }
-
-    .ads-scroll { justify-content: flex-start; }
 }
 
-/* ESTILOS PARA PÁGINAS DE ARTIGO */
-.artigo-corpo { background: white; padding: 30px; margin-top: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+/* --- RESTANTE DO CSS (PUBLICIDADE, POSTS E ARTIGOS) --- */
+.ads-top { text-align: right; font-size: 10px; color: #94a3b8; margin: 10px 0; }
+.ads-scroll { display: flex; gap: 20px; margin-bottom: 30px; overflow-x: auto; padding: 10px 5px; justify-content: center; }
+.ads-scroll::-webkit-scrollbar { display: none; }
+.ad-card { background: white; flex: 0 0 250px; text-decoration: none; color: #111; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: 0.3s; }
+.ad-card img { width: 100%; height: 140px; object-fit: contain; background: #f8fafc; border-radius: 8px 8px 0 0; }
+.ad-card h3 { font-size: 14px; padding: 10px; margin: 0; text-align: center; }
+.price { padding: 0 10px 15px; color: #00a650; font-weight: bold; font-size: 15px; text-align: center; }
+.post-card-link { text-decoration: none; display: block; margin-bottom: 20px; }
+.post-card-banner { height: 180px; background-size: cover; background-position: center; border-radius: 12px; display: flex; align-items: flex-end; overflow: hidden; transition: transform 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.post-content { padding: 20px; color: white; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
+.tag { background: #ff6600; padding: 3px 8px; font-size: 11px; font-weight: bold; border-radius: 4px; text-transform: uppercase; display: inline-block; margin-bottom: 5px; }
+.post-content h3 { margin: 0; font-size: 20px; }
+.post-content p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
+footer { background: #0f172a; color: white; text-align: center; padding: 30px; margin-top: 40px; }
+.artigo-corpo { background: white; padding: 30px; margin-top: 20px; border-radius: 12px; }
 .header-post { border-bottom: 2px solid #f1f5f9; margin-bottom: 30px; padding-bottom: 20px; }
-.categoria-tag { color: #ff6600; font-weight: bold; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+.categoria-tag { color: #ff6600; font-weight: bold; text-transform: uppercase; font-size: 13px; }
 .rank-card { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
 .rank-card img { width: 100%; max-width: 350px; height: auto; display: block; margin: 20px auto; border-radius: 8px; }
-.rank-numero { background: #0f172a; color: white; padding: 4px 12px; border-radius: 4px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
-.btn-ml-discreto { display: inline-block; background: #f3f4f6; color: #1f2937; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; border: 1px solid #d1d5db; transition: 0.2s; }
-.btn-ml-discreto:hover { background: #e5e7eb; }
+.rank-numero { background: #0f172a; color: white; padding: 4px 12px; border-radius: 4px; font-weight: bold; display: inline-block; }
+.btn-ml-discreto { display: inline-block; background: #f3f4f6; color: #1f2937; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; border: 1px solid #d1d5db; }
 .tabela-container { overflow-x: auto; margin-top: 40px; }
 table { width: 100%; border-collapse: collapse; min-width: 600px; }
 th { background: #0f172a; color: white; padding: 15px; text-align: left; }
