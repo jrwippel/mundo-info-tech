@@ -1,18 +1,17 @@
 function carregarComponentes() {
-    // Verifica se estamos na pasta posts ou na raiz para ajustar os caminhos
+    // Detecta se o arquivo está na subpasta 'posts'
     const prefix = window.location.pathname.includes('/posts/') ? '../' : '';
 
     const headerHTML = `
     <header class="topo">
       <div class="topo-container">
         <input type="checkbox" id="menu-check">
+        
         <label for="menu-check" class="menu-botao">☰</label>
 
         <div class="logo-area">
           <h1 class="logo">
-            <a href="${prefix}index.html" style="text-decoration: none; color: inherit;">
-                Mundo <span>Info</span> Tech
-            </a>
+            <a href="${prefix}index.html">Mundo <span>Info</span> Tech</a>
           </h1>
         </div>
 
@@ -33,18 +32,13 @@ function carregarComponentes() {
     </footer>
     `;
 
-    // Insere o Header se o elemento existir
+    // Injeta nos IDs correspondentes
     const headerElement = document.getElementById('header-global');
-    if (headerElement) {
-        headerElement.innerHTML = headerHTML;
-    }
-
-    // Insere o Footer se o elemento existir
     const footerElement = document.getElementById('footer-global');
-    if (footerElement) {
-        footerElement.innerHTML = footerHTML;
-    }
+
+    if (headerElement) headerElement.innerHTML = headerHTML;
+    if (footerElement) footerElement.innerHTML = footerHTML;
 }
 
-// Executa a função assim que o script é carregado
+// Inicializa a função
 carregarComponentes();
