@@ -1,6 +1,6 @@
 function carregarComponentes() {
-    const isPostPage = window.location.pathname.includes('/posts/');
-    const prefix = isPostPage ? '../' : '';
+    // Verifica se estamos na pasta posts ou na raiz
+    const prefix = window.location.pathname.includes('/posts/') ? '../' : '';
 
     const headerHTML = `
     <header class="topo">
@@ -25,9 +25,14 @@ function carregarComponentes() {
     </header>
     `;
 
-    const footerHTML = `<footer><p>© 2026 Mundo Info Tech - Todos os direitos reservados</p></footer>`;
+    const footerHTML = `
+    <footer>
+        <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
+    </footer>
+    `;
 
-    if(document.getElementById('header-global')) document.getElementById('header-global').innerHTML = headerHTML;
-    if(document.getElementById('footer-global')) document.getElementById('footer-global').innerHTML = footerHTML;
+    document.getElementById('header-global').innerHTML = headerHTML;
+    document.getElementById('footer-global').innerHTML = footerHTML;
 }
+
 carregarComponentes();
