@@ -11,15 +11,13 @@ body {
     margin: auto;
 }
 
-/* HEADER - LOGO CENTRALIZADA EM AMBAS AS SITUAÇÕES */
+/* HEADER - ESTILO PORTAL (DUAS LINHAS) */
 .topo {
     background: #0f172a;
     color: white;
     border-bottom: 3px solid #ff6600;
-    position: relative; /* Base para o centro absoluto */
-    height: 70px; /* Altura fixa para alinhar tudo */
-    display: flex;
-    align-items: center;
+    padding-top: 20px;
+    display: block; /* Permite que o conteúdo empilhe */
 }
 
 .topo-container {
@@ -27,49 +25,51 @@ body {
     max-width: 1100px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Logo em cima, Menu embaixo */
     align-items: center;
 }
 
-/* O segredo da centralização perfeita */
+/* Logo centralizada */
 .logo-area {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     text-align: center;
-    white-space: nowrap;
+    margin-bottom: 15px;
 }
 
-.logo { font-size: 24px; margin: 0; }
+.logo { 
+    font-size: 32px; 
+    margin: 0; 
+    font-weight: 800;
+    letter-spacing: -1px;
+}
 .logo span { color: #ff6600; }
 
-.menu-botao { 
-    font-size: 26px; 
-    cursor: pointer; 
-    color: white; 
-    z-index: 10; 
-}
-
-#menu-check { display: none; }
-
-/* MENU CATEGORIAS (PC) */
+/* MENU CATEGORIAS - A SEGUNDA LINHA */
 .menu-categorias { 
     display: flex; 
-    gap: 20px; 
-    z-index: 10;
+    gap: 30px; 
+    width: 100%;
+    justify-content: center;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-categorias a { 
     color: white; 
     text-decoration: none; 
-    font-size: 14px; 
-    font-weight: 600; 
+    font-size: 13px; 
+    font-weight: 700; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: 0.3s;
 }
 
 .menu-categorias a:hover { color: #ff6600; }
 
-/* PUBLICIDADE - AJUSTE PARA NOTEBOOK E CELULAR */
+/* Botão sanduíche (Invisível no PC) */
+.menu-botao { display: none; }
+#menu-check { display: none; }
+
+/* PUBLICIDADE */
 .ads-top { 
     text-align: right; 
     font-size: 10px; 
@@ -83,21 +83,14 @@ body {
     margin-bottom: 30px;
     overflow-x: auto;
     padding: 10px 5px;
-    justify-content: center; /* Centraliza as TVs no Notebook */
-}
-
-/* No mobile, o scroll lateral precisa de alinhamento à esquerda para funcionar */
-@media (max-width: 768px) {
-    .ads-scroll {
-        justify-content: flex-start; 
-    }
+    justify-content: center;
 }
 
 .ads-scroll::-webkit-scrollbar { display: none; }
 
 .ad-card {
     background: white;
-    flex: 0 0 250px; /* Largura um pouco maior para preencher melhor o espaço */
+    flex: 0 0 250px;
     text-decoration: none;
     color: #111;
     border-radius: 8px;
@@ -119,7 +112,7 @@ body {
     font-size: 14px; 
     padding: 10px; 
     margin: 0; 
-    text-align: center; /* Título centralizado */
+    text-align: center; 
 }
 
 .price { 
@@ -127,9 +120,10 @@ body {
     color: #00a650; 
     font-weight: bold; 
     font-size: 15px; 
-    text-align: center; /* Preço centralizado */
+    text-align: center; 
 }
-/* CARDS DE ARTIGOS (ALTURA AJUSTADA) */
+
+/* CARDS DE ARTIGOS */
 .post-card-link {
     text-decoration: none;
     display: block;
@@ -137,7 +131,7 @@ body {
 }
 
 .post-card-banner {
-    height: 180px; /* Altura reduzida conforme solicitado */
+    height: 180px;
     background-size: cover;
     background-position: center;
     border-radius: 12px;
@@ -171,32 +165,10 @@ body {
 .post-content h3 { margin: 0; font-size: 20px; }
 .post-content p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
 
-/* RESPONSIVIDADE (MOBILE) */
-@media (max-width: 900px) {
-    /* No Mobile, as categorias vão para dentro do menu sanduíche */
-    .menu-categorias {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: #1e293b;
-        padding: 20px;
-        z-index: 100;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-    }
-
-    #menu-check:checked ~ .menu-categorias { display: flex; }
-
-    .post-card-banner { height: 160px; }
-    .post-content h3 { font-size: 18px; }
-}
-
+/* RODAPÉ */
 footer { background: #0f172a; color: white; text-align: center; padding: 30px; margin-top: 40px; }
 
-
-/* --- ESTILOS PARA PÁGINAS DE ARTIGO --- */
+/* ARTIGOS INTERNOS */
 .artigo-corpo {
     background: white;
     padding: 30px;
@@ -258,10 +230,57 @@ footer { background: #0f172a; color: white; text-align: center; padding: 30px; m
 
 .btn-ml-discreto:hover { background: #e5e7eb; }
 
-/* Tabela Comparativa */
+/* TABELA */
 .tabela-container { overflow-x: auto; margin-top: 40px; }
 table { width: 100%; border-collapse: collapse; min-width: 600px; }
 th { background: #0f172a; color: white; padding: 15px; text-align: left; }
 td { padding: 15px; border-bottom: 1px solid #eee; }
 .img-tabela { width: 50px; height: 50px; object-fit: contain; }
 .link-oferta { color: #00a650; font-weight: bold; text-decoration: none; }
+
+/* RESPONSIVIDADE (MOBILE) */
+@media (max-width: 900px) {
+    .topo-container {
+        flex-direction: row; /* Volta a ser uma linha só no celular */
+        justify-content: center;
+        padding-bottom: 15px;
+        position: relative;
+    }
+
+    .menu-botao { 
+        display: block; 
+        position: absolute;
+        left: 10px;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .logo-area { margin-bottom: 0; }
+    .logo { font-size: 22px; }
+
+    .menu-categorias {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #1e293b;
+        padding: 0;
+        border-top: none;
+        z-index: 1000;
+    }
+
+    .menu-categorias a {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        justify-content: flex-start;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #menu-check:checked ~ .menu-categorias { display: flex; }
+
+    .ads-scroll { justify-content: flex-start; }
+    .post-card-banner { height: 160px; }
+}
