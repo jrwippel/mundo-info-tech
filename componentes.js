@@ -5,7 +5,6 @@ function carregarComponentes() {
     <header class="topo">
       <div class="topo-container">
         <input type="checkbox" id="menu-check">
-        
         <label for="menu-check" class="menu-botao">☰</label>
 
         <div class="logo-area">
@@ -25,14 +24,13 @@ function carregarComponentes() {
     </header>
     `;
 
-    const footerHTML = `
-    <footer>
-        <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
-    </footer>
-    `;
+    const footerHTML = `<footer><p>© 2026 Mundo Info Tech - Todos os direitos reservados</p></footer>`;
 
-    if (document.getElementById('header-global')) document.getElementById('header-global').innerHTML = headerHTML;
-    if (document.getElementById('footer-global')) document.getElementById('footer-global').innerHTML = footerHTML;
+    const headerElement = document.getElementById('header-global');
+    const footerElement = document.getElementById('footer-global');
+
+    if (headerElement) headerElement.innerHTML = headerHTML;
+    if (footerElement) footerElement.innerHTML = footerHTML;
 }
 
 carregarComponentes();
