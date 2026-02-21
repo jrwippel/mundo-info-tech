@@ -3,54 +3,66 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #f4f6f9;
+    color: #333;
 }
 
+/* CONTAINER PRINCIPAL - Garante que o conteúdo não cole nas bordas */
 .container {
-    width: 95%;
-    max-width: 1100px;
-    margin: auto;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
-/* HEADER - ESTILO PORTAL (DUAS LINHAS NO PC) */
+/* HEADER - ESTILO TECHTUDO */
 .topo {
     background: #0f172a;
     color: white;
     border-bottom: 3px solid #ff6600;
-    padding-top: 15px;
-    display: block;
+    width: 100%;
 }
 
 .topo-container {
-    width: 95%;
     max-width: 1100px;
     margin: auto;
     display: flex;
-    flex-direction: column; /* Logo em cima, Menu embaixo */
+    flex-direction: column; /* Logo em cima, menu embaixo no PC */
     align-items: center;
-    position: relative; /* Base para o botão mobile */
+    position: relative;
+    padding: 10px 0;
 }
 
-/* Logo */
+/* Botão Sanduíche */
+.menu-botao { 
+    display: block; 
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+#menu-check { display: none; }
+
+/* Logo Central */
 .logo-area {
     text-align: center;
-    margin-bottom: 10px;
+    padding: 10px 0;
 }
 
-.logo { 
-    font-size: 32px; 
-    margin: 0; 
-    font-weight: 800; 
-}
+.logo { font-size: 28px; margin: 0; font-weight: 800; }
 .logo span { color: #ff6600; }
 .logo a { text-decoration: none; color: inherit; }
 
-/* MENU CATEGORIAS - SEGUNDA LINHA (PC) */
+/* Menu de Categorias (Barra de baixo) */
 .menu-categorias { 
     display: flex; 
-    gap: 30px; 
+    gap: 25px; 
     width: 100%;
     justify-content: center;
-    padding: 12px 0;
+    padding: 10px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -60,165 +72,82 @@ body {
     font-size: 13px; 
     font-weight: 700; 
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: 0.3s;
 }
 
-.menu-categorias a:hover { color: #ff6600; }
-
-/* Esconder elementos de controle no PC */
-#menu-check { display: none; }
-.menu-botao { display: none; }
-
-/* PUBLICIDADE */
-.ads-top { 
-    text-align: right; 
-    font-size: 10px; 
-    color: #94a3b8; 
-    margin: 10px 0; 
-}
-
-.ads-scroll {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-    overflow-x: auto;
-    padding: 10px 5px;
-    justify-content: center;
-}
-
-.ads-scroll::-webkit-scrollbar { display: none; }
-
-.ad-card {
+/* ARTIGO - CORPO DO TEXTO */
+.artigo-corpo {
     background: white;
-    flex: 0 0 250px;
-    text-decoration: none;
-    color: #111;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.ad-card:hover { transform: scale(1.02); }
-
-.ad-card img { 
-    width: 100%; 
-    height: 140px; 
-    object-fit: contain; 
-    background: #f8fafc; 
-    border-radius: 8px 8px 0 0;
-}
-
-.ad-card h3 { font-size: 14px; padding: 10px; margin: 0; text-align: center; }
-.price { padding: 0 10px 15px; color: #00a650; font-weight: bold; font-size: 15px; text-align: center; }
-
-/* CARDS DE ARTIGOS */
-.post-card-link { text-decoration: none; display: block; margin-bottom: 20px; }
-
-.post-card-banner {
-    height: 180px;
-    background-size: cover;
-    background-position: center;
+    padding: 30px;
+    margin-top: 20px;
     border-radius: 12px;
-    display: flex;
-    align-items: flex-end; 
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    line-height: 1.6;
 }
 
-.post-card-banner:hover { transform: translateY(-5px); }
+.header-post {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 20px;
+}
 
-.post-content {
-    padding: 20px;
-    color: white;
+.header-post h1 { font-size: 28px; margin: 10px 0; }
+
+/* CARDS DE RANKING (OS FONES) */
+.rank-card {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.rank-card img {
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    max-width: 450px; /* Evita que a imagem fique gigante */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
 }
 
-.tag {
-    background: #ff6600;
-    padding: 3px 8px;
-    font-size: 11px;
-    font-weight: bold;
+.rank-numero {
+    background: #0f172a;
+    color: white;
+    padding: 5px 15px;
     border-radius: 4px;
-    text-transform: uppercase;
+    font-weight: bold;
     display: inline-block;
-    margin-bottom: 5px;
 }
 
-.post-content h3 { margin: 0; font-size: 20px; }
-.post-content p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
+.btn-ml-discreto {
+    display: inline-block;
+    background: #00a650;
+    color: white !important;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+}
 
-/* RODAPÉ */
-footer { background: #0f172a; color: white; text-align: center; padding: 30px; margin-top: 40px; }
+/* TABELA */
+.tabela-container { overflow-x: auto; margin-top: 30px; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #f8fafc; padding: 12px; text-align: left; }
+td { padding: 12px; border-bottom: 1px solid #eee; }
 
-/* RESPONSIVIDADE (MOBILE) */
+/* RESPONSIVIDADE MOBILE */
 @media (max-width: 900px) {
-    .topo { padding: 15px 0; }
-
-    .topo-container {
-        flex-direction: row; /* Volta a ser linha única */
-        justify-content: center; /* Centraliza a logo */
-    }
-
-    /* OS 3 TRAÇOS (BOTÃO) */
-    .menu-botao { 
-        display: block; 
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .logo-area { margin-bottom: 0; }
-    .logo { font-size: 22px; }
-
+    .topo-container { flex-direction: row; justify-content: center; }
+    .menu-botao { top: 50%; transform: translateY(-50%); }
     .menu-categorias {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 50px;
-        left: -2.5%; 
-        width: 105%;
-        background: #1e293b;
-        padding: 10px 0;
-        z-index: 1000;
-        border-top: 2px solid #ff6600;
-    }
-
-    /* Mostrar menu quando clicado */
-    #menu-check:checked ~ .menu-categorias {
-        display: flex;
-    }
-
-    .menu-categorias a {
-        padding: 15px 25px;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
+        top: 60px;
+        left: 0;
         width: 100%;
-        box-sizing: border-box;
-        text-align: left;
+        background: #1e293b;
+        z-index: 1000;
     }
-
-    .ads-scroll { justify-content: flex-start; }
+    #menu-check:checked ~ .menu-categorias { display: flex; }
+    .menu-categorias a { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .artigo-corpo { padding: 20px; }
 }
-
-/* ESTILOS PARA PÁGINAS DE ARTIGO */
-.artigo-corpo { background: white; padding: 30px; margin-top: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-.header-post { border-bottom: 2px solid #f1f5f9; margin-bottom: 30px; padding-bottom: 20px; }
-.categoria-tag { color: #ff6600; font-weight: bold; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
-.rank-card { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
-.rank-card img { width: 100%; max-width: 350px; height: auto; display: block; margin: 20px auto; border-radius: 8px; }
-.rank-numero { background: #0f172a; color: white; padding: 4px 12px; border-radius: 4px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
-.btn-ml-discreto { display: inline-block; background: #f3f4f6; color: #1f2937; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; border: 1px solid #d1d5db; transition: 0.2s; }
-.btn-ml-discreto:hover { background: #e5e7eb; }
-.tabela-container { overflow-x: auto; margin-top: 40px; }
-table { width: 100%; border-collapse: collapse; min-width: 600px; }
-th { background: #0f172a; color: white; padding: 15px; text-align: left; }
-td { padding: 15px; border-bottom: 1px solid #eee; }
-.img-tabela { width: 50px; height: 50px; object-fit: contain; }
-.link-oferta { color: #00a650; font-weight: bold; text-decoration: none; }
