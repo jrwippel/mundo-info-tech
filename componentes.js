@@ -1,5 +1,7 @@
-// Função para carregar o Header
-function carregarHeader() {
+function carregarComponentes() {
+    const isPostPage = window.location.pathname.includes('/posts/');
+    const prefix = isPostPage ? '../' : '';
+
     const headerHTML = `
     <header class="topo">
       <div class="topo-container">
@@ -8,33 +10,24 @@ function carregarHeader() {
 
         <div class="logo-area">
           <h1 class="logo">
-            <a href="/" style="text-decoration: none; color: inherit;">Mundo <span>Info</span> Tech</a>
+            <a href="${prefix}index.html" style="text-decoration: none; color: inherit;">Mundo <span>Info</span> Tech</a>
           </h1>
         </div>
 
         <nav class="menu-categorias">
-            <a href="/">Últimas</a>
-            <a href="/posts/celulares.html">Celulares</a>
-            <a href="/posts/melhores-fones-2026.html">Fones</a>
+            <a href="${prefix}index.html">Últimas</a>
+            <a href="#">Celulares</a>
+            <a href="${prefix}posts/melhores-fones-2026.html">Fones</a>
             <a href="#">Eletrônicos</a>
             <a href="#">Casa Inteligente</a>
         </nav>
       </div>
     </header>
     `;
-    document.getElementById('header-global').innerHTML = headerHTML;
-}
 
-// Função para carregar o Footer
-function carregarFooter() {
-    const footerHTML = `
-    <footer>
-        <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
-    </footer>
-    `;
-    document.getElementById('footer-global').innerHTML = footerHTML;
-}
+    const footerHTML = `<footer><p>© 2026 Mundo Info Tech - Todos os direitos reservados</p></footer>`;
 
-// Executa as funções ao carregar a página
-carregarHeader();
-carregarFooter();
+    if(document.getElementById('header-global')) document.getElementById('header-global').innerHTML = headerHTML;
+    if(document.getElementById('footer-global')) document.getElementById('footer-global').innerHTML = footerHTML;
+}
+carregarComponentes();
