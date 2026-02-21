@@ -2,7 +2,6 @@ function carregarComponentes() {
     const path = window.location.pathname;
     const prefix = path.includes('/posts/') ? '../' : '';
     
-    // Identifica a seção para o título ao lado do logo
     let secao = "";
     if (path.includes('fones')) secao = "Fones";
     else if (path.includes('celulares')) secao = "Celulares";
