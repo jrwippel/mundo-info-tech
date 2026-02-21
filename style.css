@@ -194,3 +194,74 @@ body {
 }
 
 footer { background: #0f172a; color: white; text-align: center; padding: 30px; margin-top: 40px; }
+
+
+/* --- ESTILOS PARA PÁGINAS DE ARTIGO --- */
+.artigo-corpo {
+    background: white;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.header-post {
+    border-bottom: 2px solid #f1f5f9;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.categoria-tag {
+    color: #ff6600;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.rank-card {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.rank-card img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.rank-numero {
+    background: #0f172a;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.btn-ml-discreto {
+    display: inline-block;
+    background: #f3f4f6;
+    color: #1f2937;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: 1px solid #d1d5db;
+    transition: 0.2s;
+}
+
+.btn-ml-discreto:hover { background: #e5e7eb; }
+
+/* Tabela Comparativa */
+.tabela-container { overflow-x: auto; margin-top: 40px; }
+table { width: 100%; border-collapse: collapse; min-width: 600px; }
+th { background: #0f172a; color: white; padding: 15px; text-align: left; }
+td { padding: 15px; border-bottom: 1px solid #eee; }
+.img-tabela { width: 50px; height: 50px; object-fit: contain; }
+.link-oferta { color: #00a650; font-weight: bold; text-decoration: none; }
