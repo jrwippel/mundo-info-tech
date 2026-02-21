@@ -1,6 +1,11 @@
 function carregarComponentes() {
-    // Detecta se estamos dentro da pasta /posts/ para ajustar os links
-    const prefix = window.location.pathname.includes('/posts/') ? '../' : '';
+    const path = window.location.pathname;
+    const prefix = path.includes('/posts/') ? '../' : '';
+    
+    // Define o nome da seção conforme o arquivo
+    let secao = "";
+    if (path.includes('fones')) secao = "Fones";
+    else if (path.includes('celulares')) secao = "Celulares";
 
     const headerHTML = `
     <header class="topo">
@@ -9,9 +14,8 @@ function carregarComponentes() {
             <label for="menu-check" class="menu-botao">☰</label>
 
             <div class="logo-area">
-                <h1 class="logo">
-                    <a href="${prefix}index.html">Mundo <span>Info</span> Tech</a>
-                </h1>
+                <h1 class="logo"><a href="${prefix}index.html">Mundo <span>Info</span> Tech</a></h1>
+                ${secao ? `<span class="secao-titulo">${secao}</span>` : ''}
             </div>
 
             <nav class="menu-categorias">
@@ -22,22 +26,14 @@ function carregarComponentes() {
                 <a href="#">Casa Inteligente</a>
             </nav>
         </div>
-    </header>
-    `;
+    </header>`;
 
     const footerHTML = `
-    <footer>
-        <div class="container">
-            <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
-        </div>
-    </footer>
-    `;
+    <footer style="background:#0f172a; color:white; text-align:center; padding:20px; margin-top:40px;">
+        <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
+    </footer>`;
 
-    const headerElement = document.getElementById('header-global');
-    const footerElement = document.getElementById('footer-global');
-
-    if (headerElement) headerElement.innerHTML = headerHTML;
-    if (footerElement) footerElement.innerHTML = footerHTML;
+    if (document.getElementById('header-global')) document.getElementById('header-global').innerHTML = headerHTML;
+    if (document.getElementById('footer-global')) document.getElementById('footer-global').innerHTML = footerHTML;
 }
-
 carregarComponentes();
