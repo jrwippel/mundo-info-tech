@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <title>Mundo Info Tech</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
 <header class="topo">
   <div class="topo-container">
-    
     <input type="checkbox" id="menu-check">
     <label for="menu-check" class="menu-botao">☰</label>
 
@@ -57,17 +56,27 @@
 </div>
 
 <section class="posts container">
-    <article class="post-card">
-        <h3>🎧 Os 5 Melhores Fones de Ouvido de 2026</h3>
-        <p>Descubra os modelos com melhor cancelamento de ruído e custo-benefício.</p>
-        <a href="posts/melhores-fones-2026.html" class="btn">Ler artigo</a>
-    </article>
 
-    <article class="post-card">
-        <h3>📱 Os 5 Melhores Celulares de 2026</h3>
-        <p>Veja os smartphones com melhor desempenho e bateria do ano.</p>
-        <a href="#" class="btn">Em breve</a>
-    </article>
+    <a href="posts/melhores-fones-2026.html" class="post-card-link">
+        <article class="post-card-banner" style="background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('posts/images/banner-fones.jpg');">
+            <div class="post-content">
+                <span class="tag">Destaque</span>
+                <h3>🎧 Os 5 Melhores Fones de Ouvido de 2026</h3>
+                <p>O guia definitivo: Analisamos som, bateria e cancelamento de ruído.</p>
+            </div>
+        </article>
+    </a>
+
+    <a href="#" class="post-card-link">
+        <article class="post-card-banner" style="background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('posts/images/banner-celulares.jpg');">
+            <div class="post-content">
+                <span class="tag">Mobile</span>
+                <h3>📱 Os 5 Melhores Celulares de 2026</h3>
+                <p>Confira os smartphones que dominam o mercado este ano.</p>
+            </div>
+        </article>
+    </a>
+
 </section>
 
 <footer>
