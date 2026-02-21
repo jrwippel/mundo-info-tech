@@ -119,3 +119,56 @@ footer {
 .main-nav a:hover {
     color: white;
 }
+/* TOPO */
+.topo {
+  background: #111;
+  color: white;
+  border-bottom: 3px solid #ff6600;
+}
+
+.topo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+.logo-area {
+  text-align: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.logo span {
+  color: #ff6600;
+}
+
+.slogan {
+  font-size: 13px;
+  color: #bbb;
+  margin-top: 3px;
+}
+
+/* MENU */
+.menu-categorias {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 12px 0;
+  background: #1a1a1a;
+}
+
+.menu-categorias a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.menu-categorias a:hover {
+  color: #ff6600;
+}
