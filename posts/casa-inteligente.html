@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Inteligente | InceptTech</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .container-pag {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Introdução Editorial (Mesmo padrão da página de filmes/notícias) */
+        .intro-editorial {
+            margin: 40px 0 60px 0;
+            padding: 40px;
+            background: #f9fafb;
+            border-top: 2px solid #ff6600;
+            border-bottom: 2px solid #eee;
+            line-height: 1.8;
+            position: relative;
+            text-align: justify;
+        }
+
+        .intro-editorial::before {
+            content: "GUIA TÉCNICO";
+            position: absolute;
+            top: -12px;
+            left: 30px;
+            background: #ff6600;
+            color: white;
+            padding: 2px 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .intro-editorial h2 {
+            color: #111827;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .intro-editorial p {
+            color: #4b5563;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Lista de Assuntos/Cards */
+        .assunto-card {
+            background: white;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            border: 1px solid #efefef;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .assunto-card:hover {
+            border-color: #ff6600;
+            transform: translateY(-3px);
+        }
+
+        .img-assunto {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .assunto-info {
+            padding: 20px 25px;
+        }
+
+        .assunto-info h3 {
+            color: #111827;
+            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .assunto-info p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            background: #ffe600;
+            color: #000;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-comprar:hover { background: #edd600; }
+
+        @media (max-width: 650px) {
+            .assunto-card { grid-template-columns: 1fr; }
+            .img-assunto { height: 180px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-global"></div>
+
+    <main class="container-pag">
+        <header style="margin-bottom: 30px; text-align: center;">
+            <h1 style="font-size: 2.5rem; color: #111827;">🏠 O Ecossistema da Casa Inteligente</h1>
+            <p style="color: #666;">Conectividade, automação e segurança no topo da camada doméstica.</p>
+        </header>
+
+        <article class="intro-editorial">
+            <h2>A Próxima Camada da Habitação</h2>
+            <p>
+                Em 2026, a <strong>Casa Inteligente</strong> deixou de ser um conjunto de gadgets isolados para se tornar um sistema operacional vivo. Integrar dispositivos não é apenas sobre ligar luzes pelo celular, mas sobre criar um ambiente que antecipa necessidades e otimiza o consumo de energia.
+            </p>
+            <p>
+                Neste guia, exploramos os componentes essenciais para construir sua <em>Smart Home</em> do zero, focando em protocolos de baixa latência e integração total com as principais IAs do mercado.
+            </p>
+        </article>
+
+        <section class="assunto-card">
+            <img src="images/hub-alexa.jpg" alt="Central de Comando" class="img-assunto">
+            <div class="assunto-info">
+                <h3>01. Centrais de Comando (Hubs)</h3>
+                <p>O cérebro da sua casa. Escolha entre Amazon Alexa ou Google Home para gerenciar todos os seus dispositivos por voz e criar rotinas automatizadas.</p>
+                <a href="https://mercadolivre.com/sec/1AtYGwJ" class="btn-comprar">Sugestão de compra</a>
+            </div>
+        </section>
+
+        <section class="assunto-card">
+            <img src="images/lampada-wifi.jpg" alt="Iluminação Inteligente" class="img-assunto">
+            <div class="assunto-info">
+                <h3>02. Iluminação e Ambiência</h3>
+                <p>Lâmpadas e fitas LED Wi-Fi permitem mudar a temperatura da casa para foco ou relaxamento, além de simular presença quando você está viajando.</p>
+                <a href="https://mercadolivre.com/sec/2oxJGAs" class="btn-comprar">Sugestão de compra</a>
+            </div>
+        </section>
+
+        <section class="assunto-card">
+            <img src="images/camera-wifi.jpg" alt="Segurança" class="img-assunto">
+            <div class="assunto-info">
+                <h3>03. Segurança Preditiva</h3>
+                <p>Câmeras com IA que distinguem pessoas de animais e fechaduras biométricas que eliminam a necessidade de chaves físicas.</p>
+                <a href="https://mercadolivre.com/sec/1g78qXw" class="btn-comprar">Ver Câmeras no Mercado Livre</a>
+            </div>
+        </section>
+        <section class="assunto-card">
+            <img src="images/fechadura-digital.jpg" alt="Fechadura Digital Inteligente" class="img-assunto">
+            <div class="assunto-info">
+                <h3>04. Acesso Inteligente e Biometria</h3>
+                <p>A praticidade de eliminar as chaves físicas. Com uma fechadura digital, você acessa sua casa via biometria, senha ou smartphone, além de poder gerar senhas temporárias para visitantes ou prestadores de serviço à distância.</p>
+                
+                <div style="font-size: 0.8rem; color: #ff6600; margin-bottom: 12px; font-weight: bold; font-style: italic;">
+                    ⚡ Insight: Modelos com Wi-Fi permitem o travamento remoto e o log de quem entrou na residência em tempo real.
+                </div>
+
+                <a href="https://mercadolivre.com/sec/19pNLMQ" class="btn-comprar" target="_blank">Sugestão de compra</a>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-global"></div>
+
+    <script src="../componentes.js"></script>
+    <script>carregarComponentes("Casa Inteligente");</script>
+</body>
+
+</html>
