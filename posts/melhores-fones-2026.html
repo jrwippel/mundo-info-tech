@@ -1,187 +1,260 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubra os 5 melhores fones de ouvido de 2026. Comparativo completo com análise técnica, qualidade sonora e cancelamento de ruído.">
-    <title>Os 5 Melhores Fones de Ouvido de 2026 | Mundo Info Tech</title>
-    
+    <title>Engenharia de Áudio 2026 | InceptTech</title>
     <link rel="stylesheet" href="../style.css">
-
     <style>
-        /* Estilos específicos para esta página de artigo */
-        body { background: #f4f6f9; color: #333; line-height: 1.6; }
-        
-        .artigo-header { 
-            background: #111827; 
-            color: white; 
-            padding: 60px 20px; 
-            text-align: center; 
+        .container-pag {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Manifesto Editorial */
+        .intro-editorial {
+            margin: 40px 0 60px 0;
+            padding: 40px;
+            background: #f9fafb;
+            border-top: 2px solid #ff6600;
+            border-bottom: 2px solid #eee;
+            line-height: 1.8;
+            position: relative;
+            text-align: justify;
+        }
+
+        .intro-editorial::before {
+            content: "ANÁLISE ACÚSTICA";
+            position: absolute;
+            top: -12px;
+            left: 30px;
+            background: #ff6600;
+            color: white;
+            padding: 2px 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        /* Cards de Assuntos - Estilo InceptTech */
+        .assunto-card {
+            background: white;
             margin-bottom: 30px;
+            border-radius: 12px;
+            border: 1px solid #efefef;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
         }
 
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        
-        .card { 
-            background: white; 
-            padding: 30px; 
-            margin-bottom: 30px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+        .assunto-card:hover {
+            border-color: #ff6600;
+            transform: translateY(-3px);
         }
 
-        .card h2 { color: #111827; border-bottom: 2px solid #ff6600; display: inline-block; margin-bottom: 20px; }
-        
-        .card img { 
-            width: 100%; 
-            max-height: 350px; 
-            object-fit: contain; 
-            margin: 20px 0; 
-            background: #f9f9f9;
-            border-radius: 8px;
+        .img-assunto {
+            width: 100%;
+            height: 100%;
+            /* O 'contain' faz a imagem caber inteira sem cortes */
+            object-fit: contain;
+            /* Adicionamos um fundo levemente cinza para destacar o produto */
+            background-color: #f9f9f9;
+            /* Um pequeno respiro interno para a imagem não encostar na borda */
+            padding: 15px;
+            box-sizing: border-box;
         }
 
-        .analise-tecnica { background: #f8fafc; padding: 15px; border-left: 4px solid #00a650; margin-top: 15px; font-style: italic; }
+        .assunto-info {
+            padding: 25px;
+        }
 
-        /* Estilo da Tabela Comparativa */
-        .table-container { overflow-x: auto; margin-top: 40px; }
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
-        th, td { padding: 15px; text-align: center; border-bottom: 1px solid #eee; }
-        th { background: #111827; color: white; text-transform: uppercase; font-size: 0.85rem; }
-        table img { width: 80px; height: auto; border-radius: 4px; }
-        
-        .btn-table { 
-            padding: 8px 15px; 
-            background: #00a650; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 6px; 
-            font-weight: bold; 
-            display: inline-block; 
+        .assunto-info h3 {
+            color: #111827;
+            margin-top: 0;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .assunto-info p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .nota-tecnica {
+            background: #111827;
+            padding: 15px;
+            border-left: 5px solid #ff6600;
+            font-size: 0.85rem;
+            color: #e5e7eb;
+            margin-bottom: 15px;
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            background: #ffe600;
+            color: #000;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-comprar:hover {
+            background: #edd600;
+        }
+
+        @media (max-width: 650px) {
+            .assunto-card {
+                grid-template-columns: 1fr;
+            }
+
+            .img-assunto {
+                height: 200px;
+            }
+        }
+
+        .assunto-card:hover .img-assunto {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
         }
     </style>
 </head>
 
 <body>
-
     <div id="header-global"></div>
 
-    <header class="artigo-header">
-        <h1>🎧 Os 5 Melhores Fones de Ouvido de 2026</h1>
-        <p>Análise técnica profunda sobre qualidade sonora, ANC e ergonomia.</p>
-    </header>
+    <main class="container-pag">
+        <header style="text-align: center; margin-bottom: 40px;">
+            <h1 style="font-size: 2.5rem; color: #111827;">🎧 A Vanguarda do Áudio Pessoal</h1>
+            <p style="color: #666;">Fidelidade Lossless, Cancelamento Ativo e Engenharia de Transdutores.</p>
+        </header>
 
-    <div class="container">
+        <article class="intro-editorial">
+            <h2>O Paradigma do Som de Alta Resolução</h2>
+            <p>
+                Em 2026, a fidelidade sonora deixou de ser um privilégio de estúdios cabeados. Com a maturação dos
+                codecs <strong>LC3</strong> e a expansão do <strong>Bluetooth 5.4</strong>, a barreira entre o áudio
+                analógico e o digital foi finalmente rompida. Hoje, avaliar um fone de ouvido exige olhar além do
+                design; trata-se de analisar a capacidade de processamento do DSP (Digital Signal Processor) e a
+                resposta transiente dos drivers.
+            </p>
+            <p>
+                Na <strong>InceptTech</strong>, desconstruímos os dispositivos sob a ótica da pureza acústica. Não
+                buscamos apenas "graves potentes", mas assinaturas sonoras equilibradas que respeitam a intenção
+                original do produtor musical, combinadas com algoritmos de cancelamento de ruído que operam em
+                frequências adaptativas.
+            </p>
+        </article>
 
-        <section class="card">
-            <h2>Critérios de Avaliação</h2>
-            <p>Em 2026, o mercado de áudio atingiu um novo patamar com o <strong>Bluetooth 5.4</strong> e codecs de alta fidelidade sem perdas (Lossless). Nossa análise foca na resposta de frequência, na eficiência do cancelamento de ruído ativo (ANC) em ambientes urbanos e na durabilidade das hastes e almofadas.</p>
-        </section>
+        <section class="assunto-card">
+            <img src="images/sony-xm6.jpg" alt="Sony WH-1000XM6" class="img-assunto">
+            <div class="assunto-info">
+                <h3>01. Sony WH-1000XM6: O Rei do Isolamento</h3>
+                <p>O XM6 é a definição de silêncio computacional. Utilizando uma matriz de microfones duplos e o chip
+                    V3, ele neutraliza o ruído ambiente através de inversão de fase em milissegundos. É a ferramenta
+                    definitiva para quem exige foco absoluto em ambientes de alto estresse sonoro.</p>
 
-        <section class="card">
-            <h2>1. Sony WH-1000XM6</h2>
-            <img src="images/sony.jpg" alt="Sony WH-1000XM6">
-            <p>O Sony XM6 consolida-se como o rei absoluto do silêncio. Equipado com o novo processador V3, ele consegue filtrar frequências agudas que modelos anteriores deixavam passar. A assinatura sonora permanece rica, com graves que têm impacto, mas não sobrepõem os médios cristalinos.</p>
-            <div class="analise-tecnica">
-                <strong>Veredito:</strong> O melhor para quem busca produtividade em escritórios barulhentos ou viagens longas.
+                <div class="nota-tecnica">
+                    <strong>📋 ESPECIFICAÇÃO:</strong> Driver de 30mm em fibra de carbono. Suporte nativo a LDAC e DSEE
+                    Extreme para upscaling de arquivos comprimidos.
+                </div>
+
+                <a href="https://mercadolivre.com/sec/227jiAw" class="btn-comprar" target="_blank">Ver Oferta
+                    Técnica</a>
             </div>
         </section>
 
-        <section class="card">
-            <h2>2. Bose QuietComfort Ultra</h2>
-            <img src="images/bose-ultra.jpg" alt="Bose QC Ultra">
-            <p>A Bose apostou tudo no "Immersive Audio", uma tecnologia de áudio espacial que coloca você no centro do palco, independente da fonte sonora. O conforto das almofadas em couro sintético de alta densidade permite o uso por 8h seguidas sem pressão excessiva nas orelhas.</p>
-            <div class="analise-tecnica">
-                <strong>Veredito:</strong> Inbatível em ergonomia e palco sonoro tridimensional.
+        <section class="assunto-card">
+            <img src="images/bose-ultra.jpg" alt="Bose QuietComfort Ultra" class="img-assunto">
+            <div class="assunto-info">
+                <h3>02. Bose QuietComfort Ultra: Ergonomia e Imersão</h3>
+                <p>A Bose redefine o palco sonoro com o modo "Immersive Audio". Através de processamento espacial, o som
+                    parece emanar de caixas acústicas à sua frente, eliminando a fadiga auditiva comum em fones
+                    fechados. O conforto é garantido por polímeros de memória de baixa pressão.</p>
+
+                <div class="nota-tecnica">
+                    <strong>🧪 INSIGHT ACÚSTICO:</strong> O sistema CustomTune calibra o som especificamente para o
+                    formato do seu canal auditivo a cada vez que você coloca o fone.
+                </div>
+
+                <a href="https://mercadolivre.com/sec/32i4uo5" class="btn-comprar" target="_blank">Ver Oferta
+                    Técnica</a>
             </div>
         </section>
 
-        <section class="card">
-            <h2>3. Apple AirPods Max (USB-C)</h2>
-            <img src="images/airpods-max.jpg" alt="AirPods Max">
-            <p>Apesar de pesado, o sistema de distribuição de peso na malha superior é engenharia pura. A transparência sonora (Modo Ambiente) ainda é a mais natural do mundo, fazendo você esquecer que está usando fones. A integração com o ecossistema Apple é o fator decisivo aqui.</p>
-            <div class="analise-tecnica">
-                <strong>Veredito:</strong> A melhor experiência de uso e construção para usuários de iPhone e Mac.
+        <section class="assunto-card">
+            <img src="images/qcy-v200.jpg" alt="QCY V200" class="img-assunto">
+            <div class="assunto-info">
+                <h3>03. QCY V200: Democratização da Alta Fidelidade</h3>
+                <p>O V200 rompe a barreira do custo-benefício ao entregar drivers dinâmicos com diafragma de titânio. É
+                    a prova de que a engenharia eficiente pode entregar uma curva de resposta de frequência (Harman
+                    Target) precisa sem o "premium price" das grandes marcas.</p>
+
+                <div class="nota-tecnica">
+                    <strong>⚡ NOTA DO ESPECIALISTA:</strong> Autonomia real de 40h com ANC ativo. Ideal para usuários
+                    que buscam performance técnica sem comprometer o orçamento.
+                </div>
+
+                <a href="https://mercadolivre.com/sec/2ssAZGa" class="btn-comprar" target="_blank">Ver Oferta
+                    Técnica</a>
+            </div>
+        </section>
+        <section class="assunto-card">
+            <img src="images/airpods-max.jpg" alt="Apple AirPods Max USB-C" class="img-assunto">
+            <div class="assunto-info">
+                <h3>04. AirPods Max: Sinergia em Computação de Áudio</h3>
+                <p>
+                    O AirPods Max não é apenas um fone, mas uma unidade de processamento computacional vestível. Com um
+                    chip H2 em cada concha, ele executa trilhões de operações por segundo para ajustar a equalização
+                    adaptativa em tempo real. A malha de suspensão da haste não é apenas estética; é um projeto de
+                    <strong>engenharia de distribuição de massa</strong> para neutralizar a pressão craniana em sessões
+                    prolongadas.
+                </p>
+
+                <div class="nota-tecnica">
+                    <strong>📋 DIFERENCIAL:</strong> O Modo Transparência utiliza microfones de baixa distorção para
+                    permitir uma percepção situacional que soa como se você não estivesse usando fones, com latência
+                    imperceptível ao ouvido humano.
+                </div>
+
+                <a href="https://mercadolivre.com/sec/1wHAbYT" class="btn-comprar" target="_blank">Ver Oferta
+                    Técnica</a>
+            </div>
+        </section>
+        <section class="assunto-card">
+            <img src="images/bose-wireless.jpg" alt="Bose QC Ultra Wireless" class="img-assunto">
+            <div class="assunto-info">
+                <h3>05. Bose QC Ultra Wireless: Estabilidade de Fluxo</h3>
+                <p>
+                    Este modelo é focado na <strong>resiliência de conexão</strong>. Em ambientes saturados de RF
+                    (radiofrequência), como aeroportos ou centros urbanos, o sistema de antenas otimizado garante que o
+                    fluxo de dados do codec aptX Adaptive permaneça íntegro. É a escolha de profissionais que dependem
+                    de uma transição fluida entre teleconferências e monitoramento de áudio sem quedas de pacotes.
+                </p>
+
+                <div class="nota-tecnica">
+                    <strong>🔒 VEREDITO INCEPT:</strong> A melhor implementação de conexão multiponto do mercado.
+                    Permite pareamento simultâneo com latência zero na troca entre dispositivos móveis e desktops.
+                </div>
+
+                <a href="https://mercadolivre.com/sec/1RwugHF" class="btn-comprar" target="_blank">Ver Oferta
+                    Técnica</a>
             </div>
         </section>
 
-        <section class="card">
-            <h2>4. QCY Tri-Mode Heroad V200</h2>
-            <img src="images/qcy.jpg" alt="QCY V200">
-            <p>A surpresa de 2026. O V200 entrega uma autonomia de bateria que beira as 40 horas reais com ANC ligado. Embora a construção seja em plástico, a fidelidade sonora surpreende pelo preço, oferecendo um app com equalizador de 10 bandas que realmente funciona.</p>
-            <div class="analise-tecnica">
-                <strong>Veredito:</strong> O campeão absoluto em custo-benefício para o dia a dia.
-            </div>
-        </section>
+    </main>
 
-        <section class="card">
-            <h2>5. Bose QuietComfort Ultra Wireless</h2>
-            <img src="images/bose-wireless.jpg" alt="Bose QC Ultra Wireless">
-            <p>Esta versão foca na conectividade multiponto ultraestável. O cancelamento adaptativo se ajusta em milissegundos ao volume do ambiente externo. É um fone para quem exige fidelidade técnica e uma conexão que nunca falha entre o celular e o notebook.</p>
-            <div class="analise-tecnica">
-                <strong>Veredito:</strong> O fone mais confiável para profissionais que alternam entre música e chamadas.
-            </div>
-        </section>
-
-        <h2>📊 Tabela Comparativa Completa</h2>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Modelo</th>
-                        <th>Cancelamento</th>
-                        <th>Bateria</th>
-                        <th>Destaque</th>
-                        <th>Onde Comprar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Sony XM6</strong></td>
-                        <td>⭐⭐⭐⭐⭐</td>
-                        <td>30h</td>
-                        <td>Melhor ANC</td>
-                        <td><a href="https://mercadolivre.com/sec/227jiAw" target="_blank" class="btn-table">Ver Oferta</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Bose Ultra</strong></td>
-                        <td>⭐⭐⭐⭐⭐</td>
-                        <td>24h</td>
-                        <td>Conforto</td>
-                        <td><a href="https://mercadolivre.com/sec/32i4uo5" target="_blank" class="btn-table">Ver Oferta</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>AirPods Max</strong></td>
-                        <td>⭐⭐⭐⭐</td>
-                        <td>20h</td>
-                        <td>Acabamento</td>
-                        <td><a href="https://mercadolivre.com/sec/1wHAbYT" target="_blank" class="btn-table">Ver Oferta</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>QCY V200</strong></td>
-                        <td>⭐⭐⭐</td>
-                        <td>40h</td>
-                        <td>Preço</td>
-                        <td><a href="https://mercadolivre.com/sec/2ssAZGa" target="_blank" class="btn-table">Ver Oferta</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Bose Wireless</strong></td>
-                        <td>⭐⭐⭐⭐⭐</td>
-                        <td>24h</td>
-                        <td>Estabilidade</td>
-                        <td><a href="https://mercadolivre.com/sec/1RwugHF" target="_blank" class="btn-table">Ver Oferta</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div id="header-global"></div> <div id="footer-global"></div>
-
+    <div id="footer-global"></div>
     <script src="../componentes.js"></script>
-    <script>
-    // Chama a função passando a categoria desejada
-    carregarComponentes("Fones");
-</script>
+    <script>carregarComponentes("Fones");</script>
 </body>
+
 </html>

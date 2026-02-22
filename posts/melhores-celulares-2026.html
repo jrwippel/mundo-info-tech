@@ -4,98 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Review completo dos 5 melhores celulares de 2026. Analisamos câmeras, bateria e desempenho.">
-    <title>Os 5 Melhores Celulares de 2026 | Mundo Info Tech</title>
+    <meta name="description" content="Engenharia mobile 2026: Análise técnica dos 5 flagships que dominam o mercado global.">
+    <title>Soberania Mobile 2026 | InceptTech</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        body {
-            background: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
+        .container-pag { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Manifesto Editorial */
+        .intro-editorial {
+            margin: 40px 0 60px 0; padding: 40px; background: #f9fafb;
+            border-top: 2px solid #ff6600; border-bottom: 2px solid #eee;
+            line-height: 1.8; position: relative; text-align: justify;
+        }
+        .intro-editorial::before {
+            content: "ESTADO DA ARTE"; position: absolute; top: -12px; left: 30px;
+            background: #ff6600; color: white; padding: 2px 12px; font-size: 0.7rem;
+            font-weight: bold; border-radius: 4px;
         }
 
-        .artigo-header {
-            background: #111827;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            margin-bottom: 30px;
+        /* Cards de Assuntos - Estilo InceptTech Horizontal */
+        .assunto-card {
+            background: white; margin-bottom: 30px; border-radius: 12px;
+            border: 1px solid #efefef; display: grid; grid-template-columns: 280px 1fr;
+            overflow: hidden; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .assunto-card:hover { border-color: #ff6600; transform: translateY(-3px); }
+        
+        .img-assunto { 
+            width: 100%; height: 100%; object-fit: contain; 
+            background: #f9f9f9; padding: 20px; box-sizing: border-box;
+        }
+        
+        .assunto-info { padding: 30px; }
+        .assunto-info h3 { color: #111827; margin-top: 0; font-size: 1.4rem; margin-bottom: 12px; }
+        .assunto-info p { font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 15px; }
+
+        .nota-tecnica {
+            background: #111827; padding: 18px; border-left: 5px solid #ff6600;
+            font-size: 0.85rem; color: #e5e7eb; margin-bottom: 15px;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
+        .btn-comprar {
+            display: inline-block; background: #ffe600; color: #000;
+            text-decoration: none; padding: 12px 25px; border-radius: 6px;
+            font-size: 0.85rem; font-weight: bold; transition: background 0.2s;
         }
+        .btn-comprar:hover { background: #edd600; }
 
-        .card {
-            background: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
+        /* Tabela Comparativa */
+        .table-container { overflow-x: auto; margin-top: 40px; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+        th, td { padding: 15px; text-align: center; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        th { background: #111827; color: white; text-transform: uppercase; font-size: 0.75rem; }
+        .btn-table { padding: 6px 12px; background: #00a650; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
 
-        .card h2 {
-            color: #111827;
-            border-bottom: 2px solid #ff6600;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .card img {
-            width: 100%;
-            max-height: 350px;
-            object-fit: contain;
-            margin: 20px 0;
-            background: #f9f9f9;
-            border-radius: 8px;
-        }
-
-        .analise-tecnica {
-            background: #f8fafc;
-            padding: 15px;
-            border-left: 4px solid #00a650;
-            margin-top: 15px;
-            font-style: italic;
-        }
-
-        .table-container {
-            overflow-x: auto;
-            margin-top: 40px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        th,
-        td {
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        th {
-            background: #111827;
-            color: white;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-        }
-
-        .btn-table {
-            padding: 8px 15px;
-            background: #00a650;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            display: inline-block;
+        @media (max-width: 768px) {
+            .assunto-card { grid-template-columns: 1fr; }
+            .img-assunto { height: 250px; }
         }
     </style>
 </head>
@@ -103,99 +68,83 @@
 <body>
     <div id="header-global"></div>
 
-    <header class="artigo-header">
-        <h1>📱 Os 5 Melhores Celulares de 2026</h1>
-        <p>Do hardware extremo à fotografia computacional avançada.</p>
+    <header style="background: #111827; color: white; padding: 80px 20px; text-align: center;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📱 A Elite da Computação de Bolso</h1>
+        <p style="opacity: 0.8;">Litografia de 2nm, Fotografia Computacional e a Revolução das Baterias de Estado Sólido.</p>
     </header>
 
-    <div class="container">
-        <section class="card">
-            <h2>1. iPhone 17 Pro Max</h2>
-            <img src="images/iphone17.jpg" alt="iPhone 17 Pro Max">
-            <p>A Apple finalmente rompeu a barreira dos 2nm com o SoC A19 Pro, garantindo uma eficiência térmica 30% superior em tarefas de renderização 3D. A grande revolução, contudo, é a tecnologia 'Under-Display FaceID', que esconde todos os sensores sob o painel OLED de microlentes, entregando pela primeira vez uma tela infinita sem interrupções físicas. A integração com o iOS 20 permite que o processamento de IA generativa para fotos ocorra inteiramente no chip, sem latência de nuvem."</p>
-            <div class="analise-tecnica">
-                <strong>Veredito:</strong> O equilíbrio perfeito entre luxo industrial e a potência bruta do silício de 2nm.
+    <main class="container-pag">
+
+        <article class="intro-editorial">
+            <h2>O Fim da Era Mobile e o Início da Computação Onipresente</h2>
+            <p>
+                Em 2026, o smartphone deixou de ser um acessório para se tornar o núcleo de processamento de borda (Edge Computing) do indivíduo. A convergência entre **Inteligência Artificial Generativa Local** e chips com litografia de **2nm** permitiu que dispositivos móveis superassem o desempenho de workstations de mesa de apenas três anos atrás. 
+            </p>
+            <p>
+                Nesta análise, a <strong>InceptTech</strong> não foca apenas em especificações brutas, mas na eficiência da arquitetura térmica e na integração de redes neurais. Estamos diante de máquinas que não apenas executam tarefas, mas antecipam a intenção do usuário através de hardware preditivo.
+            </p>
+        </article>
+
+        <section class="assunto-card">
+            <img src="images/iphone17.jpg" alt="iPhone 17 Pro Max" class="img-assunto">
+            <div class="assunto-info">
+                <h3>01. iPhone 17 Pro Max: A Era do Silício Invisível</h3>
+                <p>O chip A19 Pro define um novo padrão de eficiência energética. Com o FaceID movido para sob o display, a Apple entrega um painel OLED de microlentes com brilho de pico de 4000 nits. A grande vantagem técnica é o processamento de IA em nível de kernel, garantindo privacidade total nos dados sensíveis.</p>
+                <div class="nota-tecnica">
+                    <strong>📋 NOTA TÉCNICA:</strong> Implementação de barramento unificado de memória que reduz a latência de execução de modelos de linguagem (LLMs) em 40% comparado ao modelo anterior.
+                </div>
+                <a href="https://mercadolivre.com/sec/2KJhAFH" class="btn-comprar" target="_blank">Adquirir Engenharia Apple</a>
             </div>
         </section>
 
-        <section class="card">
-            <h2>2. Samsung Galaxy S26 Ultra</h2>
-            <img src="images/s26ultra.jpg" alt="Galaxy S26 Ultra">
-            <p>O S26 Ultra consolida-se como a câmera definitiva de 2026. Seu novo sensor Isocell de 440MP utiliza o pixel binning 16-em-1 para capturar texturas em baixíssima luz que eram invisíveis anteriormente. O novo sistema de bateria de estado sólido não apenas aumenta a densidade energética para 5.500mAh em um corpo mais fino, mas também elimina o risco de superaquecimento durante o uso intenso do DeX sem fio em telas 8K.</p>
-            <div class="analise-tecnica">
-                <strong>Veredito:</strong> A ferramenta de produtividade e fotografia mais completa já fabricada pela Samsung
+        <section class="assunto-card">
+            <img src="images/s26ultra.jpg" alt="Galaxy S26 Ultra" class="img-assunto">
+            <div class="assunto-info">
+                <h3>02. Galaxy S26 Ultra: A Supremacia do Sensor</h3>
+                <p>O S26 Ultra é o marco zero da fotografia computacional avançada. Seu sensor de 440MP não serve para gerar arquivos pesados, mas para coletar uma quantidade massiva de fótons, processada por um motor neural dedicado. A bateria de estado sólido é o salto tecnológico que o mercado esperava por décadas.</p>
+                <div class="nota-tecnica">
+                    <strong>⚡ INSIGHT INCEPT:</strong> O sistema de resfriamento por câmara de vapor 3D permite que o modo DeX opere em 8K sem thermal throttling em sessões de produtividade extensas.
+                </div>
+                <a href="https://mercadolivre.com/sec/2DfFUeN" class="btn-comprar" target="_blank">Adquirir Ecossistema Samsung</a>
             </div>
         </section>
 
-        <section class="card">
-            <h2>3. Xiaomi 16 Ultra</h2>
-            <img src="images/xiaomi16.jpg" alt="Xiaomi 16 Ultra">
-            <p>A Xiaomi redefine o conceito de urgência com o HyperCharge de 300W, capaz de revitalizar o dispositivo em tempo recorde de café da manhã. No departamento óptico, as lentes Leica Summilux com abertura variável física (f/1.2 a f/4.0) permitem um controle de profundidade de campo que rivaliza com câmeras Mirrorless profissionais. O sensor de 1 polegada foi otimizado para gravação em LOG de 12 bits, transformando o celular em uma câmera de cinema de bolso</p>
-            <div class="analise-tecnica">
-                <strong>Veredito:</strong> Hardware de vanguarda para quem não aceita menos que a máxima velocidade do mercado
+        <section class="assunto-card">
+            <img src="images/xiaomi16.jpg" alt="Xiaomi 16 Ultra" class="img-assunto">
+            <div class="assunto-info">
+                <h3>03. Xiaomi 16 Ultra: O Cinema no Bolso</h3>
+                <p>Com as novas lentes Leica Summilux de abertura variável física, o Xiaomi 16 Ultra permite controle óptico real sobre a luz. A recarga de 300W HyperCharge é o benchmark de velocidade do setor, eliminando a dependência de tomadas por períodos longos de carregamento.</p>
+                <div class="nota-tecnica">
+                    <strong>🎬 VEREDITO:</strong> Sensor de 1 polegada com suporte a gravação em LOG de 12 bits. É o dispositivo definitivo para criadores de conteúdo que buscam profundidade de campo orgânica.
+                </div>
+                <a href="https://mercadolivre.com/sec/1oMZfgj" class="btn-comprar" target="_blank">Adquirir Performance Xiaomi</a>
             </div>
         </section>
 
-        <section class="card">
-            <h2>4. Google Pixel 10 Pro</h2>
-            <img src="images/pixel10.jpg" alt="Pixel 10 Pro">
-            <p>O Pixel 10 Pro marca a independência total do Google com o chip Tensor G5 fabricado pela TSMC. Isso resolve o antigo gargalo de aquecimento e coloca a IA Gemini no centro da experiência. O novo 'Video Magic Eraser' agora funciona em tempo real para remover objetos de gravações em 4K. É o único dispositivo do mercado que oferece uma experiência preditiva, onde o sistema antecipa suas rotinas com 98% de precisão através de processamento local.</p>
-            <div class="analise-tecnica">
-                <strong>Veredito:</strong> A inteligência artificial mais refinada e orgânica disponível em um smartphone.
+        <section class="assunto-card">
+            <img src="images/pixel10.jpg" alt="Pixel 10 Pro" class="img-assunto">
+            <div class="assunto-info">
+                <h3>04. Pixel 10 Pro: A Inteligência Predisposta</h3>
+                <p>O Google finalmente alcançou a autonomia de hardware com o Tensor G5 (TSMC). O foco aqui é a "Inteligência Orgânica": o aparelho entende o contexto de cada notificação e as gerencia sem intervenção humana. A fotografia noturna agora é processada em vídeo 4K HDR em tempo real.</p>
+                <div class="nota-tecnica">
+                    <strong>🧠 ANALISE IA:</strong> O modelo Gemini Nano 2.0 roda nativamente no hardware, permitindo tradução e edição de vídeo sem necessidade de conexão com a internet.
+                </div>
+                <a href="https://store.google.com/us/product/pixel_10_pro?hl=en-US" class="btn-comprar" target="_blank">Ver Inteligência Google</a>
             </div>
         </section>
 
-        <section class="card">
-            <h2>5. Realme GT 7 Pro</h2>
-            <img src="images/realme-gt7.jpg" alt="Realme GT 7 Pro">
-            <p>Equipado com o Snapdragon 8 Gen 5 e um sistema de resfriamento por câmara de vapor de nível aeroespacial, o GT 7 Pro sustenta taxas de 144 FPS em jogos AAA sem sofrer thermal throttling. A bateria de 6.500mAh utiliza anodo de silício-carbono, permitindo uma longevidade de ciclos 2x maior que as baterias de lítio convencionais. É a máquina de guerra para o público gamer que exige performance máxima por cada real investido.</p>
-            <div class="analise-tecnica">
-                <strong>Veredito:</strong> O 'flagship killer' definitivo: desempenho de elite com foco total em estabilidade e autonomia.
+        <section class="assunto-card">
+            <img src="images/realme-gt7.jpg" alt="Realme GT 7 Pro" class="img-assunto">
+            <div class="assunto-info">
+                <h3>05. Realme GT 7 Pro: Hardware de Guerra</h3>
+                <p>O GT 7 Pro é construído para quem vive no limite da performance. Equipado com bateria de anodo de silício-carbono de 6.500mAh, ele sustenta jogos AAA com Ray Tracing ativo por horas. É a prova de que o alto desempenho não precisa custar uma fortuna.</p>
+                <div class="nota-tecnica">
+                    <strong>🎮 GAMING NOTE:</strong> Tela de 144Hz com amostragem de toque de 2000Hz. Latência de resposta inexistente para e-sports competitivos mobile.
+                </div>
+                <a href="https://mercadolivre.com/sec/1fB88s8" class="btn-comprar" target="_blank">Ver Performance Extrema</a>
             </div>
-        </section>
-
-        <h2>📊 Comparativo de Especificações</h2>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Modelo</th>
-                        <th>Câmera</th>
-                        <th>Bateria</th>
-                        <th>Destaque</th>
-                        <th>Onde Comprar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>iPhone 17 PM</strong></td>
-                        <td>48MP Tripla</td>
-                        <td>4.800mAh</td>
-                        <td>Ecossistema</td>
-                        <td><a href="https://mercadolivre.com/sec/2KJhAFH" target="_blank" class="btn-table">Ver
-                                Oferta</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Galaxy S26 U</strong></td>
-                        <td>440MP Quad</td>
-                        <td>5.500mAh</td>
-                        <td>Zoom 20x</td>
-                        <td><a href="https://mercadolivre.com/sec/2DfFUeN" class="btn-table">Ver Oferta</a></td>
-
-                    </tr>
-
-                    <tr>
-                        <td><strong>Realme GT 7 Pro</strong></td>
-                        <td>50MP Triple</td>
-                        <td>6.500mAh</td>
-                        <td>Performance Gamer</td>
-                        <td><a href="https://mercadolivre.com/sec/1fB88s8" target="_blank" class="btn-table">Ver
-                                Oferta</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+        </section>        
+    </main>
 
     <div id="footer-global"></div>
     <script src="../componentes.js"></script>
