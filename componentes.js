@@ -1,13 +1,14 @@
 function carregarComponentes(categoria = "") {
     const path = window.location.pathname;
     const estaEmPosts = path.includes('/posts/');
+    
+    // Define o prefixo para voltar para a home
     const prefix = estaEmPosts ? '../' : '';
     
-    // Se estiver em posts, não precisa repetir "posts/" no link, pois já está na pasta.
-    // Se não estiver, precisa do "posts/".
-    const pastaPosts = estaEmPosts ? '' : 'posts/';
+    // SE já estou em posts, o link é direto: "noticias.html"
+    // SE não estou em posts, o link é: "posts/noticias.html"
+    const linkParaPosts = estaEmPosts ? '' : 'posts/';
     
-    // Se houver uma categoria, adiciona o separador visual
     const textoCategoria = categoria ? ` | <span class="categoria-header">${categoria}</span>` : "";
 
     const headerHTML = `
@@ -21,9 +22,9 @@ function carregarComponentes(categoria = "") {
             </div>
 
             <nav class="menu-lateral">
-                <a href="${pastaPosts}noticias.html">Últimas Notícias</a>
-                <a href="${pastaPosts}melhores-celulares-2026.html">Celulares</a>
-                <a href="${pastaPosts}melhores-fones-2026.html">Fones de Ouvido</a>
+                <a href="${linkParaPosts}noticias.html">Últimas Notícias</a>
+                <a href="${linkParaPosts}melhores-celulares-2026.html">Celulares</a>
+                <a href="${linkParaPosts}melhores-fones-2026.html">Fones de Ouvido</a>
                 <a href="#">Eletrônicos</a>
                 <a href="#">Casa Inteligente</a>
             </nav>
