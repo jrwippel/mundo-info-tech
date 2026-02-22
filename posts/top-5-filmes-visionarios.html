@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Filmes Visionários | Mundo Info Tech</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .container-filmes {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Introdução Editorial Clean */
+        .intro-editorial {
+            margin: 40px 0 60px 0;
+            padding: 40px;
+            background: #f9fafb;
+            border-top: 2px solid #ff6600;
+            border-bottom: 2px solid #eee;
+            line-height: 1.8;
+            position: relative;
+            text-align: justify;
+        }
+
+        .intro-editorial::before {
+            content: "EDITORIAL";
+            position: absolute;
+            top: -12px;
+            left: 30px;
+            background: #ff6600;
+            color: white;
+            padding: 2px 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .intro-editorial h2 {
+            color: #111827;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .intro-editorial p {
+            color: #4b5563;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Estrutura dos Cards de Filmes */
+        .filme-card {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            border: 1px solid #efefef;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            overflow: hidden;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .filme-card:hover {
+            border-color: #ff6600;
+            transform: translateX(5px);
+        }
+
+        .img-filme {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .filme-info {
+            padding: 20px 25px;
+            text-align: justify;
+        }
+
+        .filme-info h2 {
+            color: #111827;
+            margin-top: 0;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .filme-info p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .tech-insight {
+            background: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #334155;
+            border-left: 3px solid #ff6600;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        /* Estilo do Box de Recomendação Mercado Livre */
+        .mercado-livre-box {
+            padding: 12px 15px;
+            background: #fff5e6;
+            border: 1px solid #ffe0b3;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .ml-icon {
+            width: 30px;
+            height: 30px;
+            background: #ffe600;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .ml-text {
+            font-size: 0.85rem;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        .ml-text a {
+            color: #3483fa;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .ml-text a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 650px) {
+            .filme-card {
+                grid-template-columns: 1fr;
+            }
+
+            .img-filme {
+                height: 200px;
+            }
+
+            .filme-info, .intro-editorial {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-global"></div>
+
+    <main class="container-filmes">
+        <header style="margin-bottom: 30px; text-align: center;">
+            <h1 style="font-size: 2.5rem; color: #111827;">🎬 Filmes que Anteciparam o Futuro</h1>
+            <p style="color: #666;">Uma jornada técnica pela visão de futuro da sétima arte.</p>
+        </header>
+
+        <article class="intro-editorial">
+            <h2>O Cinema como Laboratório de P&D</h2>
+            <p>
+                A relação entre o cinema e a tecnologia de ponta nunca foi meramente ilustrativa. Historicamente, a
+                sétima arte atua como um campo de teste para o <strong>Design Fiction</strong> — a prática de explorar
+                ideias futuristas através do storytelling para moldar a realidade tecnológica.
+            </p>
+            <p>
+                Em 2026, ao operarmos infraestruturas de <strong>IA Quântica</strong> e interfaces neurais, percebemos
+                que não estamos apenas criando o novo; estamos alcançando a engenhosidade técnica prevista por diretores
+                que consultaram mentes da NASA e IBM décadas atrás. Abaixo, analisamos as cinco obras que definiram o
+                <em>benchmark</em> do que hoje chamamos de vanguarda.
+            </p>
+        </article>
+
+        <section class="filme-card">
+            <img src="images/filme-2001.jpg" alt="2001: Uma Odisseia no Espaço" class="img-filme">
+            <div class="filme-info">
+                <h2>1. 2001: Uma Odisseia no Espaço (1968)</h2>
+                <p>Kubrick consultou a IBM para projetar o futuro. O filme apresentou o "Newspad", precursor dos
+                    tablets, e o HAL 9000, a primeira IA conversacional com consciência situacional.</p>
+                <div class="tech-insight"><strong>Legado:</strong> A base teórica para o processamento de linguagem
+                    natural do Gemini.</div>
+                
+                <div class="mercado-livre-box">
+                    <div class="ml-icon">📦</div>
+                    <div class="ml-text">
+                        Para a melhor experiência imersiva neste filme, recomendamos o 
+                        <a href="https://mercadolivre.com/sec/2qg2ajb" target="_blank">iPad Pro no Mercado Livre</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-card">
+            <img src="images/filme-bladerunner.jpg" alt="Blade Runner" class="img-filme">
+            <div class="filme-info">
+                <h2>2. Blade Runner (1982)</h2>
+                <p>Muito antes do debate sobre ética, Ridley Scott questionou a linha entre o sintético e o biológico,
+                    prevendo cidades hiper-conectadas e bioengenharia.</p>
+                <div class="tech-insight"><strong>Legado:</strong> O debate atual sobre direitos de identidades
+                    digitais.</div>
+
+                <div class="mercado-livre-box">
+                    <div class="ml-icon">📦</div>
+                    <div class="ml-text">
+                        Para a melhor experiência imersiva neste filme, recomendamos um 
+                        <a href="https://mercadolivre.com/sec/28khbrC" target="_blank">Monitor Gamer OLED 4K no Mercado Livre</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-card">
+            <img src="images/filme-matrix.jpg" alt="Matrix" class="img-filme">
+            <div class="filme-info">
+                <h2>3. Matrix (1999)</h2>
+                <p>Popularizou o conceito de interfaces neurais diretas (BCI). O que era ficção hoje é realidade em
+                    estudos de neurocomputação e VR imersiva.</p>
+                <div class="tech-insight"><strong>Legado:</strong> Avanços em ambientes de metaverso fotorrealistas.
+                </div>
+
+                <div class="mercado-livre-box">
+                    <div class="ml-icon">📦</div>
+                    <div class="ml-text">
+                        Para a melhor experiência imersiva neste filme, recomendamos o 
+                        <a href="https://mercadolivre.com/sec/1rN29Zz" target="_blank">Meta Quest 3 no Mercado Livre</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-card">
+            <img src="images/filme-minority.jpg" alt="Minority Report" class="img-filme">
+            <div class="filme-info">
+                <h2>4. Minority Report (2002)</h2>
+                <p>Previu interfaces gestuais, reconhecimento facial para anúncios personalizados e o uso massivo de
+                    análise preditiva de dados.</p>
+                <div class="tech-insight"><strong>Legado:</strong> Algoritmos de Big Data e policiamento preditivo.
+                </div>
+
+                <div class="mercado-livre-box">
+                    <div class="ml-icon">📦</div>
+                    <div class="ml-text">
+                        Para a melhor experiência imersiva neste filme, recomendamos o 
+                        <a href="https://mercadolivre.com/sec/2K44rqU" target="_blank">Mouse Logitech MX Master no Mercado Livre</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-card">
+            <img src="images/filme-her.jpg" alt="Her" class="img-filme">
+            <div class="filme-info">
+                <h2>5. Her (2013)</h2>
+                <p>Previu que a IA seria um sistema operacional vocal onipresente, capaz de compreender e simular
+                    nuances emocionais humanas profundas.</p>
+                <div class="tech-insight"><strong>Legado:</strong> A transição da IA de assistente para companheira
+                    digital personalizada.</div>
+
+                <div class="mercado-livre-box">
+                    <div class="ml-icon">📦</div>
+                    <div class="ml-text">
+                        Para a melhor experiência imersiva neste filme, recomendamos o 
+                        <a href="https://mercadolivre.com/sec/1AibeXx" target="_blank">Sony WH-1000XM5 no Mercado Livre</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-global"></div>
+
+    <script src="../componentes.js"></script>
+    <script>carregarComponentes("Cinema Visionário");</script>
+</body>
+
+</html>

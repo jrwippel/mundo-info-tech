@@ -16,8 +16,8 @@ function carregarComponentes(categoria = "") {
             </div>
 
             <nav class="menu-lateral">
-                <a href="${prefix}index.html">Últimas Notícias</a>
-                <a href="#">Celulares</a>
+                <a href="${prefix}posts/noticias.html">Últimas Notícias</a>
+                <a href="${prefix}posts/melhores-celulares-2026.html">Celulares</a>
                 <a href="${prefix}posts/melhores-fones-2026.html">Fones de Ouvido</a>
                 <a href="#">Eletrônicos</a>
                 <a href="#">Casa Inteligente</a>
