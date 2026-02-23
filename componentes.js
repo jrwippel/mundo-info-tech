@@ -26,6 +26,7 @@ function carregarComponentes(categoria = "") {
                 <a href="${linkParaPosts}melhores-celulares-2026.html">Celulares</a>
                 <a href="${linkParaPosts}melhores-fones-2026.html">Fones de Ouvido</a>              
                 <a href="${linkParaPosts}casa-inteligente.html">Casa Inteligente</a>
+                <a href="${linkParaPosts}ofertas.html">Ofertas do dia</a>
             </nav>
         </div>
     </header>`;

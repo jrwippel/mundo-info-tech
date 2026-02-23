@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Radar de ofertas tech: curadoria especializada com os melhores preços do dia em hardware e eletro.">
+    <title>Radar de Ofertas | Mundo Info Tech</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --primary: #ff6600;
+            --dark-header: #0f172a;
+            --dark-hero: #111827;
+            --success: #00a650;
+            --light-bg: #f4f6f9;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: #333;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* --- CABEÇALHO SEM SOBREPOSIÇÃO --- */
+        .topo {
+            background: var(--dark-header);
+            color: white;
+            padding: 15px 0;
+            border-bottom: 4px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+        }
+
+        .topo-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* Agrupamento para alinhar hambúrguer e logo corretamente */
+        .header-left-group {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Espaço entre o menu e a logo */
+        }
+
+        .menu-botao {
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: white;
+            line-height: 1;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-header {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap; /* Impede quebra de linha na logo */
+        }
+
+        .logo-header span {
+            color: var(--primary);
+        }
+
+        .divisor-logo {
+            margin: 0 10px;
+            font-weight: 300;
+            font-size: 1.5rem;
+            color: white;
+            opacity: 0.5;
+        }
+
+        .categoria-label {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        /* --- BANNER HERO --- */
+        .ofertas-hero {
+            background: var(--dark-hero);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ofertas-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .ofertas-hero p {
+            opacity: 0.9;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* --- GRID E CARDS --- */
+        .container-ofertas {
+            max-width: 1100px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+        }
+
+        .status-bar {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-left: 6px solid var(--success);
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .pulse-dot {
+            width: 12px; height: 12px;
+            background: #d32f2f;
+            border-radius: 50%;
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+        }
+
+        .grid-deals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .deal-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s ease;
+        }
+
+        .deal-card:hover { 
+            transform: translateY(-8px); 
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .deal-img-box {
+            position: relative;
+            background: #f9f9f9;
+            height: 220px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .deal-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        .discount-badge {
+            position: absolute;
+            top: 15px; left: 15px;
+            background: var(--success);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .deal-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .price-engine { background: #f8fafc; padding: 15px; border-radius: 10px; margin: 15px 0; }
+        .new-price { font-size: 1.8rem; font-weight: 800; color: var(--dark-hero); display: block; }
+        
+        .btn-buy {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-buy:hover { background: #e65c00; }
+
+        footer { background: #0f172a; color: white; text-align: center; padding: 40px; margin-top: 60px; }
+
+        @media (max-width: 600px) {
+            .status-bar { flex-direction: column; gap: 10px; text-align: center; }
+            .logo-header { font-size: 1.1rem; }
+            .categoria-label { font-size: 0.9rem; }
+            .header-left-group { gap: 10px; }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topo">
+        <div class="topo-container">
+            <div class="header-left-group">
+                <div class="menu-botao">☰</div>
+                <div class="logo-box">
+                    <a href="../index.html" class="logo-header">
+                        Mundo <span>Info</span> Tech
+                    </a>
+                    <span class="divisor-logo">|</span>
+                    <span class="categoria-label">Ofertas</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="ofertas-hero">
+        <h1>🏷️ Melhores Ofertas do Dia</h1>
+        <p>
+            Análise técnica e curadoria editorial. Selecionamos apenas produtos com 
+            descontos reais e excelente custo-benefício, verificados manualmente por nossa equipe.
+        </p>
+    </section>
+
+    <main class="container-ofertas">
+        <div class="status-bar">
+            <div class="live-indicator">
+                <div class="pulse-dot"></div>
+                RADAR ATIVO: MONITORANDO MERCADO LIVRE
+            </div>
+            <div style="font-size: 0.85rem; font-weight: 600; color: #666;">
+                Atualizado agora: <span id="current-date"></span>
+            </div>
+        </div>
+
+        <div class="grid-deals">
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge">R$ 2.300 OFF</span>
+                    <img src="../posts/images/iphone17.jpg" alt="iPhone 17"> 
+                </div>
+                <div class="deal-content">
+                    <span style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Smartphones</span>
+                    <h3>iPhone 17 Pro Max (256GB)</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 13.999,00</span>
+                        <span class="new-price">R$ 11.699,00</span>
+                    </div>
+                    <a href="https://mercadolivre.com/sec/2KJhAFH" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge">30% OFF</span>
+                    <img src="../posts/images/airfryer-philips.jpg" alt="Air Fryer">
+                </div>
+                <div class="deal-content">
+                    <span style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Eletro</span>
+                    <h3>Air Fryer Philips Walita Essential</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 1.100,00</span>
+                        <span class="new-price">R$ 800,00</span>
+                    </div>
+                    <a href="https://mercadolivre.com/sec/1CxKci7" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge">ESTOQUE FULL</span>
+                    <img src="../posts/images/macbook-m3.jpg" alt="MacBook">
+                </div>
+                <div class="deal-content">
+                    <span style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Laptops</span>
+                    <h3>MacBook Air M3 (256GB SSD)</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 10.999,00</span>
+                        <span class="new-price">R$ 8.729,03</span>
+                    </div>
+                    <a href="https://mercadolivre.com/sec/1nXwjvt" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-date').innerText = new Date().toLocaleDateString('pt-BR');
+    </script>
+</body>
+</html>
