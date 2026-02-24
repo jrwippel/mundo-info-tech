@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Radar de ofertas tech: curadoria especializada com os melhores preços do dia em hardware e eletro.">
-    <title>Radar de Ofertas | Mundo Info Tech</title>
+    <meta name="description"
+        content="Radar de ofertas tech: curadoria especializada com os melhores preços do dia em hardware e eletro.">
+    <title>Radar de Ofertas | mundoinfotech</title>
     <link rel="stylesheet" href="../style.css">
     <style>
         :root {
@@ -46,7 +47,8 @@
         .header-left-group {
             display: flex;
             align-items: center;
-            gap: 15px; /* Espaço entre o menu e a logo */
+            gap: 15px;
+            /* Espaço entre o menu e a logo */
         }
 
         .menu-botao {
@@ -69,7 +71,8 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            white-space: nowrap; /* Impede quebra de linha na logo */
+            white-space: nowrap;
+            /* Impede quebra de linha na logo */
         }
 
         .logo-header span {
@@ -125,7 +128,7 @@
             background: white;
             padding: 20px 30px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -143,16 +146,28 @@
         }
 
         .pulse-dot {
-            width: 12px; height: 12px;
+            width: 12px;
+            height: 12px;
             background: #d32f2f;
             border-radius: 50%;
             animation: pulse-red 2s infinite;
         }
 
         @keyframes pulse-red {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(211, 47, 47, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(211, 47, 47, 0);
+            }
         }
 
         .grid-deals {
@@ -171,10 +186,10 @@
             transition: 0.3s ease;
         }
 
-        .deal-card:hover { 
-            transform: translateY(-8px); 
+        .deal-card:hover {
+            transform: translateY(-8px);
             border-color: var(--primary);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .deal-img-box {
@@ -187,11 +202,16 @@
             justify-content: center;
         }
 
-        .deal-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .deal-img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
 
         .discount-badge {
             position: absolute;
-            top: 15px; left: 15px;
+            top: 15px;
+            left: 15px;
             background: var(--success);
             color: white;
             padding: 5px 12px;
@@ -200,10 +220,27 @@
             font-size: 0.85rem;
         }
 
-        .deal-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .price-engine { background: #f8fafc; padding: 15px; border-radius: 10px; margin: 15px 0; }
-        .new-price { font-size: 1.8rem; font-weight: 800; color: var(--dark-hero); display: block; }
-        
+        .deal-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-engine {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .new-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-hero);
+            display: block;
+        }
+
         .btn-buy {
             background: var(--primary);
             color: white;
@@ -214,15 +251,37 @@
             font-weight: bold;
             transition: 0.3s;
         }
-        .btn-buy:hover { background: #e65c00; }
 
-        footer { background: #0f172a; color: white; text-align: center; padding: 40px; margin-top: 60px; }
+        .btn-buy:hover {
+            background: #e65c00;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
 
         @media (max-width: 600px) {
-            .status-bar { flex-direction: column; gap: 10px; text-align: center; }
-            .logo-header { font-size: 1.1rem; }
-            .categoria-label { font-size: 0.9rem; }
-            .header-left-group { gap: 10px; }
+            .status-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .logo-header {
+                font-size: 1.1rem;
+            }
+
+            .categoria-label {
+                font-size: 0.9rem;
+            }
+
+            .header-left-group {
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -234,7 +293,7 @@
                 <div class="menu-botao">☰</div>
                 <div class="logo-box">
                     <a href="../index.html" class="logo-header">
-                        Mundo <span>Info</span> Tech
+                        mundoinfotech
                     </a>
                     <span class="divisor-logo">|</span>
                     <span class="categoria-label">Ofertas</span>
@@ -246,7 +305,7 @@
     <section class="ofertas-hero">
         <h1>🏷️ Melhores Ofertas do Dia</h1>
         <p>
-            Análise técnica e curadoria editorial. Selecionamos apenas produtos com 
+            Análise técnica e curadoria editorial. Selecionamos apenas produtos com
             descontos reais e excelente custo-benefício, verificados manualmente por nossa equipe.
         </p>
     </section>
@@ -266,10 +325,11 @@
             <article class="deal-card">
                 <div class="deal-img-box">
                     <span class="discount-badge">R$ 2.300 OFF</span>
-                    <img src="../posts/images/iphone17.jpg" alt="iPhone 17"> 
+                    <img src="../posts/images/iphone17.jpg" alt="iPhone 17">
                 </div>
                 <div class="deal-content">
-                    <span style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Smartphones</span>
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Smartphones</span>
                     <h3>iPhone 17 Pro Max (256GB)</h3>
                     <div class="price-engine">
                         <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 13.999,00</span>
@@ -285,7 +345,8 @@
                     <img src="../posts/images/airfryer-philips.jpg" alt="Air Fryer">
                 </div>
                 <div class="deal-content">
-                    <span style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Eletro</span>
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Eletro</span>
                     <h3>Air Fryer Philips Walita Essential</h3>
                     <div class="price-engine">
                         <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 1.100,00</span>
@@ -301,13 +362,165 @@
                     <img src="../posts/images/macbook-m3.jpg" alt="MacBook">
                 </div>
                 <div class="deal-content">
-                    <span style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Laptops</span>
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Laptops</span>
                     <h3>MacBook Air M3 (256GB SSD)</h3>
                     <div class="price-engine">
                         <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 10.999,00</span>
                         <span class="new-price">R$ 8.729,03</span>
                     </div>
                     <a href="https://mercadolivre.com/sec/1nXwjvt" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge" style="background: #007bff;">MENOR PREÇO 30 DIAS</span>
+                    <img src="../posts/images/logitech-pebble.jpg" alt="Mouse Logitech">
+                </div>
+                <div class="deal-content">
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Acessórios</span>
+                    <h3>Mouse Bluetooth Logitech Pebble M350</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 119,90</span>
+                        <span class="new-price">R$ 89,11</span>
+                    </div>
+                    <a href="https://meli.la/2SjkXPj" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge">CUSTO-BENEFÍCIO</span>
+                    <img src="../posts/images/lampada-smart.jpg" alt="Lâmpada Inteligente">
+                </div>
+                <div class="deal-content">
+                    <span style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Smart
+                        Home</span>
+                    <h3>Lâmpada Inteligente Wi-Fi RGB 12W</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 84,87</span>
+                        <span class="new-price">R$ 76,38</span>
+                    </div>
+                    <a href="https://meli.la/1ymrmtW" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge">CAMPEÃO DE VENDAS</span>
+                    <img src="../posts/images/redmi-buds-5.jpg" alt="Redmi Buds 5">
+                </div>
+                <div class="deal-content">
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Áudio</span>
+                    <h3>Fone Bluetooth Redmi Buds 5 (ANC)</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 190,56</span>
+                        <span class="new-price">R$ 143,00</span>
+                    </div>
+                    <a href="https://meli.la/2Nuc5qk" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge" style="background: #6b21a8;">ESSENCIAL</span>
+                    <img src="../posts/images/ssd-kingston.jpg" alt="SSD Kingston">
+                </div>
+                <div class="deal-content">
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Hardware</span>
+                    <h3>SSD Kingston A400 480GB SATA</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 780,00</span>
+                        <span class="new-price">R$ 648,00</span>
+                    </div>
+                    <a href="https://meli.la/1qRodU1" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge">MAIS VENDIDO</span>
+                    <img src="../posts/images/powerbank-baseus.jpg" alt="Power Bank Baseus">
+                </div>
+                <div class="deal-content">
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Acessórios</span>
+                    <h3>Power Bank Baseus 20.000mAh 22.5W</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 399,00</span>
+                        <span class="new-price">R$ 319,00</span>
+                    </div>
+                    <a href="https://meli.la/17y9qSo" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge" style="background: #4f46e5;">TV BOX</span>
+                    <img src="../posts/images/fire-stick.jpg" alt="Fire TV Stick">
+                </div>
+                <div class="deal-content">
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Streaming</span>
+                    <h3>Amazon Fire TV Stick Lite Full HD</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 235,38</span>
+                        <span class="new-price">R$ 178,24</span>
+                    </div>
+                    <a href="https://meli.la/1HLWD6a" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge">PREÇO BAIXO</span>
+                    <img src="../posts/images/redragon-kumara.jpg" alt="Teclado Redragon">
+                </div>
+                <div class="deal-content">
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Gamer</span>
+                    <h3>Teclado Mecânico Redragon Kumara K552</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 301,32</span>
+                        <span class="new-price">R$ 213,81</span>
+                    </div>
+                    <a href="https://meli.la/2dXsaVK" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge" style="background: #f59e0b;">PROMOÇÃO</span>
+                    <img src="../posts/images/mi-band-8.jpg" alt="Mi Band 8">
+                </div>
+                <div class="deal-content">
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Smartwatch</span>
+                    <h3>Pulseira inteligente Xiaomi Smart Band 8</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 380,00</span>
+                        <span class="new-price">R$ 327,90</span>
+                    </div>
+                    <a href="https://meli.la/1mLyREz" class="btn-buy" target="_blank">OFERTA</a>
+                </div>
+            </article>
+
+            <article class="deal-card">
+                <div class="deal-img-box">
+                    <span class="discount-badge">MENOR PREÇO</span>
+                    <img src="../posts/images/suporte-articulado.jpg" alt="Suporte Monitor">
+                </div>
+                <div class="deal-content">
+                    <span
+                        style="font-size: 0.75rem; color: #9ca3af; font-weight: 700; text-transform: uppercase;">Setup</span>
+                    <h3>Suporte Articulado de Pistão F80N</h3>
+                    <div class="price-engine">
+                        <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">R$ 300,00</span>
+                        <span class="new-price">R$ 188,22</span>
+                    </div>
+                    <a href="https://meli.la/1pHeFnd" class="btn-buy" target="_blank">OFERTA</a>
                 </div>
             </article>
         </div>
@@ -321,4 +534,5 @@
         document.getElementById('current-date').innerText = new Date().toLocaleDateString('pt-BR');
     </script>
 </body>
+
 </html>

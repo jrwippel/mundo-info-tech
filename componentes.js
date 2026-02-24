@@ -1,14 +1,14 @@
 function carregarComponentes(categoria = "") {
     const path = window.location.pathname;
     const estaEmPosts = path.includes('/posts/');
-    
+
     // Define o prefixo para voltar para a home
     const prefix = estaEmPosts ? '../' : '';
-    
+
     // SE já estou em posts, o link é direto: "noticias.html"
     // SE não estou em posts, o link é: "posts/noticias.html"
     const linkParaPosts = estaEmPosts ? '' : 'posts/';
-    
+
     const textoCategoria = categoria ? ` | <span class="categoria-header">${categoria}</span>` : "";
 
     const headerHTML = `
@@ -16,9 +16,10 @@ function carregarComponentes(categoria = "") {
         <div class="topo-container">
             <input type="checkbox" id="menu-check">
             <label for="menu-check" class="menu-botao">☰</label>
-
             <div class="logo">
-                <a href="${prefix}index.html">Mundo <span>Info</span> Tech${textoCategoria}</a>
+                <a href="${prefix}index.html" style="text-transform: lowercase; letter-spacing: -1px;">
+                    mundoinfo<span style="color: #ff6600; font-weight: 800;">tech</span>${textoCategoria}
+                </a>
             </div>
 
             <nav class="menu-lateral">
