@@ -11,12 +11,28 @@
         
         .editorial-header { 
             text-align: center; 
-            margin-bottom: 60px; 
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 40px;
+            margin-bottom: 30px; /* Ajustado para dar espaço à introdução */
+            border-bottom: none; /* Removido para ter uma introdução mais fluida */
+            padding-bottom: 0;
         }
         .editorial-header h1 { font-size: 3rem; color: #0f172a; margin-bottom: 15px; }
         .editorial-header p { font-size: 1.2rem; color: #64748b; max-width: 700px; margin: 0 auto; }
+
+        /* Novo estilo para a introdução */
+        .introduction-text {
+            max-width: 800px;
+            margin: 0 auto 60px auto; /* Margem maior para separar dos cards */
+            padding: 25px 30px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            text-align: center;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #374151;
+            border: 1px solid #e5e7eb;
+        }
+        .introduction-text strong { color: #ff6600; } /* Destaca a marca no texto */
 
         .filme-item { 
             display: grid; 
@@ -63,6 +79,9 @@
             <p>Selecionamos 5 obras primas do cinema que narram trajetórias reais de superação, genialidade e resiliência humana.</p>
         </header>
 
+        <div class="introduction-text">
+            No universo da tecnologia e da inovação, muitas vezes olhamos para o futuro em busca de inspiração. No entanto, o passado e as histórias reais nos oferecem um tesouro ainda mais valioso. Estes filmes que você está prestes a conhecer não são apenas entretenimento; são janelas para a vida de indivíduos extraordinários que, com sua visão, coragem e determinação, moldaram nosso mundo. Eles nos lembram que por trás de cada grande avanço ou desafio superado, existe uma jornada humana de paixão e perseverança. Prepare-se para se inspirar e descobrir o poder da realidade.
+        </div>
         <section class="filme-item">
             <img src="images/social-network.jpg" alt="A Rede Social" class="filme-img">
             <div class="filme-info">
@@ -127,6 +146,6 @@
     <div id="footer-global"></div>
     
     <script src="../componentes.js"></script>
-    <script>carregarComponentes("Cinema");</script>
+    <script>carregarComponentes("cinema inspirador");</script>
 </body>
 </html>
