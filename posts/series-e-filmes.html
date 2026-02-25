@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séries & Filmes | Mundo Info Tech</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            background-color: #f8fafc;
+        }
+
+        .news-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Cabeçalho da Categoria */
+        .news-header {
+            border-left: 6px solid #ff6600;
+            padding-left: 20px;
+            margin-bottom: 50px;
+        }
+
+        .news-header h1 {
+            font-size: 2.8rem;
+            color: #0f172a;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .news-header p {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        /* Lista de Notícias */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .news-card {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #e2e8f0;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff6600;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Container da Imagem com Zoom no Hover */
+        .news-img-box {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .news-img {
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .news-card:hover .news-img {
+            transform: scale(1.05);
+        }
+
+        /* Conteúdo do Card */
+        .news-content {
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-content .tag-noticia {
+            color: #ff6600;
+            font-weight: 800;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .news-content h2 {
+            margin: 0 0 15px 0;
+            font-size: 1.8rem;
+            color: #0f172a;
+            line-height: 1.2;
+        }
+
+        .news-content p {
+            color: #475569;
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Botão Ler Mais Discreto */
+        .read-more {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .read-more::after {
+            content: "→";
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover .read-more::after {
+            transform: translateX(5px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .news-card {
+                grid-template-columns: 1fr;
+            }
+
+            .news-img {
+                height: 220px;
+            }
+
+            .news-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-global"></div>
+
+    <main class="news-container">
+        <header class="news-header">
+            <h1>🎬 Séries & Filmes</h1>
+            <p>A intersecção entre a sétima arte e a inovação tecnológica.</p>
+        </header>
+
+        <div class="news-list">
+            <a href="top-5-filmes-visionarios.html" class="news-card">
+                <div class="news-img-box">
+                    <img src="images/banner-cinema.jpg" alt="Cinema Visionário" class="news-img">
+                </div>
+                <div class="news-content">
+                    <span class="tag-noticia">Cultura & Futuro</span>
+                    <h2>Top 5 Filmes que Anteciparam o Futuro Tech</h2>
+                    <p>De Kubrick a Spielberg: uma análise profunda sobre as obras que previram interfaces gestuais e IA
+                        décadas antes da realidade.</p>
+                    <span class="read-more">CONTINUAR LENDO</span>
+                </div>
+            </a>
+
+            <a href="filmes-fatos-reais.html" class="news-card">
+                <div class="news-img-box">
+                    <img src="images/poster-fatos-reais.jpg" alt="Filmes Fatos Reais" class="news-img">
+                </div>
+                <div class="news-content">
+                    <span class="tag-noticia">Curadoria Editorial</span>
+                    <h2>A Vida Imita a Arte: 5 Obras Primas Baseadas em Fatos Reais</h2>
+                    <p>De Alan Turing a Chris Gardner: mergulhe nas trajetórias reais que mudaram o mundo e emocionaram
+                        plateias globais.</p>
+                    <span class="read-more">VER LISTA COMPLETA</span>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <div id="footer-global"></div>
+
+    <script src="../componentes.js"></script>
+    <script>
+        // Carrega o cabeçalho com a categoria formatada
+        carregarComponentes("Séries e Filmes");
+    </script>
+</body>
+
+</html>

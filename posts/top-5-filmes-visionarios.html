@@ -4,236 +4,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Radar de ofertas tech: curadoria especializada com os melhores preços do dia.">
-    <title>Radar de Ofertas | Mundo Info Tech</title>
+    <title>Soberania Visual: Cinema e P&D Futurista | Tecnologia</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        :root {
-            --primary: #ff6600;
-            --dark-header: #0f172a;
-            --dark-hero: #111827;
-            --success: #00a650;
-            --light-bg: #f4f6f9;
-        }
-
-        body {
-            background: var(--light-bg);
-            color: #333;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* --- ESTILOS DO HEADER (PADRÃO CHECKBOX) --- */
-        .topo {
-            background: var(--dark-header);
-            color: white;
-            padding: 15px 0;
-            border-bottom: 4px solid var(--primary);
-            position: sticky;
-            top: 0;
-            z-index: 2000;
-        }
-
-        .topo-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
+        .container-pag {
+            max-width: 900px;
+            margin: 40px auto;
             padding: 0 20px;
+        }
+
+        /* Manifesto Editorial Incept */
+        .intro-editorial {
+            margin: 40px 0 60px 0;
+            padding: 40px;
+            background: #f9fafb;
+            border-top: 2px solid #ff6600;
+            border-bottom: 2px solid #eee;
+            line-height: 1.8;
             position: relative;
+            text-align: justify;
         }
 
-        /* Esconde o checkbox */
-        #menu-check { display: none; }
-
-        .menu-botao {
-            font-size: 1.8rem;
-            cursor: pointer;
+        .intro-editorial::before {
+            content: "DESIGN FICTION";
+            position: absolute;
+            top: -12px;
+            left: 30px;
+            background: #ff6600;
             color: white;
-            margin-right: 20px;
-            z-index: 2002;
-        }
-
-        .logo a {
-            font-size: 1.6rem;
+            padding: 2px 12px;
+            font-size: 0.7rem;
             font-weight: bold;
-            color: white;
-            text-decoration: none;
+            border-radius: 4px;
         }
 
-        .logo span { color: var(--primary); }
-
-        .categoria-header {
-            color: var(--primary);
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-left: 10px;
-        }
-
-        /* MENU LATERAL VIA CHECKBOX */
-        .menu-lateral {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 280px;
-            height: 100%;
-            background: #0f172a;
-            padding-top: 80px;
-            transition: all 0.3s;
-            z-index: 2001;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .menu-lateral a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            font-size: 1.1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .menu-lateral a:hover { background: rgba(255,102,0,0.1); }
-
-        /* QUANDO CLICAR NO BOTÃO (CHECKBOX ATIVO) */
-        #menu-check:checked ~ .menu-lateral {
-            left: 0;
-        }
-
-        /* --- CONTEÚDO DA PÁGINA DE OFERTAS --- */
-        .ofertas-hero {
-            background: var(--dark-hero);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .ofertas-hero p {
-            max-width: 700px;
-            margin: 20px auto 0;
-            opacity: 0.9;
-        }
-
-        .container-ofertas {
-            max-width: 1100px;
-            margin: -40px auto 60px;
-            padding: 0 20px;
-        }
-
-        .status-bar {
+        /* Cards Estilo Horizontal Incept */
+        .filme-card {
             background: white;
-            padding: 20px;
+            margin-bottom: 30px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            border-left: 6px solid var(--success);
-        }
-
-        .grid-deals {
+            border: 1px solid #efefef;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .deal-card {
-            background: white;
-            border-radius: 16px;
+            grid-template-columns: 240px 1fr;
             overflow: hidden;
-            border: 1px solid #e5e7eb;
-            display: flex;
-            flex-direction: column;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
         }
 
-        .deal-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .filme-card:hover {
+            border-color: #ff6600;
+            transform: translateY(-3px);
+        }
 
-        .deal-img-box {
-            height: 200px;
-            background: #f9f9f9;
+        .img-filme {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #111827;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .filme-info {
+            padding: 25px 30px;
+        }
+
+        .filme-info h3 {
+            color: #111827;
+            margin-top: 0;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .filme-info p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .tech-insight {
+            background: #111827;
+            padding: 15px;
+            border-left: 5px solid #ff6600;
+            font-size: 0.85rem;
+            color: #e5e7eb;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Box Mercado Livre Estilizado */
+        .mercado-livre-box {
+            background: #fdfdfd;
+            padding: 15px;
+            border: 1px dashed #d1d5db;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
+            gap: 15px;
         }
 
-        .deal-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .ml-icon {
+            font-size: 1.5rem;
+        }
 
-        .deal-content { padding: 20px; }
+        .ml-text {
+            font-size: 0.85rem;
+            color: #374151;
+        }
 
-        .new-price { font-size: 1.8rem; font-weight: 800; color: var(--dark-hero); display: block; margin: 10px 0; }
-
-        .btn-buy {
-            background: var(--primary);
-            color: white;
+        .ml-text a {
+            color: #ff6600;
             text-decoration: none;
-            text-align: center;
-            padding: 15px;
-            border-radius: 8px;
             font-weight: bold;
-            display: block;
         }
 
-        @media (max-width: 600px) {
-            .status-bar { flex-direction: column; text-align: center; gap: 10px; }
+        .ml-text a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .filme-card {
+                grid-template-columns: 1fr;
+            }
+
+            .img-filme {
+                height: 320px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div id="header-global"></div>
 
-    <header class="topo">
-        <div class="topo-container">
-            <input type="checkbox" id="menu-check">
-            <label for="menu-check" class="menu-botao">☰</label>
-
-            <div class="logo">
-                <a href="../index.html">Mundo <span>Info</span> Tech | <span class="categoria-header">Ofertas</span></a>
-            </div>
-
-            <nav class="menu-lateral">
-                <a href="noticias.html">Últimas Notícias</a>
-                <a href="melhores-celulares-2026.html">Celulares</a>
-                <a href="melhores-fones-2026.html">Fones de Ouvido</a>
-                <a href="casa-inteligente.html">Casa Inteligente</a>
-                <a href="ofertas.html">Ofertas do dia</a>
-            </nav>
-        </div>
+    <header style="background: #111827; color: white; padding: 80px 20px; text-align: center;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">🎬 Cinema como Matriz Tecnológica</h1>
+        <p style="opacity: 0.8;">Análise das obras que serviram de benchmark para a engenharia moderna.</p>
     </header>
 
-    <section class="ofertas-hero">
-        <h1> Melhores Ofertas do Dia</h1>
-        <p>Análise técnica e curadoria editorial. Selecionamos apenas produtos com descontos reais verificados manualmente.</p>
-    </section>
+    <main class="container-pag">
 
-    <main class="container-ofertas">
-        <div class="status-bar">
-            <div style="font-weight: bold; color: #d32f2f;">● RADAR ATIVO</div>
-            <div id="current-date"></div>
-        </div>
+        <article class="intro-editorial">
+            <h2>O Cinema como Laboratório de Antecipação</h2>
+            <p>
+                A relação entre a sétima arte e a tecnologia de vanguarda transcende o entretenimento. O cinema atua
+                como um campo de teste para o <strong>Design Fiction</strong>: a exploração de conceitos futuristas que
+                moldam as diretrizes de P&D (Pesquisa e Desenvolvimento) de gigantes como IBM, NASA e Neuralink.
+            </p>
+            <p>
+                Ao analisarmos estas obras sob a ótica de futurismo percebemos que não estamos apenas assistindo a
+                filmes; estamos observando rascunhos de engenharia que definiram as interfaces neurais e as arquiteturas
+                de IA que operamos em 2026.
+            </p>
+        </article>
 
-        <div class="grid-deals">
-            <article class="deal-card">
-                <div class="deal-img-box">
-                    <img src="../images/iphone17.jpg" alt="iPhone 17"> 
+        <section class="filme-card">
+            <img src="images/filme-2001.jpg" alt="2001: Uma Odisseia no Espaço" class="img-filme">
+            <div class="filme-info">
+                <h3>01. 2001: A Engenharia Visionária da IBM</h3>
+                <p>
+                    Para projetar o futuro, Stanley Kubrick não recorreu a roteiristas, mas à <strong>IBM</strong>. A
+                    parceria resultou na criação do <strong>HAL 9000</strong>, uma inteligência artificial que antecipou
+                    em décadas os sistemas de processamento de borda e consciência situacional. O filme serviu de
+                    blueprint para o hardware moderno, introduzindo os <em>Newspads</em> — dispositivos de leitura
+                    digital que hoje conhecemos como tablets, concebidos sob rigorosos critérios de ergonomia
+                    industrial.
+                </p>
+                <div class="tech-insight">
+                    <strong>📋 LEGADO TÉCNICO:</strong> A consultoria da IBM garantiu que as interfaces e a lógica da IA
+                    fossem baseadas em trajetórias reais de P&D, tornando o HAL o primeiro benchmark de IA
+                    conversacional da história.
                 </div>
-                <div class="deal-content">
-                    <h3>iPhone 17 Pro Max (256GB)</h3>
-                    <span class="new-price">R$ 11.699,00</span>
-                    <a href="#" class="btn-buy">VER NO MERCADO LIVRE</a>
+                <div class="mercado-livre-box">
+                    <span class="ml-icon">🛸</span>
+                    <div class="ml-text">
+                        Experimente a visão de Kubrick em alta fidelidade com o
+                        <a href="https://mercadolivre.com/sec/2qg2ajb" target="_blank">iPad Pro M4 no Mercado Livre</a>.
+                    </div>
                 </div>
-            </article>
-        </div>
+            </div>
+        </section>
+
+        <section class="filme-card">
+            <img src="images/filme-bladerunner.jpg" alt="Blade Runner" class="img-filme">
+            <div class="filme-info">
+                <h3>02. Blade Runner: Bioengenharia e Identidade</h3>
+                <p>Blade Runner explorou a fusão entre o biológico e o sintético. Ridley Scott previu não apenas a
+                    bioengenharia avançada, mas o conceito de cidades hiper-densas monitoradas por análise preditiva e
+                    publicidade holográfica personalizada.</p>
+                <div class="tech-insight">
+                    <strong>🧪 INSIGHT ACÚSTICO:</strong> A estética visual e sonora do filme influenciou o design de
+                    interfaces de "Modo Noturno" e a ergonomia de displays OLED modernos.
+                </div>
+                <div class="mercado-livre-box">
+                    <span class="ml-icon">🌆</span>
+                    <div class="ml-text">
+                        Contemple a fotografia de Scott em um
+                        <a href="https://mercadolivre.com/sec/28khbrC" target="_blank">Monitor Gamer OLED 4K no Mercado
+                            Livre</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-card">
+            <img src="images/filme-matrix.jpg" alt="Matrix" class="img-filme">
+            <div class="filme-info">
+                <h3>03. Matrix: A Fronteira da Interface Neural</h3>
+                <p>Popularizou o conceito de Interfaces Cérebro-Computador (BCI). O que era ficção em 1999 hoje reflete
+                    os avanços em realidade virtual imersiva e a busca por taxas de transferência de dados neurais de
+                    alta largura de banda.</p>
+                <div class="tech-insight">
+                    <strong>🔒 VEREDITO:</strong> O filme definiu o padrão estético para sistemas de segurança
+                    cibernética e visualização de Big Data.
+                </div>
+                <div class="mercado-livre-box">
+                    <span class="ml-icon">🕶️</span>
+                    <div class="ml-text">
+                        Acesse sua própria "matriz" visual com o
+                        <a href="https://mercadolivre.com/sec/1rN29Zz" target="_blank">Meta Quest 3 no Mercado
+                            Livre</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-card">
+            <img src="images/filme-minority.jpg" alt="Minority Report" class="img-filme">
+            <div class="filme-info">
+                <h3>04. Minority Report: UX Gestual e Big Data</h3>
+                <p>Steven Spielberg reuniu um conselho de tecnólogos para desenhar o futuro. O resultado foi a previsão
+                    de interfaces gestuais, anúncios baseados em biometria e o policiamento preditivo via análise
+                    massiva de dados.</p>
+                <div class="tech-insight">
+                    <strong>⚡ NOTA TÉCNICA:</strong> A interface de "arrastar no ar" influenciou diretamente o
+                    desenvolvimento do Spatial Computing contemporâneo.
+                </div>
+                <div class="mercado-livre-box">
+                    <span class="ml-icon">🧤</span>
+                    <div class="ml-text">
+                        Para o máximo de precisão em interfaces de produtividade:
+                        <a href="https://mercadolivre.com/sec/2K44rqU" target="_blank">Logitech MX Master no Mercado
+                            Livre</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-card">
+            <img src="images/filme-her.jpg" alt="Her" class="img-filme">
+            <div class="filme-info">
+                <h3>05. Her: IA Emocional e Onipresença Vocal</h3>
+                <p>Spike Jonze previu o fim das telas e o início da era da voz. Em 'Her', a IA não é uma ferramenta, mas
+                    um sistema operacional emocionalmente inteligente que vive no canal auditivo do usuário — exatamente
+                    a direção dos fones inteligentes atuais.</p>
+                <div class="tech-insight">
+                    <strong>🧠 ANALISE IA:</strong> A obra serve de benchmark para o desenvolvimento de IAs generativas
+                    que buscam entender nuances de humor e contexto humano.
+                </div>
+                <div class="mercado-livre-box">
+                    <span class="ml-icon">🎧</span>
+                    <div class="ml-text">
+                        Para interagir com sua IA preferida em total silêncio:
+                        <a href="https://mercadolivre.com/sec/1AibeXx" target="_blank">Sony WH-1000XM5 no Mercado
+                            Livre</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer style="background:#0f172a; color:white; text-align:center; padding:30px; margin-top:40px;">
-        <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
-    </footer>
-
-    <script>
-        document.getElementById('current-date').innerText = "Atualizado em: " + new Date().toLocaleDateString('pt-BR');
-    </script>
+    <div id="footer-global"></div>
+    <script src="../componentes.js"></script>
+    <script>carregarComponentes("Cinema Visionário");</script>
 </body>
+
 </html>

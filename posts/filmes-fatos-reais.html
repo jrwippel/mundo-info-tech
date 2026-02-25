@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Filmes Inspiradores: Fatos Reais | Mundo Info Tech</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body { background-color: #f8fafc; }
+        .page-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        
+        .editorial-header { 
+            text-align: center; 
+            margin-bottom: 60px; 
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 40px;
+        }
+        .editorial-header h1 { font-size: 3rem; color: #0f172a; margin-bottom: 15px; }
+        .editorial-header p { font-size: 1.2rem; color: #64748b; max-width: 700px; margin: 0 auto; }
+
+        .filme-item { 
+            display: grid; 
+            grid-template-columns: 300px 1fr; 
+            gap: 30px; 
+            background: white; 
+            margin-bottom: 40px; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #edf2f7;
+        }
+
+        .filme-img { width: 100%; height: 100%; object-fit: cover; min-height: 350px; }
+
+        .filme-info { padding: 40px; }
+        .filme-info .ano { color: #ff6600; font-weight: 800; font-size: 0.9rem; }
+        .filme-info h2 { font-size: 2rem; color: #0f172a; margin: 10px 0; }
+        .filme-info p { color: #4a5568; line-height: 1.8; font-size: 1.05rem; text-align: justify; }
+
+        .curiosidade-box { 
+            margin-top: 20px; 
+            padding: 15px; 
+            background: #fff5ed; 
+            border-left: 4px solid #ff6600; 
+            font-size: 0.9rem; 
+            color: #7c2d12;
+        }
+
+        @media (max-width: 800px) {
+            .filme-item { grid-template-columns: 1fr; }
+            .filme-img { height: 250px; min-height: auto; }
+            .editorial-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-global"></div>
+
+    <main class="page-container">
+        <header class="editorial-header">
+            <span style="color: #ff6600; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Curadoria Editorial</span>
+            <h1>A Vida Imita a Arte</h1>
+            <p>Selecionamos 5 obras primas do cinema que narram trajetórias reais de superação, genialidade e resiliência humana.</p>
+        </header>
+
+        <section class="filme-item">
+            <img src="images/social-network.jpg" alt="A Rede Social" class="filme-img">
+            <div class="filme-info">
+                <span class="ano">2010 • DRAMA/BIOGRAFIA</span>
+                <h2>A Rede Social</h2>
+                <p>O filme explora a criação do Facebook e as batalhas legais que se seguiram. Mais do que uma história sobre código, é um estudo sobre amizade, traição e a busca obsessiva pelo sucesso na era digital.</p>
+                <div class="curiosidade-box">
+                    <strong>💡 Curiosidade Tech:</strong> Mark Zuckerberg afirmou que o único detalhe que o filme acertou com precisão absoluta foram as camisetas e moletons que ele usava.
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-item">
+            <img src="images/imitation-game.jpg" alt="O Jogo da Imitação" class="filme-img">
+            <div class="filme-info">
+                <span class="ano">2014 • HISTÓRICO/WAR</span>
+                <h2>O Jogo da Imitação</h2>
+                <p>A cinebiografia de Alan Turing, o pai da computação. O filme mostra como ele liderou uma equipe para decifrar a máquina Enigma nazista, encurtando a Segunda Guerra Mundial e salvando milhões de vidas.</p>
+                <div class="curiosidade-box">
+                    <strong>💡 Curiosidade Tech:</strong> O computador construído por Turing, chamado "Christopher" no filme, era na verdade conhecido historicamente como "Bombe".
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-item">
+            <img src="images/pursuit-happyness.jpg" alt="À Procura da Felicidade" class="filme-img">
+            <div class="filme-info">
+                <span class="ano">2006 • DRAMA</span>
+                <h2>À Procura da Felicidade</h2>
+                <p>A emocionante jornada de Chris Gardner, que enfrentou a falta de moradia enquanto lutava para criar seu filho e conseguir uma vaga em um competitivo programa de estágio em uma corretora de valores.</p>
+                <div class="curiosidade-box">
+                    <strong>💡 Curiosidade Real:</strong> O verdadeiro Chris Gardner faz uma breve aparição (cameo) na cena final do filme, passando por Will Smith na rua.
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-item">
+            <img src="images/hidden-figures.jpg" alt="Estrelas Além do Tempo" class="filme-img">
+            <div class="filme-info">
+                <span class="ano">2016 • HISTÓRICO</span>
+                <h2>Estrelas Além do Tempo</h2>
+                <p>A história esquecida das matemáticas negras da NASA que foram fundamentais para o lançamento de John Glenn ao espaço. Uma lição poderosa sobre intelecto superando o preconceito sistêmico.</p>
+                <div class="curiosidade-box">
+                    <strong>💡 Curiosidade Científica:</strong> Katherine Johnson, a protagonista real, calculou à mão as trajetórias da missão Apollo 11 antes do lançamento.
+                </div>
+            </div>
+        </section>
+
+        <section class="filme-item">
+            <img src="images/theory-everything.jpg" alt="A Teoria de Tudo" class="filme-img">
+            <div class="filme-info">
+                <span class="ano">2014 • ROMANCE/CIÊNCIA</span>
+                <h2>A Teoria de Tudo</h2>
+                <p>Um retrato íntimo da vida de Stephen Hawking, desde sua juventude em Cambridge até suas descobertas revolucionárias sobre o tempo e o cosmos, em paralelo com sua luta contra a ELA.</p>
+                <div class="curiosidade-box">
+                    <strong>💡 Curiosidade Real:</strong> Stephen Hawking ficou tão impressionado com a atuação de Eddie Redmayne que emprestou sua voz computadorizada real para o filme.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-global"></div>
+    
+    <script src="../componentes.js"></script>
+    <script>carregarComponentes("Cinema");</script>
+</body>
+</html>
