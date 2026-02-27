@@ -24,75 +24,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* --- CABEÇALHO SEM SOBREPOSIÇÃO --- */
-        .topo {
-            background: var(--dark-header);
-            color: white;
-            padding: 15px 0;
-            border-bottom: 4px solid var(--primary);
-            position: sticky;
-            top: 0;
-            z-index: 2000;
-        }
-
-        .topo-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        /* Agrupamento para alinhar hambúrguer e logo corretamente */
-        .header-left-group {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            /* Espaço entre o menu e a logo */
-        }
-
-        .menu-botao {
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: white;
-            line-height: 1;
-        }
-
-        .logo-box {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-header {
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            white-space: nowrap;
-            /* Impede quebra de linha na logo */
-        }
-
-        .logo-header span {
-            color: var(--primary);
-        }
-
-        .divisor-logo {
-            margin: 0 10px;
-            font-weight: 300;
-            font-size: 1.5rem;
-            color: white;
-            opacity: 0.5;
-        }
-
-        .categoria-label {
-            color: var(--primary);
-            font-size: 1.2rem;
-            font-weight: 400;
-        }
-
         /* --- BANNER HERO --- */
         .ofertas-hero {
             background: var(--dark-hero);
@@ -287,20 +218,7 @@
 </head>
 
 <body>
-    <header class="topo">
-        <div class="topo-container">
-            <div class="header-left-group">
-                <div class="menu-botao">☰</div>
-                <div class="logo-box">
-                    <a href="../index.html" class="logo-header">
-                        mundoinfotech
-                    </a>
-                    <span class="divisor-logo">|</span>
-                    <span class="categoria-label">Ofertas</span>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div id="header-global"></div>
 
     <section class="ofertas-hero">
         <h1>🏷️ Melhores Ofertas do Dia</h1>
@@ -577,11 +495,11 @@
         </div>
     </main>
 
-    <footer>
-        <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
-    </footer>
+    <div id="footer-global"></div>
 
+    <script src="../componentes.js"></script>
     <script>
+        carregarComponentes("Ofertas");
         document.getElementById('current-date').innerText = new Date().toLocaleDateString('pt-BR');
     </script>
 </body>

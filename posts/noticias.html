@@ -1,39 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Últimas Notícias | Mundo Info Tech</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        .news-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        .news-header { border-left: 6px solid #ff6600; padding-left: 15px; margin-bottom: 40px; }
-        .news-header h1 { font-size: 2.5rem; color: #111827; }
-        .news-list { display: flex; flex-direction: column; gap: 25px; }
-        .news-card { 
-            display: grid; 
-            grid-template-columns: 350px 1fr; 
-            background: white; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        .news-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .news-header {
+            border-left: 6px solid #ff6600;
+            padding-left: 15px;
+            margin-bottom: 40px;
+        }
+
+        .news-header h1 {
+            font-size: 2.5rem;
+            color: #111827;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .news-card {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
             border: 1px solid #eee;
         }
-        .news-card:hover { transform: translateY(-5px); border-color: #ff6600; }
-        .news-img { width: 100%; height: 230px; object-fit: cover; }
-        .news-content { padding: 30px; }
-        .news-content span { color: #ff6600; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; }
-        .news-content h2 { margin: 12px 0; font-size: 1.6rem; color: #111827; }
-        .news-content p { color: #555; line-height: 1.6; }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6600;
+        }
+
+        .news-img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 30px;
+        }
+
+        .news-content span {
+            color: #ff6600;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .news-content h2 {
+            margin: 12px 0;
+            font-size: 1.6rem;
+            color: #111827;
+        }
+
+        .news-content p {
+            color: #555;
+            line-height: 1.6;
+        }
 
         @media (max-width: 850px) {
-            .news-card { grid-template-columns: 1fr; }
+            .news-card {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
     <div id="header-global"></div>
 
@@ -49,15 +99,30 @@
                 <div class="news-content">
                     <span>Inteligência Artificial</span>
                     <h2>Google Gemini rompe a barreira do tempo com processamento quântico</h2>
-                    <p>Análise técnica sobre como o chip Sycamore 2 está eliminando a latência em smartphones modernos.</p>
+                    <p>Análise técnica sobre como o chip Sycamore 2 está eliminando a latência em smartphones modernos.
+                    </p>
+                </div>
+            </a>
+
+            <a href="guia-seguranca-digital.html" class="news-card">
+                <div class="news-img-box">
+                    <img src="images/seguranca-digital-banner.jpg" alt="Segurança Digital" class="news-img">
+                </div>
+                <div class="news-content">
+                    <span class="tag-noticia">Segurança Digital</span>
+                    <h2>Escudo Digital: Como identificar e evitar os golpes mais comuns em 2026</h2>
+                    <p>Um guia prático para proteger sua identidade contra Deepfakes, engenharia social e as novas
+                        táticas de cibercriminosos.</p>
+                    <span class="read-more">LER GUIA COMPLETO</span>
                 </div>
             </a>
         </div>
     </main>
 
     <div id="footer-global"></div>
-    
+
     <script src="../componentes.js"></script>
     <script>carregarComponentes("Notícias");</script>
 </body>
+
 </html>

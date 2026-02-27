@@ -24,6 +24,7 @@ function carregarComponentes(categoria = "") {
 
             <nav class="menu-lateral">
                 <a href="${linkParaPosts}noticias.html">Últimas Notícias</a>
+                <a href="${linkParaPosts}setup-home-office-2026.html">Setup Home Office</a>
                 <a href="${linkParaPosts}melhores-celulares-2026.html">Celulares</a>
                 <a href="${linkParaPosts}melhores-fones-2026.html">Fones de Ouvido</a>              
                 <a href="${linkParaPosts}casa-inteligente.html">Casa Inteligente</a>
@@ -40,4 +41,9 @@ function carregarComponentes(categoria = "") {
 
     if (document.getElementById('header-global')) document.getElementById('header-global').innerHTML = headerHTML;
     if (document.getElementById('footer-global')) document.getElementById('footer-global').innerHTML = footerHTML;
+    
+    // Carrega Google Analytics
+    const analyticsScript = document.createElement('script');
+    analyticsScript.src = prefix + 'analytics.js';
+    document.head.appendChild(analyticsScript);
 }
