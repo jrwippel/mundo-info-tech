@@ -25,12 +25,27 @@ function carregarComponentes(categoria = "") {
         <div class="topo-container">
             <input type="checkbox" id="menu-check">
             <label for="menu-check" class="menu-botao">☰</label>
+            
             <div class="logo">
                 <a href="${prefix}" style="text-transform: lowercase; letter-spacing: -1px;">
                     mundoinfo<span style="color: #ff6600; font-weight: 800;">tech</span>${textoCategoria}
                 </a>
             </div>
 
+            <!-- Menu Horizontal (Desktop) -->
+            <nav class="menu-horizontal">
+                <a href="${linkParaPosts}noticias.html">Notícias</a>
+                <a href="${linkParaPosts}ofertas.html">Ofertas</a>
+                <a href="${linkParaPosts}melhores-celulares-2026.html">Celulares</a>
+                <a href="${linkParaPosts}melhores-fones-2026.html">Fones</a>
+                <a href="${linkParaPosts}casa-inteligente.html">Casa Inteligente</a>
+                <a href="${linkParaPosts}series-e-filmes.html">Séries & Filmes</a>
+            </nav>
+
+            <!-- Botão Entrar -->
+            <a href="#" class="btn-entrar" onclick="alert('Em breve: área de membros com ofertas exclusivas!'); return false;">Entrar</a>
+
+            <!-- Menu Lateral (Mobile) -->
             <nav class="menu-lateral">
                 <a href="${linkParaPosts}noticias.html">Últimas Notícias</a>
                 <a href="${linkParaPosts}setup-home-office-2026.html">Setup Home Office</a>

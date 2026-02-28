@@ -4,12 +4,28 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; co
 
 /* HEADER SIMPLIFICADO */
 .topo { background: #0f172a; color: white; border-bottom: 4px solid #ff6600; width: 100%; position: sticky; top: 0; z-index: 1000; }
-.topo-container { max-width: 1200px; margin: auto; padding: 10px 15px; display: flex; align-items: center; justify-content: center; position: relative; min-height: 65px; }
+.topo-container { max-width: 1200px; margin: auto; padding: 10px 15px; display: flex; align-items: center; justify-content: space-between; position: relative; min-height: 65px; }
 .logo { font-size: 24px; font-weight: 800; white-space: nowrap; }
 .logo a { text-decoration: none; color: white; }
 .logo span { color: #ff6600; }
 .menu-botao { position: absolute; left: 15px; font-size: 28px; cursor: pointer; color: white; }
 #menu-check { display: none; }
+
+/* MENU HORIZONTAL (Desktop) */
+.menu-horizontal { display: none; gap: 5px; }
+.menu-horizontal a { color: white; text-decoration: none; padding: 8px 15px; font-size: 13px; font-weight: 600; text-transform: uppercase; border-radius: 6px; transition: background 0.2s; }
+.menu-horizontal a:hover { background: rgba(255,102,0,0.2); }
+
+/* BOTÃO ENTRAR */
+.btn-entrar { background: #ff6600; color: white; padding: 8px 20px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+.btn-entrar:hover { background: #e65c00; }
+
+/* Desktop: mostra menu horizontal, esconde hambúrguer */
+@media (min-width: 900px) {
+    .menu-botao { display: none; }
+    .menu-horizontal { display: flex; }
+    .logo { position: static; }
+}
 
 /* MENU LATERAL */
 .menu-lateral { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 250px; background: #0f172a; border-bottom: 3px solid #ff6600; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); }
