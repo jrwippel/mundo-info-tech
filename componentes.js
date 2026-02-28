@@ -42,6 +42,7 @@ function carregarComponentes(categoria = "") {
                 <a href="${linkParaPosts}melhores-fones-2026.html">Fones</a>
                 <a href="${linkParaPosts}casa-inteligente.html">Casa Inteligente</a>
                 <a href="${linkParaPosts}series-e-filmes.html">Séries & Filmes</a>
+                <a href="${linkParaPosts}contato.html">Contato</a>
             </nav>
 
             <!-- Botão Entrar -->
@@ -56,12 +57,14 @@ function carregarComponentes(categoria = "") {
                 <a href="${linkParaPosts}casa-inteligente.html">Casa Inteligente</a>
                 <a href="${linkParaPosts}series-e-filmes.html">Séries e Filmes</a>
                 <a href="${linkParaPosts}ofertas.html">Ofertas do dia</a>
+                <a href="${linkParaPosts}contato.html">📧 Contato</a>
             </nav>
         </div>
     </header>`;
 
     const footerHTML = `
     <footer style="background:#0f172a; color:white; text-align:center; padding:30px; margin-top:40px;">
+        <p style="margin-bottom: 10px;">📧 <a href="${linkParaPosts}contato.html" style="color: #ff6600; text-decoration: none; font-weight: bold;">Entre em Contato</a> | E-mail: <a href="mailto:contato@mundoinfotech.com.br" style="color: #ff6600; text-decoration: none;">contato@mundoinfotech.com.br</a></p>
         <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
     </footer>`;
 

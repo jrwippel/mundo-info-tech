@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Mundo Info Tech</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .container-contato {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .contato-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .contato-box h1 {
+            color: #0f172a;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .contato-box p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #0f172a;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6600;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-enviar {
+            background: #ff6600;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+
+        .btn-enviar:hover {
+            background: #e65c00;
+        }
+
+        .contato-info {
+            background: #f9fafb;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #ff6600;
+        }
+
+        .contato-info h3 {
+            color: #0f172a;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contato-info p {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .contato-info a {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contato-info a:hover {
+            text-decoration: underline;
+        }
+
+        .success-message {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-global"></div>
+
+    <main class="container-contato">
+        <div class="contato-box">
+            <h1>📧 Entre em Contato</h1>
+            <p>Tem alguma dúvida, sugestão ou quer fazer uma parceria? Envie sua mensagem e responderemos em até 24 horas!</p>
+
+            <div class="success-message" id="successMessage">
+                ✅ Mensagem enviada com sucesso! Responderemos em breve.
+            </div>
+
+            <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Nome *</label>
+                    <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Assunto *</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Sobre o que você quer falar?">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensagem *</label>
+                    <textarea id="message" name="message" required placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+
+            <div class="contato-info">
+                <h3>📬 Outras formas de contato</h3>
+                <p>📧 E-mail: <a href="mailto:contato@mundoinfotech.com.br">contato@mundoinfotech.com.br</a></p>
+                <p>⏰ Respondemos em até 24 horas úteis</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-global"></div>
+
+    <script src="../componentes.js"></script>
+    <script>
+        carregarComponentes("Contato");
+
+        // Mostra mensagem de sucesso após envio
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(e) {
+            // Deixa o Formspree processar o envio
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'block';
+                form.reset();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
