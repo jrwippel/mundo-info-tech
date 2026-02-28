@@ -17,7 +17,7 @@ function carregarComponentes(categoria = "") {
             <input type="checkbox" id="menu-check">
             <label for="menu-check" class="menu-botao">☰</label>
             <div class="logo">
-                <a href="${prefix}index.html" style="text-transform: lowercase; letter-spacing: -1px;">
+                <a href="${prefix}" style="text-transform: lowercase; letter-spacing: -1px;">
                     mundoinfo<span style="color: #ff6600; font-weight: 800;">tech</span>${textoCategoria}
                 </a>
             </div>
