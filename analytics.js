@@ -1,18 +1,18 @@
-// Google Analytics 4 - Substitua 'G-XXXXXXXXXX' pelo seu ID real
-// Obtenha em: https://analytics.google.com
+// Google Analytics 4 - ID: G-Q9R33G03K1
+// Configurado em: https://analytics.google.com
 
 // Carrega o script do Google Analytics
 (function() {
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q9R33G03K1';
     document.head.appendChild(script);
 })();
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
+gtag('config', 'G-Q9R33G03K1');
 
 // Rastreia cliques em links de afiliado
 document.addEventListener('DOMContentLoaded', function() {
