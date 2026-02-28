@@ -11,6 +11,15 @@ function carregarComponentes(categoria = "") {
 
     const textoCategoria = categoria ? ` | <span class="categoria-header">${categoria}</span>` : "";
 
+    // Adiciona favicon dinamicamente
+    if (!document.querySelector('link[rel="icon"]')) {
+        const favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        favicon.type = 'image/svg+xml';
+        favicon.href = prefix + 'favicon.svg';
+        document.head.appendChild(favicon);
+    }
+
     const headerHTML = `
     <header class="topo">
         <div class="topo-container">
