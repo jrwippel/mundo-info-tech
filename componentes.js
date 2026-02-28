@@ -23,9 +23,11 @@ function carregarComponentes(categoria = "") {
     const headerHTML = `
     <header class="topo">
         <div class="topo-container">
+            <!-- Hambúrguer (Mobile) -->
             <input type="checkbox" id="menu-check">
             <label for="menu-check" class="menu-botao">☰</label>
             
+            <!-- Logo (Centro no mobile, esquerda no desktop) -->
             <div class="logo">
                 <a href="${prefix}" style="text-transform: lowercase; letter-spacing: -1px;">
                     mundoinfo<span style="color: #ff6600; font-weight: 800;">tech</span>${textoCategoria}
