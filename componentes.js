@@ -72,4 +72,9 @@ function carregarComponentes(categoria = "") {
     const analyticsScript = document.createElement('script');
     analyticsScript.src = prefix + 'analytics.js';
     document.head.appendChild(analyticsScript);
+    
+    // Carrega Meta Pixel (Facebook)
+    const metaPixelScript = document.createElement('script');
+    metaPixelScript.src = prefix + 'meta-pixel.js';
+    document.head.appendChild(metaPixelScript);
 }

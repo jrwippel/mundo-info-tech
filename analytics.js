@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     afiliadoLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            const produto = this.closest('.ad-card, .deal-card, .assunto-card')?.querySelector('h3')?.textContent || 'Produto desconhecido';
+            const produto = this.closest('.ad-card, .deal-card, .assunto-card, .produto-card, .filme-card')?.querySelector('h3')?.textContent || 'Produto desconhecido';
             
             // Envia evento para o Google Analytics
             gtag('event', 'click_afiliado', {
