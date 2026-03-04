@@ -20,6 +20,15 @@ function carregarComponentes(categoria = "") {
         document.head.appendChild(favicon);
     }
 
+    // Adiciona Google AdSense
+    if (!document.querySelector('script[src*="adsbygoogle"]')) {
+        const adsenseScript = document.createElement('script');
+        adsenseScript.async = true;
+        adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8369479836329140';
+        adsenseScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsenseScript);
+    }
+
     const headerHTML = `
     <header class="topo">
         <div class="topo-container">
