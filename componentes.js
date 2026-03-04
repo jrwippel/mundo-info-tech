@@ -74,6 +74,11 @@ function carregarComponentes(categoria = "") {
     const footerHTML = `
     <footer style="background:#0f172a; color:white; text-align:center; padding:30px; margin-top:40px;">
         <p style="margin-bottom: 10px;">📧 <a href="${linkParaPosts}contato.html" style="color: #ff6600; text-decoration: none; font-weight: bold;">Entre em Contato</a> | E-mail: <a href="mailto:contato@mundoinfotech.com.br" style="color: #ff6600; text-decoration: none;">contato@mundoinfotech.com.br</a></p>
+        <p style="margin-bottom: 15px; font-size: 0.9rem;">
+            <a href="${linkParaPosts}sobre.html" style="color: #cbd5e1; text-decoration: none; margin: 0 10px;">Sobre</a> | 
+            <a href="${linkParaPosts}privacidade.html" style="color: #cbd5e1; text-decoration: none; margin: 0 10px;">Privacidade</a> | 
+            <a href="${linkParaPosts}termos.html" style="color: #cbd5e1; text-decoration: none; margin: 0 10px;">Termos de Uso</a>
+        </p>
         <p>© 2026 Mundo Info Tech - Todos os direitos reservados</p>
     </footer>`;
 
