@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual Celular Combina com Você? Descubra pelo Seu Perfil | Mundo Info Tech</title>
+    <meta name="description" content="Descubra qual celular é ideal para o seu perfil em 2026. Fotógrafo, gamer, executivo ou econômico? Encontre o seu match tech!">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .container-pag { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .intro-editorial { margin: 40px 0 60px 0; padding: 40px; background: #f9fafb; border-top: 2px solid #ff6600; border-bottom: 2px solid #eee; line-height: 1.8; position: relative; text-align: justify; }
+        .intro-editorial::before { content: "DESCUBRA SEU PERFIL"; position: absolute; top: -12px; left: 30px; background: #ff6600; color: white; padding: 2px 12px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; }
+
+        /* Perfil Cards */
+        .perfil-section { margin: 50px 0; }
+        .perfil-section h2 { color: #ff6600; font-size: 1.8rem; margin-bottom: 10px; }
+        .perfil-section > p { color: #666; margin-bottom: 30px; font-size: 0.95rem; }
+
+        .perfil-card { background: white; border-radius: 16px; border: 2px solid #e5e7eb; margin: 30px 0; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .perfil-card:hover { border-color: #ff6600; transform: translateY(-4px); box-shadow: 0 8px 25px rgba(255,102,0,0.15); }
+
+        .perfil-header { padding: 25px 30px; display: flex; align-items: center; gap: 20px; }
+        .perfil-emoji { font-size: 3rem; }
+        .perfil-titulo { flex: 1; }
+        .perfil-titulo h3 { margin: 0; font-size: 1.4rem; color: #111827; }
+        .perfil-titulo p { margin: 5px 0 0 0; color: #666; font-size: 0.9rem; }
+        .perfil-badge { background: #ff6600; color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; white-space: nowrap; }
+
+        .perfil-body { display: grid; grid-template-columns: 200px 1fr; border-top: 1px solid #f3f4f6; }
+        .perfil-img { width: 100%; height: 100%; object-fit: contain; background: #f9f9f9; padding: 20px; box-sizing: border-box; }
+        .perfil-content { padding: 25px 30px; }
+
+        .perfil-caracteristicas { margin-bottom: 20px; }
+        .perfil-caracteristicas h4 { color: #111827; margin: 0 0 10px 0; font-size: 0.95rem; }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+        .tag-item { background: #f3f4f6; color: #374151; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; }
+        .tag-item.destaque { background: #fff3e0; color: #ff6600; border: 1px solid #ff6600; }
+
+        .tech-insight { background: #111827; padding: 12px 15px; border-left: 4px solid #ff6600; font-size: 0.85rem; color: #e5e7eb; margin: 15px 0; border-radius: 0 6px 6px 0; }
+
+        .celular-recomendado { background: #f9fafb; padding: 15px; border-radius: 8px; margin-top: 15px; }
+        .celular-recomendado h4 { margin: 0 0 8px 0; color: #111827; font-size: 0.9rem; }
+        .celular-recomendado p { margin: 3px 0; font-size: 0.85rem; color: #666; }
+        .btn-ver { display: inline-block; background: #00a650; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.85rem; margin-top: 10px; }
+        .btn-ver:hover { background: #008a43; }
+
+        /* Comparação */
+        .comparacao-rapida { background: #111827; color: white; padding: 30px; border-radius: 12px; margin: 50px 0; }
+        .comparacao-rapida h2 { color: #ff6600; margin: 0 0 20px 0; }
+        .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .comp-item { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,102,0,0.3); }
+        .comp-item .emoji { font-size: 2rem; display: block; margin-bottom: 8px; }
+        .comp-item strong { display: block; color: #ff6600; margin-bottom: 5px; font-size: 0.9rem; }
+        .comp-item span { font-size: 0.8rem; color: #9ca3af; }
+
+        /* Compartilhar */
+        .share-box { background: linear-gradient(135deg, #ff6600, #ff8533); color: white; padding: 30px; border-radius: 12px; text-align: center; margin: 40px 0; }
+        .share-box h3 { margin: 0 0 10px 0; font-size: 1.4rem; }
+        .share-box p { margin: 0 0 20px 0; opacity: 0.95; }
+        .share-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .btn-share { display: inline-block; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: transform 0.2s; }
+        .btn-share:hover { transform: scale(1.05); }
+        .btn-whatsapp { background: #25D366; color: white; }
+        .btn-twitter { background: #1DA1F2; color: white; }
+        .btn-facebook { background: #1877F2; color: white; }
+
+        @media (max-width: 700px) {
+            .perfil-body { grid-template-columns: 1fr; }
+            .perfil-img { height: 180px; }
+            .perfil-header { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-global"></div>
+
+    <header style="background: #111827; color: white; padding: 80px 20px; text-align: center;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📱 Qual Celular Combina com Você?</h1>
+        <p style="opacity: 0.8;">Descubra o Seu Match Tech pelo Seu Perfil em 2026</p>
+    </header>
+
+    <main class="container-pag">
+        <article class="intro-editorial">
+            <h2>Cada Pessoa, um Celular Diferente</h2>
+            <p>
+                Não existe o "melhor celular do mundo" — existe o <strong>melhor celular para o seu perfil</strong>. 
+                Um fotógrafo profissional precisa de câmera excepcional. Um gamer precisa de processador potente e tela rápida. 
+                Quem é econômico quer o máximo pelo menor preço.
+            </p>
+            <p>
+                Neste guia, criamos 6 perfis de usuário com base nos hábitos mais comuns dos brasileiros. 
+                Encontre o seu perfil, descubra qual celular foi feito para você e pare de pagar mais do que precisa 
+                (ou de economizar onde não devia).
+            </p>
+        </article>
+
+        <section class="perfil-section">
+            <h2>🎯 Encontre Seu Perfil</h2>
+            <p>Leia cada perfil e veja qual descreve melhor o seu uso do celular:</p>
+
+            <!-- PERFIL 1: FOTÓGRAFO -->
+            <div class="perfil-card">
+                <div class="perfil-header">
+                    <span class="perfil-emoji">📸</span>
+                    <div class="perfil-titulo">
+                        <h3>O Fotógrafo / Criador de Conteúdo</h3>
+                        <p>Vive registrando momentos, posta muito no Instagram e TikTok</p>
+                    </div>
+                    <span class="perfil-badge">CÂMERA É TUDO</span>
+                </div>
+                <div class="perfil-body">
+                    <img src="images/iphone17.jpg" alt="iPhone 17" class="perfil-img">
+                    <div class="perfil-content">
+                        <div class="perfil-caracteristicas">
+                            <h4>Você se identifica se:</h4>
+                            <div class="tag-list">
+                                <span class="tag-item destaque">📷 Tira fotos de tudo</span>
+                                <span class="tag-item destaque">🎬 Grava vídeos frequentemente</span>
+                                <span class="tag-item">Posta no Instagram/TikTok</span>
+                                <span class="tag-item">Edita fotos no celular</span>
+                                <span class="tag-item">Viaja e quer registrar tudo</span>
+                            </div>
+                        </div>
+                        <div class="tech-insight">
+                            <strong>📋 O QUE VOCÊ PRECISA:</strong> Câmera principal 50MP+, estabilização OIS, modo noturno potente, gravação 4K, câmera frontal boa para selfies e lives.
+                        </div>
+                        <div class="celular-recomendado">
+                            <h4>🏆 Seu Match: iPhone 17 ou Samsung Galaxy S25</h4>
+                            <p>✓ Melhor sistema de câmeras do mercado</p>
+                            <p>✓ Processamento de imagem com IA</p>
+                            <p>✓ Gravação em 4K ProRes (iPhone)</p>
+                            <p>✓ Modo noturno excepcional</p>
+                            <a href="https://mercadolivre.com/sec/2VdWgFa" class="btn-ver" target="_blank">Ver no Mercado Livre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERFIL 2: GAMER -->
+            <div class="perfil-card">
+                <div class="perfil-header">
+                    <span class="perfil-emoji">🎮</span>
+                    <div class="perfil-titulo">
+                        <h3>O Gamer</h3>
+                        <p>Free Fire, PUBG, COD Mobile — o celular é seu console</p>
+                    </div>
+                    <span class="perfil-badge">PERFORMANCE MÁXIMA</span>
+                </div>
+                <div class="perfil-body">
+                    <img src="images/poco-m7-pro.jpg" alt="POCO X6 Pro" class="perfil-img">
+                    <div class="perfil-content">
+                        <div class="perfil-caracteristicas">
+                            <h4>Você se identifica se:</h4>
+                            <div class="tag-list">
+                                <span class="tag-item destaque">🎮 Joga todo dia</span>
+                                <span class="tag-item destaque">⚡ Ódio de lag e travamento</span>
+                                <span class="tag-item">Usa fone enquanto joga</span>
+                                <span class="tag-item">Carrega celular várias vezes</span>
+                                <span class="tag-item">Quer tela fluida e rápida</span>
+                            </div>
+                        </div>
+                        <div class="tech-insight">
+                            <strong>🎯 O QUE VOCÊ PRECISA:</strong> Processador Snapdragon/Dimensity potente, tela 120Hz+, bateria 5000mAh+, carregamento rápido, sistema de resfriamento, RAM 8GB+.
+                        </div>
+                        <div class="celular-recomendado">
+                            <h4>🏆 Seu Match: POCO X6 Pro ou Redmi Note 13 Pro+</h4>
+                            <p>✓ Processador Dimensity 8300 (top de linha)</p>
+                            <p>✓ Tela AMOLED 144Hz ultra fluida</p>
+                            <p>✓ Carregamento 120W (100% em 20min)</p>
+                            <p>✓ Sistema de resfriamento avançado</p>
+                            <a href="https://mercadolivre.com/sec/2CgF3V8" class="btn-ver" target="_blank">Ver no Mercado Livre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERFIL 3: EXECUTIVO -->
+            <div class="perfil-card">
+                <div class="perfil-header">
+                    <span class="perfil-emoji">💼</span>
+                    <div class="perfil-titulo">
+                        <h3>O Executivo / Profissional</h3>
+                        <p>Reuniões, e-mails, produtividade — o celular é sua ferramenta de trabalho</p>
+                    </div>
+                    <span class="perfil-badge">PRODUTIVIDADE</span>
+                </div>
+                <div class="perfil-body">
+                    <img src="images/galaxy-a15.jpg" alt="Samsung Galaxy S25" class="perfil-img">
+                    <div class="perfil-content">
+                        <div class="perfil-caracteristicas">
+                            <h4>Você se identifica se:</h4>
+                            <div class="tag-list">
+                                <span class="tag-item destaque">📧 Muitos e-mails e reuniões</span>
+                                <span class="tag-item destaque">🔒 Segurança é prioridade</span>
+                                <span class="tag-item">Usa muito o celular para trabalho</span>
+                                <span class="tag-item">Viaja a negócios</span>
+                                <span class="tag-item">Quer aparência profissional</span>
+                            </div>
+                        </div>
+                        <div class="tech-insight">
+                            <strong>💡 O QUE VOCÊ PRECISA:</strong> Bateria que dura o dia todo, tela boa para leitura, câmera decente para videoconferências, segurança biométrica, suporte longo de atualizações.
+                        </div>
+                        <div class="celular-recomendado">
+                            <h4>🏆 Seu Match: Samsung Galaxy A55 ou iPhone 16</h4>
+                            <p>✓ 5 anos de atualizações de segurança (Samsung)</p>
+                            <p>✓ Samsung DeX (transforma em desktop)</p>
+                            <p>✓ Biometria avançada</p>
+                            <p>✓ Design premium e profissional</p>
+                            <a href="https://mercadolivre.com/sec/2fUe9qD" class="btn-ver" target="_blank">Ver no Mercado Livre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERFIL 4: ECONÔMICO -->
+            <div class="perfil-card">
+                <div class="perfil-header">
+                    <span class="perfil-emoji">💰</span>
+                    <div class="perfil-titulo">
+                        <h3>O Econômico / Custo-Benefício</h3>
+                        <p>Quer o máximo pelo menor preço, sem pagar por recursos que não usa</p>
+                    </div>
+                    <span class="perfil-badge">MELHOR PREÇO</span>
+                </div>
+                <div class="perfil-body">
+                    <img src="images/moto-g24.jpg" alt="Moto G24" class="perfil-img">
+                    <div class="perfil-content">
+                        <div class="perfil-caracteristicas">
+                            <h4>Você se identifica se:</h4>
+                            <div class="tag-list">
+                                <span class="tag-item destaque">💵 Orçamento até R$ 1.200</span>
+                                <span class="tag-item destaque">📱 Uso básico: WhatsApp, redes sociais</span>
+                                <span class="tag-item">Não liga para marca</span>
+                                <span class="tag-item">Quer celular que dure anos</span>
+                                <span class="tag-item">Bateria boa é essencial</span>
+                            </div>
+                        </div>
+                        <div class="tech-insight">
+                            <strong>🎯 O QUE VOCÊ PRECISA:</strong> Bateria 5000mAh+, 128GB de armazenamento, câmera decente para o dia a dia, Android atualizado, marca confiável com assistência técnica.
+                        </div>
+                        <div class="celular-recomendado">
+                            <h4>🏆 Seu Match: Moto G54 5G ou Redmi 13C</h4>
+                            <p>✓ Melhor custo-benefício do mercado</p>
+                            <p>✓ Bateria que dura 2 dias</p>
+                            <p>✓ 5G para o futuro</p>
+                            <p>✓ Preço entre R$ 800-1.200</p>
+                            <a href="https://mercadolivre.com/sec/2SRBo1X" class="btn-ver" target="_blank">Ver no Mercado Livre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERFIL 5: IDOSO / INICIANTE -->
+            <div class="perfil-card">
+                <div class="perfil-header">
+                    <span class="perfil-emoji">👴</span>
+                    <div class="perfil-titulo">
+                        <h3>O Iniciante / Usuário Simples</h3>
+                        <p>Quer facilidade de uso, tela grande e não precisa de recursos avançados</p>
+                    </div>
+                    <span class="perfil-badge">FACILIDADE</span>
+                </div>
+                <div class="perfil-body">
+                    <img src="images/moto-g54.jpg" alt="Moto G54" class="perfil-img">
+                    <div class="perfil-content">
+                        <div class="perfil-caracteristicas">
+                            <h4>Você se identifica se:</h4>
+                            <div class="tag-list">
+                                <span class="tag-item destaque">📞 Usa principalmente para ligar</span>
+                                <span class="tag-item destaque">💬 WhatsApp com família</span>
+                                <span class="tag-item">Quer tela grande e legível</span>
+                                <span class="tag-item">Não gosta de complicação</span>
+                                <span class="tag-item">Volume alto é importante</span>
+                            </div>
+                        </div>
+                        <div class="tech-insight">
+                            <strong>❤️ O QUE VOCÊ PRECISA:</strong> Tela grande (6.5"+), botões grandes, interface simples, bateria que dura muito, volume alto, câmera fácil de usar.
+                        </div>
+                        <div class="celular-recomendado">
+                            <h4>🏆 Seu Match: Motorola Moto G14 ou Samsung Galaxy A05</h4>
+                            <p>✓ Interface simples e intuitiva</p>
+                            <p>✓ Tela grande 6.5"</p>
+                            <p>✓ Bateria de 2 dias</p>
+                            <p>✓ Preço acessível (R$ 700-900)</p>
+                            <a href="https://mercadolivre.com/sec/1nXwjvt" class="btn-ver" target="_blank">Ver no Mercado Livre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERFIL 6: POWER USER -->
+            <div class="perfil-card">
+                <div class="perfil-header">
+                    <span class="perfil-emoji">🚀</span>
+                    <div class="perfil-titulo">
+                        <h3>O Power User / Entusiasta</h3>
+                        <p>Quer o melhor do melhor, acompanha lançamentos e não aceita limitações</p>
+                    </div>
+                    <span class="perfil-badge">TOP DE LINHA</span>
+                </div>
+                <div class="perfil-body">
+                    <img src="images/iphone17.jpg" alt="iPhone 17 Pro" class="perfil-img">
+                    <div class="perfil-content">
+                        <div class="perfil-caracteristicas">
+                            <h4>Você se identifica se:</h4>
+                            <div class="tag-list">
+                                <span class="tag-item destaque">⚡ Quer o mais rápido disponível</span>
+                                <span class="tag-item destaque">🔋 Carregamento rápido é essencial</span>
+                                <span class="tag-item">Acompanha lançamentos</span>
+                                <span class="tag-item">Usa recursos avançados</span>
+                                <span class="tag-item">Orçamento acima de R$ 3.000</span>
+                            </div>
+                        </div>
+                        <div class="tech-insight">
+                            <strong>🏆 O QUE VOCÊ PRECISA:</strong> Processador top (Snapdragon 8 Gen 3 / Apple A18), câmera periscópio, tela 120Hz LTPO, carregamento 100W+, 12GB RAM, 5G.
+                        </div>
+                        <div class="celular-recomendado">
+                            <h4>🏆 Seu Match: iPhone 17 Pro ou Samsung Galaxy S25 Ultra</h4>
+                            <p>✓ Processadores mais rápidos do mundo</p>
+                            <p>✓ Câmera periscópio com zoom 10x</p>
+                            <p>✓ Tela LTPO (1-120Hz adaptativo)</p>
+                            <p>✓ Recursos exclusivos de IA</p>
+                            <a href="https://mercadolivre.com/sec/2KJhAFH" class="btn-ver" target="_blank">Ver no Mercado Livre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARAÇÃO RÁPIDA -->
+        <div class="comparacao-rapida">
+            <h2>⚡ Resumo: Perfil x Celular Ideal</h2>
+            <div class="comp-grid">
+                <div class="comp-item">
+                    <span class="emoji">📸</span>
+                    <strong>Fotógrafo</strong>
+                    <span>iPhone 17 / Galaxy S25</span>
+                </div>
+                <div class="comp-item">
+                    <span class="emoji">🎮</span>
+                    <strong>Gamer</strong>
+                    <span>POCO X6 Pro / Redmi Note 13 Pro+</span>
+                </div>
+                <div class="comp-item">
+                    <span class="emoji">💼</span>
+                    <strong>Executivo</strong>
+                    <span>Galaxy A55 / iPhone 16</span>
+                </div>
+                <div class="comp-item">
+                    <span class="emoji">💰</span>
+                    <strong>Econômico</strong>
+                    <span>Moto G54 5G / Redmi 13C</span>
+                </div>
+                <div class="comp-item">
+                    <span class="emoji">👴</span>
+                    <strong>Iniciante</strong>
+                    <span>Moto G14 / Galaxy A05</span>
+                </div>
+                <div class="comp-item">
+                    <span class="emoji">🚀</span>
+                    <strong>Power User</strong>
+                    <span>iPhone 17 Pro / S25 Ultra</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPARTILHAR -->
+        <div class="share-box">
+            <h3>📲 Compartilhe com seus Amigos!</h3>
+            <p>Manda esse guia para quem está em dúvida sobre qual celular comprar. Você pode ajudar alguém a não errar na compra!</p>
+            <div class="share-buttons">
+                <a href="https://wa.me/?text=Descobri%20qual%20celular%20combina%20com%20meu%20perfil!%20Veja%20o%20guia%3A%20https://mundoinfotech.com.br/posts/qual-celular-combina-com-voce-2026.html" 
+                   class="btn-share btn-whatsapp" target="_blank">💬 WhatsApp</a>
+                <a href="https://twitter.com/intent/tweet?text=Qual%20celular%20combina%20com%20voc%C3%AA%3F%20Descubra%20pelo%20seu%20perfil!&url=https://mundoinfotech.com.br/posts/qual-celular-combina-com-voce-2026.html" 
+                   class="btn-share btn-twitter" target="_blank">🐦 Twitter/X</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://mundoinfotech.com.br/posts/qual-celular-combina-com-voce-2026.html" 
+                   class="btn-share btn-facebook" target="_blank">👍 Facebook</a>
+            </div>
+        </div>
+
+        <article class="intro-editorial" style="margin-top: 60px;">
+            <h2>💡 Dica Final: Não Compre por Marca, Compre por Necessidade</h2>
+            <p>O celular mais caro não é necessariamente o melhor para você. Um Moto G54 de R$ 1.200 pode ser mais útil para o seu dia a dia do que um iPhone de R$ 8.000 se você usa o celular apenas para WhatsApp e redes sociais.</p>
+            <p>Identifique seu perfil, defina seu orçamento e escolha o celular que atende suas necessidades reais. Seu bolso agradece!</p>
+            <p style="margin-top: 20px;"><strong>Quer ver os melhores celulares por faixa de preço?</strong> Confira nosso guia: <a href="celulares-ate-1500-reais-2026.html" style="color: #ff6600;">Melhores Celulares Até R$ 1.500 em 2026</a></p>
+        </article>
+    </main>
+
+    <div id="footer-global"></div>
+    <script src="../componentes.js"></script>
+    <script>carregarComponentes("Celulares");</script>
+</body>
+</html>
