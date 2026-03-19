@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo Info Tech - Reviews e Ofertas de Tecnologia</title>
-    
+
     <!-- Google AdSense Verification -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8369479836329140" crossorigin="anonymous"></script>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
-    <!-- Meta Description (aparece no Google) -->
+
     <meta name="description" content="Reviews completos de celulares, fones de ouvido, smart TVs e tecnologia para casa inteligente. Encontre as melhores ofertas e compare preços.">
     <meta name="keywords" content="celulares 2026, fones de ouvido, smart tv, casa inteligente, ofertas tecnologia, reviews tech">
-    
-    <!-- Open Graph (quando compartilha no Facebook/WhatsApp) -->
+
     <meta property="og:title" content="Mundo Info Tech - Reviews e Ofertas de Tecnologia">
     <meta property="og:description" content="Reviews completos de celulares, fones de ouvido, smart TVs e tecnologia para casa inteligente.">
     <meta property="og:image" content="https://mundoinfotech.com.br/posts/images/banner-celulares.jpg">
     <meta property="og:url" content="https://mundoinfotech.com.br">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
-    
-    <!-- Twitter Card (quando compartilha no Twitter/X) -->
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mundo Info Tech - Reviews e Ofertas de Tecnologia">
     <meta name="twitter:description" content="Reviews completos de celulares, fones de ouvido, smart TVs e tecnologia para casa inteligente.">
     <meta name="twitter:image" content="https://mundoinfotech.com.br/posts/images/banner-celulares.jpg">
-    
-    <!-- Structured Data (JSON-LD) - Google entende melhor seu site -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -47,147 +42,292 @@
       }
     }
     </script>
-    
+
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── LAYOUT GERAL ── */
+        .home-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 20px 60px; }
+
+        /* ── DESTAQUE PRINCIPAL ── */
+        .destaque-principal { display: grid; grid-template-columns: 1fr 340px; gap: 20px; margin: 30px 0; }
+
+        .destaque-grande { position: relative; border-radius: 14px; overflow: hidden; height: 420px; display: block; text-decoration: none; }
+        .destaque-grande img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .destaque-grande:hover img { transform: scale(1.04); }
+        .destaque-grande .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; }
+        .destaque-grande .tag-destaque { background: #ff6600; color: white; font-size: 0.7rem; font-weight: bold; padding: 3px 10px; border-radius: 4px; width: fit-content; margin-bottom: 10px; }
+        .destaque-grande h2 { color: white; font-size: 1.6rem; margin: 0; line-height: 1.3; }
+        .destaque-grande p { color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 8px 0 0; }
+
+        .destaque-lateral { display: flex; flex-direction: column; gap: 14px; }
+        .destaque-mini { position: relative; border-radius: 10px; overflow: hidden; height: 128px; display: block; text-decoration: none; flex-shrink: 0; }
+        .destaque-mini img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+        .destaque-mini:hover img { transform: scale(1.05); }
+        .destaque-mini .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; }
+        .destaque-mini .tag-mini { background: #ff6600; color: white; font-size: 0.65rem; font-weight: bold; padding: 2px 8px; border-radius: 3px; width: fit-content; margin-bottom: 5px; }
+        .destaque-mini h3 { color: white; font-size: 0.85rem; margin: 0; line-height: 1.3; }
+
+        /* ── SEÇÃO DE CATEGORIA ── */
+        .secao-categoria { margin: 45px 0; }
+        .secao-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; border-bottom: 3px solid #ff6600; padding-bottom: 10px; }
+        .secao-header h2 { font-size: 1.2rem; color: #111827; margin: 0; display: flex; align-items: center; gap: 8px; }
+        .secao-header a { font-size: 0.85rem; color: #ff6600; text-decoration: none; font-weight: 600; white-space: nowrap; }
+        .secao-header a:hover { text-decoration: underline; }
+
+        .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+        .article-card { border-radius: 10px; overflow: hidden; border: 1px solid #e5e7eb; background: white; text-decoration: none; display: flex; flex-direction: column; transition: all 0.25s ease; }
+        .article-card:hover { border-color: #ff6600; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card img { width: 100%; height: 160px; object-fit: cover; }
+        .article-card .card-body { padding: 14px; flex: 1; display: flex; flex-direction: column; }
+        .article-card .card-tag { font-size: 0.7rem; font-weight: bold; color: #ff6600; text-transform: uppercase; margin-bottom: 6px; }
+        .article-card h3 { font-size: 0.95rem; color: #111827; margin: 0; line-height: 1.4; flex: 1; }
+        .article-card .card-footer { margin-top: 10px; font-size: 0.8rem; color: #9ca3af; }
+
+        /* ── BANNER OFERTAS ── */
+        .banner-ofertas { background: linear-gradient(135deg, #111827, #1f2937); border-radius: 14px; padding: 30px; display: flex; align-items: center; justify-content: space-between; margin: 40px 0; gap: 20px; }
+        .banner-ofertas h2 { color: white; font-size: 1.4rem; margin: 0 0 8px; }
+        .banner-ofertas p { color: rgba(255,255,255,0.7); margin: 0; font-size: 0.9rem; }
+        .banner-ofertas a { background: #ff6600; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; white-space: nowrap; transition: background 0.2s; }
+        .banner-ofertas a:hover { background: #e65c00; }
+
+        /* ── SCROLL DE PRODUTOS ── */
+        .ads-scroll { display: flex; gap: 14px; overflow-x: auto; padding: 5px 0 15px; scrollbar-width: thin; margin: 20px 0; }
+        .ads-scroll::-webkit-scrollbar { height: 4px; }
+        .ads-scroll::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 4px; }
+
+        /* ── RESPONSIVO ── */
+        @media (max-width: 900px) {
+            .destaque-principal { grid-template-columns: 1fr; }
+            .destaque-lateral { flex-direction: row; overflow-x: auto; }
+            .destaque-mini { min-width: 220px; }
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .destaque-grande { height: 280px; }
+            .destaque-grande h2 { font-size: 1.2rem; }
+            .banner-ofertas { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
-
 <body>
-
     <div id="header-global"></div>
 
-    <main class="container">
-        <div class="ads-scroll">
-
-            <a href="https://mercadolivre.com/sec/2VdWgFa" target="_blank" class="ad-card">
-                <img src="posts/images/tv-lg-65.jpg" alt="Smart TV 65 LG">
-                <h3>Smart TV 65" LG</h3>
-                <span class="ver-oferta">Ver oferta</span>
-            </a>
-
-            <a href="https://mercadolivre.com/sec/2CgF3V8" target="_blank" class="ad-card">
-                <img src="posts/images/tv-tcl-65.jpg" alt="Smart TV 65 TCL QLED">
-                <h3>Smart TV 65" TCL QLED</h3>
-                <span class="ver-oferta">Ver oferta</span>
-            </a>
-
-            <a href="https://mercadolivre.com/sec/2fUe9qD" target="_blank" class="ad-card">
-                <img src="posts/images/tv-weyon-43.jpg" alt="Smart TV 43 Weyon">
-                <h3>Smart TV 43" Weyon</h3>
-                <span class="ver-oferta">Ver oferta</span>
-            </a>
-
-            <a href="https://mercadolivre.com/sec/2SRBo1X" target="_blank" class="ad-card">
-                <img src="posts/images/tv-samsumg-75.jpg" alt="Smart Tv U8100f Crystal 75">
-                <h3>Smart Tv U8100f Crystal 75"</h3>
-                <span class="ver-oferta">Ver oferta</span>
-            </a>
-
+    <main>
+        <!-- SCROLL DE PRODUTOS -->
+        <div style="max-width:1100px; margin:0 auto; padding:0 20px;">
+            <div class="ads-scroll">
+                <a href="https://mercadolivre.com/sec/2VdWgFa" target="_blank" class="ad-card">
+                    <img src="posts/images/tv-lg-65.jpg" alt="Smart TV 65 LG">
+                    <h3>Smart TV 65" LG</h3>
+                    <span class="ver-oferta">Ver oferta</span>
+                </a>
+                <a href="https://mercadolivre.com/sec/2CgF3V8" target="_blank" class="ad-card">
+                    <img src="posts/images/tv-tcl-65.jpg" alt="Smart TV 65 TCL QLED">
+                    <h3>Smart TV 65" TCL QLED</h3>
+                    <span class="ver-oferta">Ver oferta</span>
+                </a>
+                <a href="https://mercadolivre.com/sec/2fUe9qD" target="_blank" class="ad-card">
+                    <img src="posts/images/tv-weyon-43.jpg" alt="Smart TV 43 Weyon">
+                    <h3>Smart TV 43" Weyon</h3>
+                    <span class="ver-oferta">Ver oferta</span>
+                </a>
+                <a href="https://mercadolivre.com/sec/2SRBo1X" target="_blank" class="ad-card">
+                    <img src="posts/images/tv-samsumg-75.jpg" alt="Smart TV Samsung 75">
+                    <h3>Smart TV Samsung 75"</h3>
+                    <span class="ver-oferta">Ver oferta</span>
+                </a>
+            </div>
         </div>
 
-        <section class="posts-grid">
+        <div class="home-wrapper">
 
-            <a href="posts/melhores-fones-2026.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/banner-fones.jpg');">
-                <div class="post-over">
-                    <span class="tag">Destaque</span>
-                    <h2>Os 5 Melhores Fones de Ouvido de 2026</h2>
+            <!-- DESTAQUE PRINCIPAL -->
+            <section class="destaque-principal">
+                <a href="posts/melhores-celulares-2026.html" class="destaque-grande">
+                    <img src="posts/images/banner-celulares.jpg" alt="Melhores Celulares 2026">
+                    <div class="overlay">
+                        <span class="tag-destaque">🔥 DESTAQUE</span>
+                        <h2>Os 5 Melhores Celulares de 2026: Qual Comprar?</h2>
+                        <p>Análise completa dos flagships que dominam o mercado este ano</p>
+                    </div>
+                </a>
+                <div class="destaque-lateral">
+                    <a href="posts/melhores-fones-2026.html" class="destaque-mini">
+                        <img src="posts/images/banner-fones.jpg" alt="Melhores Fones">
+                        <div class="overlay">
+                            <span class="tag-mini">Review</span>
+                            <h3>Os 5 Melhores Fones de 2026</h3>
+                        </div>
+                    </a>
+                    <a href="posts/celulares-ate-1500-reais-2026.html" class="destaque-mini">
+                        <img src="posts/images/celulares-baratos-banner.jpg" alt="Celulares até 1500">
+                        <div class="overlay">
+                            <span class="tag-mini">Popular</span>
+                            <h3>Melhores Celulares Até R$ 1.500</h3>
+                        </div>
+                    </a>
+                    <a href="posts/gadgets-baratos-que-parecem-caros-2026.html" class="destaque-mini">
+                        <img src="posts/images/gadgets-baratos-banner.jpg" alt="Gadgets Baratos">
+                        <div class="overlay">
+                            <span class="tag-mini">💎 Viral</span>
+                            <h3>10 Gadgets Baratos que Parecem Caros</h3>
+                        </div>
+                    </a>
                 </div>
-            </a>
+            </section>
 
-            <a href="posts/melhores-celulares-2026.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/banner-celulares.jpg');">
-                <div class="post-over">
-                    <span class="tag">Review</span>
-                    <h2>Os 5 Melhores Celulares de 2026: Qual comprar?</h2>
+            <!-- BANNER OFERTAS -->
+            <div class="banner-ofertas">
+                <div>
+                    <h2>🏷️ Radar de Ofertas do Dia</h2>
+                    <p>Curadoria diária com os melhores preços em tech. Atualizado agora.</p>
                 </div>
-            </a>
+                <a href="posts/ofertas.html">Ver Todas as Ofertas →</a>
+            </div>
 
-            <a href="posts/casa-inteligente.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/banner-casa-inteligente.jpg');">
-                <div class="post-over">
-                    <span class="tag">Guia Técnico</span>
-                    <h2>Arquitetura de rede domésticas</h2>
+            <!-- SEÇÃO: CELULARES -->
+            <section class="secao-categoria">
+                <div class="secao-header">
+                    <h2>📱 Celulares</h2>
+                    <a href="posts/melhores-celulares-2026.html">Ver todos →</a>
                 </div>
-            </a>
-            <a href="posts/gadgets-vistos-em-filmes.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/viral_gadgets.jpg');">
-                <div class="post-over">
-                    <span class="tag">🔥 Viral</span>
-                    <h2>Gadgets de Filmes que Você Pode Comprar Hoje</h2>
+                <div class="cards-grid">
+                    <a href="posts/melhores-celulares-2026.html" class="article-card">
+                        <img src="posts/images/banner-celulares.jpg" alt="Melhores Celulares">
+                        <div class="card-body">
+                            <span class="card-tag">Review</span>
+                            <h3>Os 5 Melhores Celulares de 2026</h3>
+                            <div class="card-footer">Guia completo</div>
+                        </div>
+                    </a>
+                    <a href="posts/celulares-ate-1500-reais-2026.html" class="article-card">
+                        <img src="posts/images/celulares-baratos-banner.jpg" alt="Celulares até 1500">
+                        <div class="card-body">
+                            <span class="card-tag">🔥 Popular</span>
+                            <h3>Melhores Celulares Até R$ 1.500 (2026)</h3>
+                            <div class="card-footer">Custo-benefício</div>
+                        </div>
+                    </a>
+                    <a href="posts/qual-celular-combina-com-voce-2026.html" class="article-card">
+                        <img src="posts/images/banner-celulares.jpg" alt="Qual celular é seu">
+                        <div class="card-body">
+                            <span class="card-tag">🎯 Engajamento</span>
+                            <h3>Qual Celular Combina com Você? Descubra!</h3>
+                            <div class="card-footer">Descubra seu perfil</div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="posts/setup-home-office-2026.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/viral-setup.jpg');">
-                <div class="post-over">
-                    <span class="tag">Guia Completo</span>
-                    <h2>Setup Home Office 2026: Do Básico ao Premium</h2>
-                </div>
-            </a>
+            </section>
 
-            <a href="posts/melhor-notebook-estudantes-2026.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/notebook-banner.jpg');">
-                <div class="post-over">
-                    <span class="tag">Estudantes</span>
-                    <h2>Melhor Notebook para Estudantes 2026</h2>
+            <!-- SEÇÃO: FONES & ÁUDIO -->
+            <section class="secao-categoria">
+                <div class="secao-header">
+                    <h2>🎧 Fones & Áudio</h2>
+                    <a href="posts/melhores-fones-2026.html">Ver todos →</a>
                 </div>
-            </a>
+                <div class="cards-grid">
+                    <a href="posts/melhores-fones-2026.html" class="article-card">
+                        <img src="posts/images/banner-fones.jpg" alt="Melhores Fones">
+                        <div class="card-body">
+                            <span class="card-tag">Destaque</span>
+                            <h3>Os 5 Melhores Fones de Ouvido de 2026</h3>
+                            <div class="card-footer">Review completo</div>
+                        </div>
+                    </a>
+                    <a href="posts/como-escolher-fone-de-ouvido-2026.html" class="article-card">
+                        <img src="posts/images/guia-fones-banner.jpg" alt="Como escolher fone">
+                        <div class="card-body">
+                            <span class="card-tag">📚 Guia</span>
+                            <h3>Como Escolher Fone de Ouvido: Guia Completo</h3>
+                            <div class="card-footer">ANC, Bluetooth, tipos</div>
+                        </div>
+                    </a>
+                    <a href="posts/melhores-produtos-xiaomi-2026.html" class="article-card">
+                        <img src="posts/images/xiaomi-banner.jpg" alt="Xiaomi">
+                        <div class="card-body">
+                            <span class="card-tag">Custo-Benefício</span>
+                            <h3>Melhores Produtos Xiaomi 2026</h3>
+                            <div class="card-footer">Qualidade pelo preço</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
 
-            <a href="posts/presente-tech-namorado-2026.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/presente-tech-banner.jpg');">
-                <div class="post-over">
-                    <span class="tag">💝 Presentes</span>
-                    <h2>Presente Tech para Namorado/Namorada 2026</h2>
+            <!-- SEÇÃO: GUIAS & SETUP -->
+            <section class="secao-categoria">
+                <div class="secao-header">
+                    <h2>💡 Guias & Setup</h2>
+                    <a href="posts/setup-home-office-2026.html">Ver todos →</a>
                 </div>
-            </a>
+                <div class="cards-grid">
+                    <a href="posts/setup-home-office-2026.html" class="article-card">
+                        <img src="posts/images/viral-setup.jpg" alt="Setup Home Office">
+                        <div class="card-body">
+                            <span class="card-tag">Guia Completo</span>
+                            <h3>Setup Home Office 2026: Do Básico ao Premium</h3>
+                            <div class="card-footer">3 níveis de preço</div>
+                        </div>
+                    </a>
+                    <a href="posts/melhor-notebook-estudantes-2026.html" class="article-card">
+                        <img src="posts/images/notebook-banner.jpg" alt="Notebook Estudantes">
+                        <div class="card-body">
+                            <span class="card-tag">Estudantes</span>
+                            <h3>Melhor Notebook para Estudantes 2026</h3>
+                            <div class="card-footer">Do básico ao premium</div>
+                        </div>
+                    </a>
+                    <a href="posts/gadgets-baratos-que-parecem-caros-2026.html" class="article-card">
+                        <img src="posts/images/gadgets-baratos-banner.jpg" alt="Gadgets Baratos">
+                        <div class="card-body">
+                            <span class="card-tag">💎 Viral</span>
+                            <h3>10 Gadgets Baratos que Parecem Caros</h3>
+                            <div class="card-footer">Custo-benefício</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
 
-            <a href="posts/melhores-produtos-xiaomi-2026.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/xiaomi-banner.jpg');">
-                <div class="post-over">
-                    <span class="tag">Custo-Benefício</span>
-                    <h2>Melhores Produtos Xiaomi 2026</h2>
+            <!-- SEÇÃO: ENTRETENIMENTO & PRESENTES -->
+            <section class="secao-categoria">
+                <div class="secao-header">
+                    <h2>🎬 Entretenimento & Presentes</h2>
+                    <a href="posts/series-e-filmes.html">Ver todos →</a>
                 </div>
-            </a>
+                <div class="cards-grid">
+                    <a href="posts/gadgets-vistos-em-filmes.html" class="article-card">
+                        <img src="posts/images/viral_gadgets.jpg" alt="Gadgets de Filmes">
+                        <div class="card-body">
+                            <span class="card-tag">🔥 Viral</span>
+                            <h3>Gadgets de Filmes que Você Pode Comprar Hoje</h3>
+                            <div class="card-footer">Cinema + tecnologia</div>
+                        </div>
+                    </a>
+                    <a href="posts/presente-tech-namorado-2026.html" class="article-card">
+                        <img src="posts/images/presente-tech-banner.jpg" alt="Presentes Tech">
+                        <div class="card-body">
+                            <span class="card-tag">💝 Presentes</span>
+                            <h3>Presente Tech para Namorado/Namorada 2026</h3>
+                            <div class="card-footer">Ideias para surpreender</div>
+                        </div>
+                    </a>
+                    <a href="posts/casa-inteligente.html" class="article-card">
+                        <img src="posts/images/banner-casa-inteligente.jpg" alt="Casa Inteligente">
+                        <div class="card-body">
+                            <span class="card-tag">Casa Inteligente</span>
+                            <h3>Arquitetura de Redes Domésticas</h3>
+                            <div class="card-footer">Guia técnico</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
 
-            <a href="posts/celulares-ate-1500-reais-2026.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/celulares-baratos-banner.jpg');">
-                <div class="post-over">
-                    <span class="tag">🔥 Popular</span>
-                    <h2>Melhores Celulares Até R$ 1.500 (2026)</h2>
-                </div>
-            </a>
-
-            <a href="posts/como-escolher-fone-de-ouvido-2026.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/guia-fones-banner.jpg');">
-                <div class="post-over">
-                    <span class="tag">📚 Guia Completo</span>
-                    <h2>Como Escolher Fone de Ouvido: Guia 2026</h2>
-                </div>
-            </a>
-
-            <a href="posts/gadgets-baratos-que-parecem-caros-2026.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/gadgets-baratos-banner.jpg');">
-                <div class="post-over">
-                    <span class="tag">💎 Viral</span>
-                    <h2>10 Gadgets Baratos que Parecem Caros</h2>
-                </div>
-            </a>
-
-            <a href="posts/qual-celular-combina-com-voce-2026.html" class="post-item"
-                style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('posts/images/banner-celulares.jpg');">
-                <div class="post-over">
-                    <span class="tag">🎯 Engajamento</span>
-                    <h2>Qual Celular Combina com Você? Descubra!</h2>
-                </div>
-            </a>
-        </section>
+        </div>
     </main>
 
     <div id="footer-global"></div>
-
     <script src="componentes.js"></script>
-    <script>
-        carregarComponentes(); 
-    </script>
+    <script>carregarComponentes();</script>
 </body>
-
 </html>
